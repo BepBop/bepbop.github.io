@@ -13,7 +13,7 @@ export default function (year) {
             <div className={style.line}/>
         </a>
     } else {
-        return <a href={`/${year.year}`} className={style.grid}>
+        return <a href={`./${year.year}`} className={style.grid}>
             <div className={style.line}/>
             <div className={style.hover + ' ' + style.active}>
                 <div className={style.year}>{year.year}</div>
