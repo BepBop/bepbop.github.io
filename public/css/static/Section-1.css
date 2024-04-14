@@ -35,7 +35,7 @@
 }
 
 .sub-header {
-  color: #303031 !important;
+  /*color: rgba(34, 34, 34, 0.80);*/
   font-weight: 400;
   font-size: clamp(1.5rem, 2vw + 0.3125rem, 2.0rem);
   /*text-transform: capitalize;*/
@@ -65,7 +65,8 @@
 .flex-basis-width-char {
   /*max-width: 794px;*/
   flex-basis: 60ch;
-  font-family: 'IBM Plex Sans', sans-serif !important
+  font-family: 'IBM Plex Sans', sans-serif !important;
+  padding-top:24px;
 }
 
 .line {
@@ -91,7 +92,6 @@
   font-size: 32px;
   font-weight: 400;
   color: var(--black);
-  text-transform: uppercase;
   /*border-radius: 25px;*/
   /*padding: 25% 50%;*/
 }
@@ -100,12 +100,14 @@
   font-family: 'IBM Plex Sans', sans-serif !important;
   font-size: 20px;
   line-height: 30px;
-  padding-top: 28px;
+  padding-top: 20px;
 }
+
 
 .sub-header-2 {
   font-size: 24px;
   font-weight: 400;
+  color: var(--black2);
   /*padding-top: 4px;*/
 }
 

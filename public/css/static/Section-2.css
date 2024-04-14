@@ -131,7 +131,8 @@
 }
 
 a:link, a:visited, a:hover, a:active {
-  color: var(--white) !important;
+  color: var(--green) !important;
+  cursor: pointer;
 }
 
 .font-24 {
