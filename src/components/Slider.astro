@@ -1,0 +1,21 @@
+---
+import style from "./public/css/static/Section-3.css";
+---
+
+<div id="test" style="background-image: url('../../../public/img/ab.svg');"></div>
+
+<script>
+
+    const x = document.getElementById("test");
+
+    let y = 0;
+
+    function fun() {
+        y = y + 2;
+        x.style.backgroundPositionX = `${y}px`;
+        requestAnimationFrame(fun);
+    }
+
+    requestAnimationFrame(fun);
+</script>
+

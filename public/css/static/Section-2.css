@@ -94,7 +94,7 @@
 #first-child-child {
   font-weight: 600;
   padding-top: 44px;
-  padding-bottom: 32px;
+  padding-bottom: 28px;
   display: flex;
   justify-content: space-between;
   font-family: 'IBM Plex Sans', sans-serif;
@@ -109,6 +109,7 @@
 .project-para {
   color: var(--white) !important;
   width: 80%;
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 
 #first-child {
@@ -133,6 +134,9 @@
 a:link, a:visited, a:hover, a:active {
   color: var(--green) !important;
   cursor: pointer;
+}
+a:hover {
+  text-decoration-line: underline;
 }
 
 .font-24 {
