@@ -1,6 +1,6 @@
 import {StrictMode, useState} from "react";
-import Wrapper from "./Active Default Wrapper.jsx"
-import {globalContext} from "./Context.jsx"
+import Wrapper from "../components/Active Default Wrapper.jsx"
+import {globalContext} from "../components/Context.jsx"
 import style from "../css/component/Container.module.css"
 
 

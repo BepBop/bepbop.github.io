@@ -1,7 +1,7 @@
 ---
 import {ViewTransitions} from 'astro:transitions';
-import A from "../layouts/Head.astro";
-import B from "../components/Timeline.jsx";
+import A from "../layouts/Slider.astro";
+import B from "../layouts/Timeline.jsx";
 ---
 
 <!doctype html>
@@ -18,7 +18,6 @@ import B from "../components/Timeline.jsx";
     <meta property="og:url" content=""/>
     <meta property="og:image" content=""/>
 
-    <link rel="manifest" href="site.webmanifest">
     <link rel="apple-touch-icon" href="icon.png">
     <!-- Place favicon.ico in the root directory -->
 
@@ -302,7 +301,7 @@ import B from "../components/Timeline.jsx";
 
 <div id="Section-3">
 
-    <!--<div id="test" style="background-image: url('../../../public/img/ab.svg');"></div>-->
+    <A/>
 
     <div class="margin">
         <div class="parent-box-">
@@ -391,10 +390,6 @@ import B from "../components/Timeline.jsx";
 
 </div>
 
-<!--<script src="js/vendor/modernizr-3.11.2.min.js"></script>-->
-<script src="/src/js/plugins.js"></script>
-<script src="/src/js/main.js"></script>
-<script src="/src/js/Section-2.js"></script>
 
 <style>
 

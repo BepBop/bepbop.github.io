@@ -1,9 +1,8 @@
 import {defineConfig} from 'astro/config';
 
 import react from "@astrojs/react";
-import {current_year} from "./src/components/Timeline.jsx";
+import {current_year} from "./src/layouts/Timeline.jsx";
 
-console.log(current_year);
 // https://astro.build/config
 export default defineConfig({
     integrations: [react()],
