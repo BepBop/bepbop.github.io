@@ -10,7 +10,7 @@ export default function ({year}) {
                 <div className={style.year}>{year}</div>
             </div>
 
-            <img src='indicator.svg' alt='arrow'/>
+            <img src='/indicator.svg' alt='arrow'/>
         </div>
     )
 
