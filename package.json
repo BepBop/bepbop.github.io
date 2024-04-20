@@ -10,13 +10,15 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/check": "^0.5.10",
     "@astrojs/react": "^3.0.7",
     "@types/react": "^18.2.38",
     "@types/react-dom": "^18.2.17",
     "astro": "^4.0.3",
     "motion": "^10.16.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "typescript": "^5.4.5"
   },
   "devDependencies": {
     "eslint": "^8.54.0",
