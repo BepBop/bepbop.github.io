@@ -1,15 +1,15 @@
 ---
 import {ViewTransitions} from 'astro:transitions';
-import A from "../layouts/Slider.astro";
 import B from "../layouts/Timeline.jsx";
+import Slider from "../layouts/Slider.astro";
 ---
 
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>bepbop</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -18,16 +18,16 @@ import B from "../layouts/Timeline.jsx";
     <meta property="og:url" content=""/>
     <meta property="og:image" content=""/>
 
-    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="apple-touch-icon" href="/icon.png">
     <!-- Place favicon.ico in the root directory -->
 
 
-    <link rel="stylesheet" href="css/static/main.css">
-    <link rel="stylesheet" href="css/static/normalize.css">
-    <link rel="stylesheet" href="css/static/Root.css">
-    <link rel="stylesheet" href="css/static/Section-1.css">
-    <link rel="stylesheet" href="css/static/Section-2.css">
-    <link rel="stylesheet" href="css/static/Section-3.css">
+    <link rel="stylesheet" href="/css/static/main.css">
+    <link rel="stylesheet" href="/css/static/normalize.css">
+    <link rel="stylesheet" href="/css/static/Root.css">
+    <link rel="stylesheet" href="/css/static/Section-1.css">
+    <link rel="stylesheet" href="/css/static/Section-2.css">
+    <link rel="stylesheet" href="/css/static/Section-3.css">
 
 
     <meta name="theme-color" content="#fafafa">
@@ -53,7 +53,7 @@ import B from "../layouts/Timeline.jsx";
 
     <!--<Timeline transition:name="abc" transition:persist/>-->
 
-    <B client:only="react" transition:name="abc" transition:persist/>
+    <B client:only="react" transition:name="trans" transition:persist/>
 
 
     <div id="one" class="grid">
@@ -135,7 +135,7 @@ import B from "../layouts/Timeline.jsx";
             <details id="first-child">
                 <summary id="first-child-child">
                     <span id="cum" class="font-48">Blog From Scratch HTML JS</span>
-                    <img id="icon" src="img/add.svg" alt="close">
+                    <img id="icon" src="/img/add.svg" alt="close">
                 </summary>
 
                 <!--                <div><img-->
@@ -160,7 +160,7 @@ import B from "../layouts/Timeline.jsx";
             <details id="first-child">
                 <summary id="first-child-child">
                     <span id="cum" class="font-48">Arduino UNO Digital Clock</span>
-                    <img id="icon" src="img/add.svg" alt="close">
+                    <img id="icon" src="/img/add.svg" alt="close">
                 </summary>
                 <div class="font-28 roboto project-para">Lead a group of 3, programming and building a Digital clock
                     using UNO
@@ -176,7 +176,7 @@ import B from "../layouts/Timeline.jsx";
             <details id="first-child">
                 <summary id="first-child-child">
                     <span id="cum" class="font-48">A Modern Website, Urban Sports Club</span>
-                    <img id="icon" src="img/add.svg" alt="close">
+                    <img id="icon" src="/img/add.svg" alt="close">
                 </summary>
                 <div class="font-28 roboto project-para">Designed and published a well themed responsive Landing,
                     Pricing, Sign
@@ -193,7 +193,7 @@ import B from "../layouts/Timeline.jsx";
             <details id="first-child">
                 <summary id="first-child-child">
                     <span id="cum" class="font-48">Story Generator, using Tkinter and ML</span>
-                    <img id="icon" src="img/add.svg" alt="close">
+                    <img id="icon" src="/img/add.svg" alt="close">
                 </summary>
                 <div class="font-28 roboto project-para">Programmed GUI based random story generator using GPT-J API and
                     a
@@ -212,7 +212,7 @@ import B from "../layouts/Timeline.jsx";
             <details id="first-child">
                 <summary id="first-child-child">
                     <span id="cum" class="font-48"> Pong Video Game, Java OOP</span>
-                    <img id="icon" src="img/add.svg" alt="close">
+                    <img id="icon" src="/img/add.svg" alt="close">
                 </summary>
                 <div class="font-28 roboto project-para">Inspired by the Youtube Channel Computerphile! built Pong using
                     Java
@@ -231,7 +231,7 @@ import B from "../layouts/Timeline.jsx";
                 <summary id="first-child-child">
           <span id="cum" class="font-48">  Mini React Apps, Stopwatch and To-Do List
 </span>
-                    <img id="icon" src="img/add.svg" alt="close">
+                    <img id="icon" src="/img/add.svg" alt="close">
                 </summary>
                 <div class="font-28 roboto project-para">Learned React through building state efficient Apps and, with
                     it
@@ -258,7 +258,7 @@ import B from "../layouts/Timeline.jsx";
           <span id="cum" class="font-48">      Blog, using Laravel framework
 
 </span>
-                    <img id="icon" src="img/add.svg" alt="close">
+                    <img id="icon" src="/img/add.svg" alt="close">
                 </summary>
                 <div class="font-28 roboto project-para">Learned MVC framework through implementing backend in MYSQL and
                     frontend with
@@ -280,7 +280,7 @@ import B from "../layouts/Timeline.jsx";
 
 
 </span>
-                    <img id="icon" src="img/add.svg" alt="close">
+                    <img id="icon" src="/img/add.svg" alt="close">
                 </summary>
                 <div class="font-28 roboto project-para">Iterated Urban Sports Club Project adding PHP MYSQL Backend for
                     Login
@@ -301,7 +301,7 @@ import B from "../layouts/Timeline.jsx";
 
 <div id="Section-3">
 
-    <A/>
+    <Slider/>
 
     <div class="margin">
         <div class="parent-box-">
@@ -391,25 +391,6 @@ import B from "../layouts/Timeline.jsx";
 </div>
 
 
-<style>
-
-    .container {
-        top: 0;
-        right: 0;
-        z-index: 1000;
-        position: absolute;
-        display: flex;
-        flex-flow: column;
-        height: 100vh;
-        min-width: max-content;
-        width: 50%;
-        background: linear-gradient(to left, white, rgba(255, 255, 255, 0.1));
-        justify-content: center;
-        align-items: flex-end;
-    }
-
-
-</style>
 
 </body>
 

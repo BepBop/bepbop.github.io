@@ -1,16 +1,15 @@
 ---
 import {ViewTransitions} from 'astro:transitions';
-import A from "../layouts/Head.astro";
 import B from "../layouts/Timeline.jsx";
 import Slider from "../layouts/Slider.astro";
 ---
 
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>BepBop</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -19,16 +18,16 @@ import Slider from "../layouts/Slider.astro";
     <meta property="og:url" content=""/>
     <meta property="og:image" content=""/>
 
-    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="apple-touch-icon" href="/icon.png">
     <!-- Place favicon.ico in the root directory -->
 
 
-    <link rel="stylesheet" href="css/static/main.css">
-    <link rel="stylesheet" href="css/static/normalize.css">
-    <link rel="stylesheet" href="css/static/Root.css">
-    <link rel="stylesheet" href="css/static/Section-1.css">
-    <link rel="stylesheet" href="css/static/Section-2.css">
-    <link rel="stylesheet" href="css/static/Section-3.css">
+    <link rel="stylesheet" href="/css/static/main.css">
+    <link rel="stylesheet" href="/css/static/normalize.css">
+    <link rel="stylesheet" href="/css/static/Root.css">
+    <link rel="stylesheet" href="/css/static/Section-1.css">
+    <link rel="stylesheet" href="/css/static/Section-2.css">
+    <link rel="stylesheet" href="/css/static/Section-3.css">
 
 
     <meta name="theme-color" content="#fafafa">
@@ -47,7 +46,7 @@ import Slider from "../layouts/Slider.astro";
 
     <!--<Timeline transition:name="abc" transition:persist/>-->
 
-    <B client:only="react" transition:name="abc" transition:persist/>
+    <B client:only="react" transition:name="trans" transition:persist/>
 
 
     <div id="one" class="grid">
@@ -308,7 +307,6 @@ import Slider from "../layouts/Slider.astro";
 
 <div id="Section-3">
 
-    <!--<div id="test" style="background-image: url('../../../public/img/slider.svg');"></div>-->
     <Slider/>
 
     <div class="margin">
@@ -398,26 +396,6 @@ import Slider from "../layouts/Slider.astro";
 
 </div>
 
-
-<style>
-
-    .container {
-        top: 0;
-        right: 0;
-        z-index: 1000;
-        position: absolute;
-        display: flex;
-        flex-flow: column;
-        height: 100vh;
-        min-width: max-content;
-        width: 50%;
-        background: linear-gradient(to left, white, rgba(255, 255, 255, 0.1));
-        justify-content: center;
-        align-items: flex-end;
-    }
-
-
-</style>
 
 </body>
 
