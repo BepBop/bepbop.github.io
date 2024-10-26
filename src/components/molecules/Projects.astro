@@ -1,0 +1,90 @@
+---
+import Card from "../atoms/card.astro";
+import test from "/src/content/projects-list.json";
+---
+
+<div id="Projects">
+  <div class="card-container grd">
+    {
+      test.map((item) => (
+        <Card
+          title={item.title}
+          tag={item.tag}
+          eyebrow={item.eyebrow}
+          paragraph={item.paragraph}
+          link={item.link}
+        />
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  #Projects {
+    //padding: 2.5% 0 5% 0;
+    //padding: clamp(72px, 6vw + 1rem, 120px) 2.5% 180px 2.5%;
+    padding: clamp(36px, 2.4vw + 1rem, 72px) 2.5% 108px 2.5%;
+    //height: fit-content;
+    overflow-x: auto;
+    transition: all 4s ease-in-out;
+    //position: relative;
+    //scroll-snap-type: x mandatory;
+  }
+
+  @scope (
+    #Projects
+
+    ) {
+    .grd {
+      display: grid;
+      grid-template: auto / repeat(12, minmax(380px, 1fr));
+      gap: clamp(1rem, 1.5vw, 2rem);
+      overflow-x: auto;
+      //cursor: none;
+      padding: 5% 0;
+
+      @media (width <= 1000px) {
+        grid-template: auto / repeat(auto-fill, minmax(380px, auto));
+      }
+    }
+  }
+</style>
+
+<script is:inline data-astro-rerun>
+  if (window.innerWidth > 1000) {
+    const cardContainer = document.querySelector(".card-container");
+
+    const cardContainerLastChild = cardContainer.lastElementChild;
+
+    let cardContainerIntersection = false;
+    let cardContainerLastChildIntersection = false;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.target === cardContainer) {
+            cardContainerIntersection = entry.isIntersecting;
+          } else if (entry.target === cardContainerLastChild) {
+            cardContainerLastChildIntersection = entry.isIntersecting;
+          }
+        });
+      },
+      {
+        threshold: [0.8, 0.9],
+      },
+    );
+
+    observer.observe(cardContainer);
+    observer.observe(cardContainerLastChild);
+
+    cardContainer.addEventListener("wheel", scrollFunction, { passive: false });
+
+    function scrollFunction(e) {
+      if (cardContainerIntersection && !cardContainerLastChildIntersection) {
+        e.preventDefault();
+        cardContainer.scrollLeft +=
+          Math.sign(e.deltaY || e.deltaX) * Math.abs(e.deltaY || e.deltaX);
+      }
+    }
+  }
+</script>

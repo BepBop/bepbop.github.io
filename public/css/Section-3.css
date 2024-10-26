@@ -1,0 +1,97 @@
+#skill {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-17); /* between 40px and 80px */
+    width: max-content;
+}
+
+.toy {
+    border-top: 1px solid #c8c8c9;
+    height: 25%;
+    position: sticky;
+    top: 0;
+    padding: 50px 30px 120px 30px;
+}
+
+.toy button {
+    font-family: var(--font-sans);
+    font-size: var(--font-size-9); /* 24px */
+    background: var(--green);
+    padding: 16px 32px;
+    width: max-content;
+    box-shadow: 0 4px 12px 0 hsla(90, 100%, 49%, 0.2);
+    border: none;
+    border-radius: 8px;
+
+    &:hover {
+        box-shadow: 0px 0px 0px 1px rgba(124, 252, 0, 0.1),
+        0px 5px 10px 0px rgba(124, 252, 0, 0.2),
+        0px 15px 40px 0px rgba(124, 252, 0, 0.4);
+    }
+}
+
+.parent-box- {
+    display: inline-flex;
+    flex-flow: row nowrap;
+}
+
+.parent-box {
+    display: inline-flex;
+    flex-flow: row wrap;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 60px 30px 60px;
+    gap: 12px;
+
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+    border-color: #c8c8c9;
+    font-family: var(--font-sans);
+    flex: 1 1 42%;
+}
+
+.box-head {
+    font-size: var(--font-size-16); /* 40px */
+}
+
+.box-para {
+    font-size: var(--font-size-8); /* between 20px and 24px */
+    line-height: 1.5;
+}
+
+
+@media (width <= 800px) {
+    .parent-box- {
+        flex-flow: row wrap;
+    }
+
+    .toy {
+        position: unset;
+        border-width: 0 0 0 0;
+        padding-left: 0;
+    }
+}
+
+@media (width <= 400px) {
+    .box {
+        gap: 16px;
+        padding: 30px 30px 30px;
+    }
+
+    .parent-box {
+        gap: 30px;
+    }
+}
+
+.slider {
+    width: 100%;
+    height: max(8vmax, 100px);
+    background-color: var(--green);
+    overflow: clip;
+    background-repeat: repeat-x;
+    background-position-x: 100px;
+    background-size: cover;
+}

@@ -1,0 +1,145 @@
+#Section-2 {
+  background: var(--dark);
+}
+
+.icon {
+  transition: all 120ms;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+}
+
+#year {
+  color: var(--black);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-19); /* 4vmax */
+  font-weight: 500;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 4vw;
+  transform: rotate(4deg) translateX(-107px) translateY(-50px);
+  background: var(--green);
+  padding: 25px 0;
+  overflow: auto;
+  width: calc(101% + 107px);
+}
+
+#year::-webkit-scrollbar {
+  display: none;
+}
+
+#year {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#rotate {
+  position: absolute;
+  height: 100%;
+  background-size: 100% auto;
+  width: 4vw;
+  z-index: -1;
+}
+
+.rectangle-2 {
+  width: 100%;
+  height: 56px;
+  background: var(--blue);
+}
+
+.project-number {
+  position: absolute;
+  top: -12px;
+  right: 0;
+  color: var(--green);
+}
+
+.marquee {
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+
+.parent-flex {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: baseline;
+  gap: 24px;
+  justify-content: space-evenly;
+  padding-bottom: 64px;
+}
+
+.first-child-child {
+  font-weight: 600;
+  padding-top: 44px;
+  padding-bottom: 28px;
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-sans);
+  align-items: flex-start;
+}
+
+.flex-basis-80 {
+  flex-basis: 80%;
+}
+
+.project-para {
+  color: var(--white) !important;
+  width: 80%;
+  font-family: var(--font-sans);
+}
+
+.first-child {
+  flex-basis: calc(100vmax - 60%);
+}
+
+.rectangle-3 {
+  width: 80%;
+  height: 1px;
+  background: var(--white);
+  margin-top: 32px;
+  display: none;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: var(--green) !important;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration-line: underline;
+}
+
+details[open] .icon {
+  transform: rotate(45deg);
+}
+
+summary {
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+.serial-number {
+  font-family: var(--font-mono);
+}
+
+@media (width <= 800px) {
+  .serial-number {
+    display: none;
+  }
+}

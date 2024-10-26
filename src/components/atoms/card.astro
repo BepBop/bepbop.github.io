@@ -1,0 +1,107 @@
+---
+const { eyebrow } = Astro.props;
+const { tag } = Astro.props;
+const { title } = Astro.props;
+const { paragraph } = Astro.props;
+const { link } = Astro.props;
+---
+
+<a class="card" href={link}>
+  <div class="card_img"></div>
+  <div class="card_info">
+    <div class="card_eyebrow">{eyebrow}</div>
+    <div class="card_title">{title}</div>
+    <div class="card_paragraph">
+      {paragraph}
+    </div>
+  </div>
+  <div class="card_footer">
+    <div>
+      {tag.map((item) => <div class="tags"> #{item} </div>)}
+    </div>
+  </div>
+
+  <style>
+    .card {
+      display: grid;
+      grid-template-rows: repeat(24, 1fr);
+      height: 600px;
+      transition: ease-in-out 0.5s all;
+      background: var(--white);
+
+      text-decoration: none;
+      color: inherit;
+      font: inherit;
+      border: none;
+      padding: 0;
+      margin: 0;
+      outline: none;
+
+      &:hover {
+        transform: scale(1.05);
+        cursor: url("./img/arrow_cursour.svg"), auto;
+      }
+    }
+
+    @scope (.card) {
+      .card_img {
+        grid-row: 1 / 16;
+        background: url("/cool2.jpg") center;
+        background-size: contain;
+      }
+
+      .card_info {
+        grid-row: 16 / 24;
+        padding: 16px;
+
+        .card_eyebrow {
+          font-family: var(--font-sans);
+          font-size: var(--font-size-3); /* Using 14px equivalent */
+          font-weight: 400;
+          color: var(--black2);
+          line-height: 1.4;
+          margin-bottom: 2px;
+        }
+        .card_title {
+          font-family: var(--font-sans);
+          font-size: var(--font-size-13); /* 32px */
+          font-weight: 500;
+          color: var(--black);
+          margin-bottom: 10px;
+        }
+
+        .card_paragraph {
+          font-family: var(--font-sans);
+          font-size: var(--font-size-6); /* 18px */
+          font-weight: 400;
+          color: var(--black);
+          line-height: 1.4;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
+          overflow: hidden;
+        }
+      }
+
+      .card_footer {
+        grid-row: auto / 25;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px;
+      }
+
+      .tags {
+        display: inline-block;
+        color: var(--black);
+        padding: 6px 8px;
+        margin: 6px;
+        background: var(--green);
+        border-radius: 1px;
+        font-family: var(--font-sans);
+        font-size: var(--font-size-5); /* 16px */
+        font-weight: 400;
+      }
+    }
+  </style>
+</a>

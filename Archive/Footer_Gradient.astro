@@ -1,0 +1,289 @@
+---
+
+---
+
+<footer>
+  <div class="margin" id="aloo">
+    <hr />
+
+    <div id="ass">
+      <div class="cntnr">
+        <div class="flx-clmn">
+          <div class="nv-txt">Navigation</div>
+          <div class="flx-clmn">
+            <div class="hdng">Who Am I</div>
+            <div class="hdng">What I Do</div>
+            <div class="hdng">What I Have Done</div>
+            <div class="hdng">What I Can Do</div>
+          </div>
+        </div>
+        <div class="cntct-clmn">
+          <div class="flx-clmn">
+            <div class="cntct-txt">Contact me</div>
+            <div class="flx-inln">
+              <div class="hdng">7hw3dm4p0@gmail.com</div>
+            </div>
+            <div class="flx-inln">
+              <div class="hdng">Github</div>
+            </div>
+          </div>
+          <div class="flx-clmn">
+            <div class="tm-ln-txt">Timeline</div>
+            <div class="tm-ln">
+              <div class="hdng">2022</div>
+              <div class="hdng">2023</div>
+              <div class="hdng">2024</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        style="height: 192px; flex-direction: column; justify-content: space-between; display: inline-flex"
+      >
+        <div
+          style="color: #7CFC00; font-size: 20px; font-family: IBM Plex Mono,monospace; font-weight: 400; text-transform: uppercase; word-wrap: break-word"
+        >
+          bepbop.<br />github.io
+        </div>
+        <img src="/img/Logo.svg" alt="logo" />
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div style="display: none">
+  <svg>
+    <filter id="noise1">
+      <feTurbulence>
+        type="turbulence" baseFrequency="3" numOctaves="10" result="noise"
+        stitchTiles="stitch" seed="4"
+        <!--<animate attributeName="baseFrequency" values="2; 4" dur="50ms" repeatCount="indefinite"/>-->
+      </feTurbulence>
+      <feComposite operator="in" in="noise" in2="SourceAlpha" result="composite"
+      ></feComposite>
+      <feColorMatrix in="composite" type="luminanceToAlpha"></feColorMatrix>
+      <feBlend
+        in="<<SourceGraphic></SourceGraphic></SourceGraphic>"
+        in2="composite"
+        mode="soft-light"></feBlend>
+    </filter>
+  </svg>
+</div>
+
+<style>
+  @property --p {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: -24%;
+  }
+
+  @property --a {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 115deg;
+  }
+
+  @property --c {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: rgba(120, 245, 0, 0.15);
+  }
+
+  footer {
+    //background: linear-gradient(var(--a), var(--c) var(--p),
+        //linear-gradient(rgba(0, 0, 0, 0.20) calc(100% - var(--p)))), #000;
+    //background:
+      linear-gradient(var(--a), rgba(120, 245, 0, 0.2)) var(--p),
+      rgba(50, 102, 0, 0.2) 72%,
+      rgba(0, 0, 0, 0.2) 100%,
+      #000;
+    //background:
+      linear-gradient(var(--a), rgba(120, 245, 0, 0.2)) var(--p),
+      //linear-gradient(rgba(50, 102, 0, 0.20) 72%, rgba(0, 0, 0, 0.20) 100%),
+      //#000;;
+    //background: linear-gradient(
+        var(--a),
+        var(--c) var(--p),
+        rgba(0, 0, 0, 0.2) 100%
+      ),
+      #000;
+    //background-size: 200% 200%;
+    //animation: gradient-animation 5s ease infinite;
+    //background: linear-gradient(
+        89deg,
+        rgba(120, 245, 0, 0.2) 1.21%,
+        rgba(0, 0, 0, 0.2) 99.89%
+      ),
+      #000;
+
+    background: linear-gradient(
+        var(--a),
+        var(--c) var(--p),
+        rgba(0, 0, 0, 0.2) 100%
+      ),
+      #000;
+    animation: gradientMove 16s ease-in-out alternate infinite;
+    //transition:
+      --a 20s ease-in-out,
+      --p 20s ease-in-out,
+      --c 20s ease-in-out;
+    padding: 1px 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    filter: url(#noise1);
+  }
+
+  @keyframes gradientMove {
+    0% {
+      --a: var(--a);
+      --p: var(--p);
+      --c: var(--c);
+    }
+    12.5% {
+      --a: 110deg;
+      --p: -12%;
+      --c: rgba(120, 245, 0, 0.19);
+    }
+    25% {
+      --a: 105deg;
+      --p: 0%;
+      --c: rgba(120, 245, 0, 0.23);
+    }
+    37.5% {
+      --a: 100deg;
+      --p: 12%;
+      --c: rgba(120, 245, 0, 0.19);
+    }
+    50% {
+      --a: 95deg;
+      --p: 24%;
+      --c: rgba(120, 245, 0, 0.15);
+    }
+    62.5% {
+      --a: 105deg;
+      --p: 12%;
+      --c: rgba(120, 245, 0, 0.13);
+    }
+    75% {
+      --a: 115deg;
+      --p: 0%;
+      --c: rgba(120, 245, 0, 0.11);
+    }
+    87.5% {
+      --a: 120deg;
+      --p: -12%;
+      --c: rgba(120, 245, 0, 0.13);
+    }
+    100% {
+      --a: var(--a);
+      --p: var(--p);
+      --c: var(--c);
+    }
+  }
+
+  .cntnr {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+  }
+
+  .clmn,
+  .cntct-clmn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.5rem;
+    flex: 1 1 15rem; /* flex-grow: 1; flex-shrink: 1; flex-basis: 15rem; */
+    min-height: 12rem; /* 192px = 12rem */
+  }
+
+  .nv-txt,
+  .cntct-txt,
+  .tm-ln-txt,
+  .hdng {
+    word-wrap: break-word;
+  }
+
+  .nv-txt,
+  .cntct-txt,
+  .tm-ln-txt {
+    color: white;
+    font-size: 0.75rem; /* 12px = 0.75rem */
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .hdng {
+    color: #7cfc00;
+    font-size: 1.75rem; /* 28px = 1.75rem */
+    font-weight: 400;
+  }
+
+  .flx-clmn {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .flx-inln {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.75rem; /* 12px = 0.75rem */
+  }
+
+  .tm-ln {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem; /* 8px = 0.5rem */
+  }
+
+  .dt {
+    width: 0.5rem; /* 8px = 0.5rem */
+    height: 0.5rem;
+    background: white;
+    border-radius: 50%;
+  }
+
+  #aloo {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    font-family: "IBM Plex Sans", sans-serif;
+  }
+
+  #ass {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    gap: 4rem;
+  }
+
+  #ass > div {
+    flex: 0 1 auto; /* flex-grow: 1; flex-shrink: 1; flex-basis: 15rem; */
+  }
+
+  #ass > div > div {
+    flex: 1 1 auto;
+  }
+
+  hr {
+    height: 4px;
+    border-width: 0;
+    background-color: var(--green);
+  }
+
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0 50%;
+    }
+  }
+</style>

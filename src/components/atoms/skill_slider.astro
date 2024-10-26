@@ -1,0 +1,27 @@
+---
+
+---
+
+<div
+  id="skill_slider"
+  class="slider"
+  style="background-image: url('/img/skills.svg');"
+>
+</div>
+
+<script is:inline data-astro-rerun>
+  (function () {
+    const skillSlider = document.getElementById("skill_slider");
+    let scrollPosition = 0;
+
+    function animateSlider() {
+      scrollPosition += 2;
+      skillSlider.style.backgroundPositionX = `${scrollPosition}px`;
+      requestAnimationFrame(animateSlider);
+    }
+
+    if (skillSlider) {
+      requestAnimationFrame(animateSlider);
+    }
+  })();
+</script>

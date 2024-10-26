@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap");
+
+:root {
+    /* Colors */
+    --dark: hsla(0, 0%, 0%, 0.98); /* black */
+    --black: hsl(0 0% 13.3%); /* #222 */
+    --black2: hsl(0 0% 13.3% / 72%); /* rgba(34, 34, 34, 0.72) */
+    --black3: hsl(210, 15%, 16%); /* #37404a */
+    --green: hsl(90 100% 49%); /* lawngreen */
+    --white: hsl(0 0% 98.8%); /* FFFAFAFF (snow) */
+    --pure-white: hsl(0 0% 100%); /* FFFFFF (white) */
+
+
+    /* Fonts */
+    --font-sans: "IBM Plex Sans", sans-serif;
+    --font-mono: "IBM Plex Mono", monospace;
+
+
+
+    /* Font Sizes - sorted by size, duplicates removed */
+    --font-size-1: clamp(0.75rem, 1vw + 0.375rem, 1.25rem); /* between 12px and 20px */
+    --font-size-2: 0.8rem; /* 12.8px */
+    --font-size-3: 0.875rem; /* 14px */
+    --font-size-4: clamp(1rem, 0.5vw + 0.8125rem, 1.25rem); /* between 16px and 20px */
+    --font-size-5: 1rem; /* 16px */
+    --font-size-6: 1.125rem; /* 18px */
+    --font-size-7: 1.25rem; /* 20px */
+    --font-size-8: clamp(1.25rem, 0.2vw + 1.175rem, 1.5rem); /* between 20px and 24px */
+    --font-size-9: 1.5rem; /* 24px */
+    --font-size-10: clamp(1.5rem, 2vw + 0.3125rem, 2rem); /* between 24px and 32px */
+    --font-size-11: 1.7rem; /* 27.2px */
+    --font-size-12: 1.75rem; /* 28px */
+    --font-size-13: 2rem; /* 32px */
+    --font-size-14: clamp(2rem, 1.25vw + 1.53125rem, 2.375rem); /* between 32px and 38px */
+    --font-size-15: clamp(2.25rem, 2vw + 1.5rem, 3rem); /* between 36px and 48px */
+    --font-size-16: 2.5rem; /* 40px */
+    --font-size-17: clamp(2.5rem, 5vw + 0.625rem, 5rem); /* between 40px and 80px */
+    --font-size-18: clamp(3.5rem, 2.666vw + 2.166rem, 3.75rem); /* between 56px and 60px */
+    --font-size-19: 4vmax;
+    --font-size-20: 5vmax;
+    --font-size-21: clamp(5rem, 4vw + 3.4125rem, 6.5rem); /* between 80px and 104px */
+    --font-size-22: 6.5rem; /* 104px */
+    --font-size-23: 7.5rem; /* 120px */
+}
+
+
+.margin {
+    @media (width <= 1336px) {
+        margin: 3rem 6vw;
+    }
+    @media (1336px < width) {
+        margin: 3rem 11.2vw;
+    }
+}
+
+.margin-top-24 {
+    padding-top: 1.5rem;
+}
+
+.margin-top-121 {
+    margin-top: clamp(6.25rem, 12.5vw + 1.875rem, 1rem);
+}
+
+.margin-top-120 {
+    margin-top: clamp(6.25rem, 12.5vw + 1.875rem, 10.5rem);
+}
+
+
+.font-24 {
+    font-family: var(--font-sans);
+    font-size: var(--font-size-9); /* 24px */
+    line-height: 2.25rem;
+    color: var(--green);
+}
+
+.font-28 {
+    font-family: var(--font-sans); /* Add or remove as needed */
+    font-size: var(--font-size-12); /* 28px */
+    line-height: 2.75rem;
+    color: var(--green);
+}
+
+.font-40 {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-16); /* 40px */
+    line-height: 1.2; /* Adjust as needed */
+    color: var(--green);
+}
+
+.font-size-42 {
+    font-family: var(--font-sans); /* Add or remove as needed */
+    font-size: var(--font-size-14); /* between 32px and 38px */
+    line-height: 1.2; /* Adjust as needed */
+}
+
+.font-48 {
+    font-family: var(--font-sans); /* Add or remove as needed */
+    font-weight: 525;
+    font-size: var(--font-size-15); /* between 36px and 48px */
+    line-height: 1.2; /* Adjust as needed */
+    color: var(--green);
+}
+
+.font-64 {
+    font-family: var(--font-sans); /* Add or remove as needed */
+    font-weight: 500;
+    font-size: var(--font-size-18); /* between 56px and 60px */
+    line-height: 1.1; /* Adjust as needed */
+    color: var(--green);
+}
+
+.font-120 {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: var(--font-size-22); /* 104px */
+    line-height: 1; /* Adjust as needed */
+    color: var(--white);
+}

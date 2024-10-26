@@ -1,0 +1,49 @@
+---
+import Projects from "../molecules/Projects.astro";
+import Slider2 from "../atoms/project_slider.astro";
+---
+
+<div id="Section-2">
+  <Slider2 />
+  <div id="sqr1"></div>
+  <div id="sqr2"></div>
+  <Projects />
+</div>
+
+<style>
+  #sqr1 {
+    //margin-top: -5%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    //bottom: 0;
+    height: 100%;
+    z-index: 1;
+    //width: clamp(10vw, calc(10vw + (8 * ((100vw - 1440px) / 480))), 18vw);
+    width: 8%;
+    background: linear-gradient(to left, black 20%, rgba(0, 0, 0, 0) 80%);
+    @media (width <= 1000px) {
+      display: none;
+    }
+  }
+
+  #sqr2 {
+    //margin-top: -5%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    //bottom: 0;
+    z-index: 1;
+    height: 100%;
+    //width: clamp(10vw, calc(10vw + (8 * ((100vw - 1440px) / 480))), 18vw);
+    width: 8%;
+    background: linear-gradient(to right, black 20%, rgba(0, 0, 0, 0) 80%);
+    @media (width <= 1000px) {
+      display: none;
+    }
+  }
+
+  #Section-2 {
+    position: relative;
+  }
+</style>
