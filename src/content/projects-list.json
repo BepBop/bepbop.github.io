@@ -1,0 +1,113 @@
+[
+  {
+    "eyebrow": "Zero To Hero",
+    "title": "Pop-Up Product",
+    "tag": [
+      "LeadSquared",
+      "Product Designer",
+      "2024",
+      "SASS Product"
+    ],
+    "paragraph": "At LeadSquared, I designed and developed the 'Pop-Up' feature, turning a concept into a live product. This involved in-depth user research and SASS integration to meet our design goals.",
+    "link": "/case-study?title=Pop-Up Product"
+  },
+  {
+    "eyebrow": "Product Feature",
+    "title": "Mobile Editor",
+    "tag": [
+      "LeadSquared",
+      "Product Designer",
+      "2024",
+      "No Code Website Builder"
+    ],
+    "paragraph": "I led the design of the 'Mobile Editor' feature for our no-code website builder, focusing on mobile usability and intuitive design to enhance user interactions.",
+    "link": "/case-study?title=Mobile Editor"
+  },
+  {
+    "eyebrow": "Product Feature",
+    "title": "Hide on Device",
+    "tag": [
+      "LeadSquared",
+      "Product Designer",
+      "2023",
+      "No Code Website Builder"
+    ],
+    "paragraph": "The 'Hide on Device' feature was designed to give users control over content visibility on various devices, improving flexibility and responsiveness in our no-code website builder.",
+    "link": "/case-study?title=Hide on Device"
+  },
+  {
+    "eyebrow": "Product Feature",
+    "title": "Scroll To",
+    "tag": [
+      "LeadSquared",
+      "Product Designer",
+      "2023",
+      "No Code Website Builder"
+    ],
+    "paragraph": "I developed the 'Scroll To' feature, enhancing user navigation within our no-code website builder to ensure a seamless and engaging experience.",
+    "link": "/case-study?title=Scroll To"
+  },
+  {
+    "eyebrow": "Product Feature",
+    "title": "Save As Draft",
+    "tag": [
+      "LeadSquared",
+      "Product Designer",
+      "2023",
+      "Forms"
+    ],
+    "paragraph": "For the 'Save As Draft' feature, I focused on creating a smooth process for users to save their form progress, adding a layer of convenience and flexibility.",
+    "link": "/case-study?title=Save As Draft"
+  },
+  {
+    "eyebrow": "Zero To Hero",
+    "title": "Landing Page Pro Product",
+    "tag": [
+      "LeadSquared",
+      "Product Designer",
+      "2022",
+      "SASS Product"
+    ],
+    "paragraph": "In developing the 'Landing Page Pro Product,' I managed end-to-end design and user research, aligning the product with user needs and stakeholder expectations.",
+    "link": "/case-study?title=Landing Page Pro Product"
+  },
+  {
+    "eyebrow": "Figma Implementation",
+    "title": "Design System",
+    "tag": [
+      "LeadSquared",
+      "Product Designer",
+      "2022",
+      "Figma",
+      "Atomic Design"
+    ],
+    "paragraph": "I implemented a comprehensive 'Design System' using Figma and Atomic Design principles, streamlining our design process and improving team collaboration.",
+    "link": "/case-study?title=Design System"
+  },
+  {
+    "eyebrow": "Landing Page Templates",
+    "title": "Design Templates",
+    "tag": [
+      "LeadSquared",
+      "Product Designer",
+      "2022",
+      "BFSI",
+      "Healthcare"
+    ],
+    "paragraph": "I created tailored 'BFSI & Healthcare Design Templates,' focusing on industry-specific needs to deliver effective solutions for these sectors.",
+    "link": "/case-study?title=Design Templates"
+  },
+  {
+    "eyebrow": "User Research",
+    "title": "User Shadowing",
+    "tag": [
+      "LeadSquared",
+      "Product Designer",
+      "2022",
+      "Persona Building",
+      "Empathy Mapping"
+    ],
+    "paragraph": "Conducting 'User Shadowing' provided deep insights into user behavior, which were crucial for persona building and empathy mapping in my design projects.",
+    "link": "/case-study?title=User Shadowing"
+  }
+]

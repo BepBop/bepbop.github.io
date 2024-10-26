@@ -1,0 +1,128 @@
+---
+import Card from "../src/components/card.astro";
+---
+
+
+    <div id="Projects">
+    <div id="screen-1" class="grd margin ">
+        <Card tag_name={["LeadSquared", "Product Designer", "2023", "SASS Product"]}/>
+        <Card tag_name={["tag_name4", "tag_name5", "tag_name6"]}/>
+        <Card tag_name={[]}/>
+        <!--<div>Hi I am Screen-1 Column 2</div>-->
+        <!--<div>Hi I am Screen-1 Column 3</div>-->
+    </div>
+    <div id="screen-2" class="grd margin ">Hi, I am screen-2</div>
+</div>
+
+<style>
+    //@property --hue {
+    //  syntax: "<angle>";
+    //  initial-value: 0turn;
+    //  inherits: false;
+    //}
+    //
+    //:root {
+    //  //--surface-1: oklch(40% 50% var(--hue));
+    //  --surface-1: oklch(88.18% 0.263 136.17);
+    //  --surface-2: oklch(90.18% 0.2326 136.17);
+    //  //--surface-2: oklch(50% 40% var(--hue));
+    //}
+    //
+    //#Projects {
+    //  background: radial-gradient(
+    //      farthest-corner circle at bottom center in oklab,
+    //      oklch(from var(--surface-2) calc(l * 1.25) c h),
+    //      var(--surface-1)
+    //    )
+    //    fixed no-repeat !important;
+    //}
+
+    #Projects {
+        //padding: 2.5% 0 5% 0;
+        padding: 5% 0;
+        display: grid;
+        width: 100vw;
+        height: fit-content;
+        grid-auto-flow: column dense ;
+        grid-template-columns: repeat(2, 100vw);
+
+        overflow: auto;
+
+        //scroll-snap-type: x mandatory;
+
+
+
+    }
+
+
+
+    @scope (#Projects)
+    {
+    #screen-1 {
+        cursor: none;
+
+
+    }
+
+    #screen-2 {
+        background: blue;
+
+
+    }
+
+    .grd {
+        display: grid;
+        grid-template: auto / repeat(3, minmax(380px, 1fr));
+        gap: clamp(1rem, 1.5vw, 2rem);
+        place-content: center;
+        scroll-snap-align:      center;
+        overscroll-behavior: contain;
+    }}
+
+
+</style>
+
+<script>
+
+
+    const screen1_card3 = document.querySelector('#screen-1 > div:nth-child(3)');
+    const parent_screen1_card3 = document.querySelector('#Projects');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                console.log('Screen 1 Card 3 is intersecting');
+                // verticalToHorizontalScroll(parent_screen1_card3);
+                verticalToHorizontalScroll(parent_screen1_card3);
+            } else {
+                console.log('Screen 1 Card 3 is NOT intersecting');
+                parent_screen1_card3.removeEventListener('wheel', verticalToHorizontalScroll);
+            }
+        });
+
+        console.table(entries);
+
+    }, {threshold:1});
+
+    observer.observe(screen1_card3);
+
+
+    function verticalToHorizontalScroll(element) {
+        element.addEventListener('wheel', (e) => {
+            // Prevent the default vertical scroll
+            e.preventDefault();
+
+            // console.log(element,element.scrollLeft, e.deltaY);
+
+
+            // Convert vertical scroll to horizontal
+            element.scrollLeft += e.deltaY;
+            console.log('I am being scrolled');
+        });
+    }
+
+    // Usage
+
+
+</script>
+

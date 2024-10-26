@@ -1,402 +1,89 @@
 ---
-import {ViewTransitions} from 'astro:transitions';
-import B from "../layouts/Timeline.jsx";
-import Slider from "../layouts/Slider.astro";
+import { ViewTransitions } from "astro:transitions";
+import { current_year } from "../components/molecules/Timeline.jsx";
+return Astro.redirect(`/${current_year}`);
 ---
 
 <!doctype html>
-<html class="no-js" lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <title>BepBop</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <meta property="og:title" content=""/>
-    <meta property="og:type" content=""/>
-    <meta property="og:url" content=""/>
-    <meta property="og:image" content=""/>
-
-    <link rel="apple-touch-icon" href="/icon.png">
-    <!-- Place favicon.ico in the root directory -->
-
-
-    <link rel="stylesheet" href="/css/static/main.css">
-    <link rel="stylesheet" href="/css/static/normalize.css">
-    <link rel="stylesheet" href="/css/static/Root.css">
-    <link rel="stylesheet" href="/css/static/Section-1.css">
-    <link rel="stylesheet" href="/css/static/Section-2.css">
-    <link rel="stylesheet" href="/css/static/Section-3.css">
-
-
-    <meta name="theme-color" content="#fafafa">
-
-    <ViewTransitions/>
-
-</head>
-
-<body>
-
-<div class="rectangle"></div>
-
-
-<div id="Section-1">
-
-
-    <!--<Timeline transition:name="abc" transition:persist/>-->
-
-    <B client:only="react" transition:name="trans" transition:persist/>
-
-
-    <div id="one" class="grid">
-        <div class="eye-brow-header">Hello World</div>
-        <div class="header">I'm Gyan Anjay</div>
-        <div class="sub-header ">
-            <!--      I'm UI/UX Designer and Front-end Developer.-->
-            <!--      I'm deeply interested in frontend development, from UI/UX design to actual coding.-->
-            <!--I create what I love, Hope you too!-->
-            I strive to create an experience, which is visually appealing and easy to use!
-        </div>
-    </div>
-
-    <div class="grid">
-        <div id="tl.dr">
-            TL;DR: I'M A DESIGNER WHO CODES
-        </div>
-    </div>
-
-    <div class="flex padding-120">
-        <div>
-            <div class="circle">
-                <div class="date">2023</div>
-            </div>
-            <div class="line"></div>
-        </div>
-        <div class="flex-basis-width-char">
-            <div class="font-size-42 bold">UI-UX Designer Associate</div>
-            <div class="sub-header-2">@LeadSquared</div>
-            <div class="para"> Designed a new product from inception, focusing on enhancing the site visitor experience
-                and introducing several features to benefit product users. Conducted in-depth research on product
-                to ensure alignment with user needs.
-            </div>
-        </div>
-    </div>
-
-    <div class="flex padding-121">
-        <div>
-            <div class="circle">
-                <div class="date">2022</div>
-            </div>
-            <div class="line"></div>
-        </div>
-        <div class="flex-basis-width-char">
-            <div class="font-size-42 bold">UI-UX Designer Intern</div>
-            <div class="sub-header-2">@LeadSquared</div>
-            <div class="para">Learned content organization with sitemaps and user flows to enhance Information
-                Architecture. Developed user research skills (interviews, surveys, usability testing, analysis) to
-                inform design choices. Applied principles for user-friendly interfaces (visual hierarchy, typography,
-                color theory, layout, usability, accessibility, user-centered design)
-            </div>
-
-        </div>
-    </div>
-
-    <div class="flex padding-121">
-        <div>
-            <div class="circle">
-                <div class="date">2019</div>
-            </div>
-        </div>
-        <div class="flex-basis-width-char">
-            <div class="font-size-42 bold">B.Tech CSE</div>
-            <div class="sub-header-2">@Lovely Professional University</div>
-            <div class="para">Studied a range of computer science subjects, applying principles and concepts including
-                computer architecture, operating systems, and database systems. Gained practical experience through
-                hands-on projects, designing and implementing algorithms and data structures to solve various
-                computational problems.
-
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="Section-2" class="padding-120">
-
-    <div id="year">
-        <div>Projects</div>
-        <div>Projects</div>
-        <div>Projects</div>
-        <div>Projects</div>
-        <div>Projects</div>
-        <div>Projects</div>
-        <div>Projects</div>
-        <div>Projects</div>
-    </div>
-
-    <div class="margin">
-
-        <div class="parent-flex" style="padding-top: 40px">
-            <div class="font-64" id="serial-number">01</div>
-            <details id="first-child">
-                <summary id="first-child-child">
-                    <span id="cum" class="font-48">Blog From Scratch HTML JS</span>
-                    <img id="icon" src="/img/add.svg" alt="close">
-                </summary>
-
-                <!--                <div><img-->
-                <!--                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Lemon_-_whole_and_split.jpg/1200px-Lemon_-_whole_and_split.jpg"-->
-                <!--                        alt="Lemon - whole and split.jpg"/>-->
-                <!--                </div>-->
-
-
-                <div class="font-28  project-para">Engineered and published my own smartphone ready blog using
-                    trio of
-                    modern Web
-                    Technologies, HTML5, Bootstrap and JavaScript
-                    Acquired the skill of, working with tools like Git, WebStorm and Google Chrome’s Dev Tools
-                </div>
-                <div class="rectangle-3"></div>
-                <div id="date" class="font-40"><a href="https://bepbop.github.io">Visit-Link</a></div>
-            </details>
-        </div>
-
-        <div class="parent-flex">
-            <div class="font-64" id="serial-number">02</div>
-            <details id="first-child">
-                <summary id="first-child-child">
-                    <span id="cum" class="font-48">Arduino UNO Digital Clock</span>
-                    <img id="icon" src="/img/add.svg" alt="close">
-                </summary>
-                <div class="font-28  project-para">Lead a group of 3, programming and building a Digital clock
-                    using UNO
-                    and LCD
-                </div>
-                <!--                <div class="rectangle-3"></div>-->
-                <!--                <div id="date" class="font-40"><a href="https://Google.com">Visit-Link</a></div>-->
-            </details>
-        </div>
-
-        <div class="parent-flex">
-            <div class="font-64" id="serial-number">03</div>
-            <details id="first-child">
-                <summary id="first-child-child">
-                    <span id="cum" class="font-48">A Modern Website, Urban Sports Club</span>
-                    <img id="icon" src="/img/add.svg" alt="close">
-                </summary>
-                <div class="font-28  project-para">Designed and published a well themed responsive Landing,
-                    Pricing, Sign
-                    Up,
-                    Login and About-us page using key Web Technologies: CSS, HTML5, JavaScript, jQuery and Bootstrap
-                </div>
-                <div class="rectangle-3"></div>
-                <div id="date" class="font-40"><a href="https://bepbop.github.io/Sports_Club">Visit-Link</a></div>
-            </details>
-        </div>
-
-        <div class="parent-flex">
-            <div class="font-64" id="serial-number">04</div>
-            <details id="first-child">
-                <summary id="first-child-child">
-                    <span id="cum" class="font-48">Story Generator, using Tkinter and ML</span>
-                    <img id="icon" src="/img/add.svg" alt="close">
-                </summary>
-                <div class="font-28  project-para">Programmed GUI based random story generator using GPT-J API and
-                    a
-                    Dictionary
-                    of predefined scenarios in Python
-
-                </div>
-                <div class="rectangle-3"></div>
-                <div id="date" class="font-40"><a href="https://github.com/BepBop/Story-Generator-with-tkinter">Visit
-                    Link</a></div>
-            </details>
-        </div>
-
-        <div class="parent-flex">
-            <div class="font-64" id="serial-number">05</div>
-            <details id="first-child">
-                <summary id="first-child-child">
-                    <span id="cum" class="font-48"> Pong Video Game, Java OOP</span>
-                    <img id="icon" src="/img/add.svg" alt="close">
-                </summary>
-                <div class="font-28  project-para">Inspired by the Youtube Channel Computerphile! built Pong using
-                    Java
-                    Swing,
-                    OOP and Clean Code Principles
-
-                </div>
-                <div class="rectangle-3"></div>
-                <div id="date" class="font-40"><a href="https://github.com/BepBop/Pong-with-OOP">Visit-Link</a></div>
-            </details>
-        </div>
-
-        <div class="parent-flex">
-            <div class="font-64" id="serial-number">06</div>
-            <details id="first-child">
-                <summary id="first-child-child">
-          <span id="cum" class="font-48">  Mini React Apps, Stopwatch and To-Do List
-</span>
-                    <img id="icon" src="/img/add.svg" alt="close">
-                </summary>
-                <div class="font-28  project-para">Learned React through building state efficient Apps and, with
-                    it
-                    grabbed the
-                    skill of working with Web Development tooling, Sass, Prettier, ESLint and Parcel
-
-                </div>
-                <div class="rectangle-3"></div>
-                <div class="flex">
-                    <div id="date" class="font-40"><a href="https://github.com/BepBop/todo_list-with-react">Visit
-                        Link</a>
-                    </div>
-                    <div id="date" class="font-40"><a href="https://github.com/BepBop/stopwatch-with-react">Visit
-                        Link</a>
-                    </div>
-                </div>
-            </details>
-        </div>
-
-        <div class="parent-flex">
-            <div class="font-64" id="serial-number">07</div>
-            <details id="first-child">
-                <summary id="first-child-child">
-          <span id="cum" class="font-48">      Blog, using Laravel framework
-
-</span>
-                    <img id="icon" src="/img/add.svg" alt="close">
-                </summary>
-                <div class="font-28  project-para">Learned MVC framework through implementing backend in MYSQL and
-                    frontend with
-                    Components in Laravel
-
-
-                </div>
-                <div class="rectangle-3"></div>
-                <div id="date" class="font-40"><a href="https://github.com/BepBop/CRUD_Blog-with-Laravel">Visit-Link</a>
-                </div>
-            </details>
-        </div>
-
-        <div class="parent-flex">
-            <div class="font-64" id="serial-number">08</div>
-            <details id="first-child">
-                <summary id="first-child-child">
-          <span id="cum" class="font-48">     Sports Club PHP Sign-up and Login
-
-
-</span>
-                    <img id="icon" src="/img/add.svg" alt="close">
-                </summary>
-                <div class="font-28  project-para">Iterated Urban Sports Club Project adding PHP MYSQL Backend for
-                    Login
-                    and
-                    Signup Feature
-
-
-                </div>
-                <div class="rectangle-3"></div>
-                <div id="date" class="font-40"><a href="https://github.com/BepBop/Sports_Club-backend-with-PHP">Visit
-                    Link</a></div>
-            </details>
-        </div>
-
-    </div>
-
-</div>
-
-<div id="Section-3">
-
-    <Slider/>
-
-    <div class="margin">
-        <div class="parent-box-">
-
-            <div class="toy">
-                <button>View Resume <img src="/img/arrow.png" alt="arrow"></button>
-            </div>
-
-            <div class="parent-box">
-                <div class="box">
-                    <div id="box-head"> Figma</div>
-                    <ul id="box-para">
-                        <li>Creating and organizing Design System.</li>
-                        <li>Using Frames, styles, components and auto-layout.</li>
-                        <li>Developing skills in design and collaboration.</li>
-                    </ul>
-                </div>
-
-                <div class="box">
-                    <div id="box-head"> Java</div>
-                    <ul id="box-para">
-                        <li> Using and implementing classes, interfaces, and inheritance.
-                        <li> Implementing algorithms and data structures to solve problems.
-                        <li> Developing skills in problem-solving and critical thinking.
-                    </ul>
-                </div>
-
-                <div class="box">
-                    <div id="box-head"> JavaScript</div>
-                    <ul id="box-para">
-                        <li> Learning and implementing functions, objects, and classes.
-                        <li>Handling events and working with the DOM to manipulate HTML and CSS.
-                        <li> Using and managing frameworks and libraries to simplify development.
-                    </ul>
-                </div>
-
-                <div class="box">
-                    <div id="box-head"> PHP</div>
-                    <ul id="box-para">
-                        <li>Working with PHP learning how backend works.
-                        <li> Working with databases using SQL.
-                    </ul>
-                </div>
-
-                <div class="box">
-                    <div id="box-head"> React</div>
-                    <ul id="box-para">
-                        <li>Fundamentals of React, including components, state, and props.
-                        <li> Developing reusable UI components.
-                        <li> Building efficient and maintainable user interfaces.
-                        <li> Implementing routing and navigation using React Router.
-                    </ul>
-                </div>
-
-                <div class="box">
-                    <div id="box-head"> HTML/CSS</div>
-                    <ul id="box-para">
-                        <li>Basic and advanced CSS, including flexbox, grid, and Sass.
-                        <li>Responsive design and media queries for creating mobile-friendly websites.
-                        <li>Best practices for writing clean, maintainable, and scalable CSS code.
-                    </ul>
-                </div>
-
-                <div class="box">
-                    <div id="box-head"> Git</div>
-                    <ul id="box-para">
-                        <li>Fundamentals of Git, including basic commands
-                        <li>Collaboration using Git, including branching, pull requests, and code review.
-                        <li>Advanced techniques, such as rebasing, cherry-picking, and resolving merge conflicts.
-                    </ul>
-                </div>
-
-                <div class="box">
-                    <div id="box-head"> Docker</div>
-                    <ul id="box-para">
-                        <li>Fundamentals of containerization, including concepts such as images,
-                            containers, and registries.
-                        <li>Management of Docker containers, including configuration of networking and storage for
-                            Docker containers.
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-</div>
-
-
-</body>
-
+<html lang="en">
+  <head>
+    <!-- Set character encoding for the document -->
+    <meta charset="utf-8" />
+
+    <!-- Instruct Internet Explorer to use its latest rendering engine -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <!-- Viewport for responsive web design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Document Title -->
+    <title>Gyan Anjay's Portfolio | Professional Projects and Skills</title>
+
+    <!-- Meta Description -->
+    <meta
+      name="description"
+      content="Explore Gyan Anjay's portfolio showcasing professional projects, skills, and achievements. Discover how I can contribute to your team's success."
+    />
+
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta
+      property="og:title"
+      content="Gyan Anjay's Portfolio | Professional Projects and Skills"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bepbop.github.io" />
+    <meta property="og:image" content="/icon.svg" />
+    <meta
+      property="og:description"
+      content="Explore Gyan Anjay's portfolio showcasing professional projects, skills, and achievements. Discover how I can contribute to your team's success."
+    />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Gyan Anjay's Portfolio | Professional Projects and Skills"
+    />
+    <meta
+      name="twitter:description"
+      content="Explore Gyan Anjay's portfolio showcasing professional projects, skills, and achievements. Discover how I can contribute to your team's success."
+    />
+    <meta name="twitter:image" content="/icon.svg" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://bepbop.github.io" />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" href="/icon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/css/normalize.css" />
+
+    <!-- Theme Color for browser UI -->
+    <meta name="theme-color" content="#fafafa" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Gyan Anjay",
+        "url": "https://bepbop.github.io",
+        "sameAs": [
+          "https://linkedin.com/in/gyananjay",
+          "https://github.com/bepbop"
+        ]
+      }
+    </script>
+
+    <!-- Analytics (load asynchronously for better performance) -->
+    <script
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-website-id="818ff8d6-209c-425f-b3f3-bb9c51e37a8e"></script>
+
+    <ViewTransitions />
+  </head>
+  <body> </body>
 </html>

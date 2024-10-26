@@ -1,0 +1,249 @@
+---
+
+---
+
+<div id="jobs">
+  <div class="div1">
+    <div class="title">
+      <div class="job-title-container">
+        <div class="job-title">Associate UI UX Designer</div>
+        <div class="sub-header-2">@LeadSquared</div>
+      </div>
+      <div class="title-year">2022</div>
+    </div>
+    <div class="paragraph">
+      <ol>
+        <li>Building Design System</li>
+        <li>Product Features For Sales Users</li>
+        <li>Product Features For Implementation Teams</li>
+        <li class="bold">Product Building From Zero, Landing Pages Pro</li>
+        <li>User Research & Usability Testing</li>
+      </ol>
+    </div>
+  </div>
+  <div class="div2">
+    <div class="title">
+      <div class="job-title-container">
+        <div class="now">Now</div>
+        <div class="job-title">Associate UI UX Designer</div>
+        <div class="sub-header-2">@LeadSquared</div>
+      </div>
+      <div class="title-year">2023-24</div>
+    </div>
+    <div class="paragraph">
+      <ol>
+        <li class="bold">Product Building From Zero, Pop-Up</li>
+        <li>Product Feature: Hide on Desktop</li>
+        <li>Product Feature: Mobile Editor</li>
+        <li>Responsive Preview, Responsive Images etc</li>
+        <li>Creation of New Components For Design System</li>
+      </ol>
+    </div>
+  </div>
+  <div class="div3">
+    <div class="title">
+      <div class="job-title-container">
+        <div class="job-title">B.Tech CSE</div>
+        <div class="sub-header-2">@LPU</div>
+      </div>
+      <div class="title-year">2019-23</div>
+    </div>
+    <div class="paragraph">
+      <ol>
+        <li>Pong Video Game</li>
+        <li class="bold">Urban Sports Club & Beta Wesbites</li>
+        <li>Story Generator, using Tkinter and ML</li>
+        <li>Mini React Apps, Stopwatch and To-Do List</li>
+      </ol>
+    </div>
+  </div>
+  <div class="div4">
+    <span></span>
+  </div>
+</div>
+
+<style>
+  ol {
+    list-style-type: decimal-leading-zero;
+  }
+
+  li {
+    padding: 5px 0;
+  }
+
+  #jobs {
+    display: grid;
+    grid-template: repeat(15, 1fr) / repeat(24, 1fr);
+    gap: 0;
+    width: 100%;
+    min-height: 720px;
+    margin: 48px auto;
+    max-width: 1336px;
+
+    @media (width <= 1000px) {
+      margin: 64px auto;
+    }
+
+    > div {
+      transition:
+        transform 0.3s ease,
+        z-index 0.1s ease;
+      box-shadow: 0 0 8px 16px rgba(250, 250, 251, 0.3);
+      border: 1px solid rgba(8, 8, 10, 0.06);
+      background: white;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .div1 {
+    grid-area: 2 / 2 / 10 / 16;
+    z-index: 5;
+    //background: red !important;
+
+    @media (width <= 1000px) {
+      grid-column: 1 / 24;
+      grid-row: 1 / 14;
+    }
+  }
+
+  .div2 {
+    grid-area: 4 / 10 / 12 / 24;
+    z-index: 15;
+    //background: black !important;
+    @media (width <= 1000px) {
+      grid-column: 1 / 24;
+      grid-row: 5 / 14;
+    }
+  }
+
+  .div3 {
+    grid-area: 8 / 4 / 15 / 16;
+    z-index: 10;
+    //background: saddlebrown !important;
+    @media (width <= 1000px) {
+      grid-column: 1 / 24;
+      grid-row: 3 / 14;
+    }
+  }
+
+  .div4 {
+    grid-area: 3 / 11 / 14/ 21;
+    z-index: 0;
+    padding: 16px 0 !important;
+
+    @media (width <= 1000px) {
+      grid-column: 1 / 24;
+      grid-row: 1 / 14;
+    }
+
+    > span {
+      background: url("./img/summary.svg") center no-repeat;
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+    }
+  }
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+
+    @media (width <= 1000px) {
+      align-items: center;
+    }
+
+    .job-title-container {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: flex-start;
+      font-family: var(--font-sans);
+      flex: 1 1 0;
+
+      .job-title {
+        color: var(--black3);
+        font-size: var(--font-size-12);
+        font-weight: 500;
+        text-transform: uppercase;
+
+        @media (width <= 1000px) {
+          font-size: var(--font-size-11);
+          width: 96%;
+        }
+      }
+
+      .now {
+        background: var(--green);
+        border-radius: 24px;
+        padding: 4px 12px;
+        color: var(--black);
+        font: 500 1rem var(--font-sans);
+      }
+    }
+    .title-year {
+      color: rgba(0, 0, 0, 0.25);
+      font: 400 var(--font-size-16) var(--font-mono);
+      @media (width <= 1000px) {
+        font-size: var(--font-size-14);
+      }
+    }
+  }
+
+  .paragraph {
+    color: var(--black3);
+    font: 400 var(--font-size-9) var(--font-sans);
+    position: relative;
+    align-self: stretch;
+    @media (width <= 1000px) {
+      font-size: var(--font-size-10);
+    }
+  }
+</style>
+
+<script>
+  // Select the parent container and all child divs
+  const jobsContainer = document.getElementById("jobs");
+  const jobDivs = jobsContainer.querySelectorAll("#jobs > div");
+
+  // Store the original z-index values
+  const originalZIndex = Array.from(jobDivs).map(
+    (div) => getComputedStyle(div).zIndex,
+  );
+
+  // Function to handle mouse enter
+  function handleMouseEnter(event) {
+    const hoveredDiv = event.target;
+
+    jobDivs.forEach((div, index) => {
+      if (div === hoveredDiv) {
+        div.style.transform = "scale(1.05)";
+        div.style.zIndex = "1000"; // Ensure hovered div is on top
+        div.style.boxShadow = "0px 0px 300px 400px rgba(255, 255, 255, 0.8)";
+      }
+    });
+  }
+
+  // Function to handle mouse leave
+  function handleMouseLeave() {
+    jobDivs.forEach((div, index) => {
+      div.style.transform = "scale(1)";
+      div.style.zIndex = originalZIndex[index]; // Reset to original z-index
+      div.style.boxShadow = "0 0 8px 16px rgba(250, 250, 251, 0.3)";
+    });
+  }
+
+  // Add event listeners to each job div
+  jobDivs.forEach((div) => {
+    div.addEventListener("mouseenter", handleMouseEnter);
+    div.addEventListener("click", () => {
+      div.style.transform == "scale(1.05)"
+        ? console.log("clicked")
+        : console.log("not clicked");
+    });
+    div.addEventListener("mouseleave", handleMouseLeave);
+  });
+</script>

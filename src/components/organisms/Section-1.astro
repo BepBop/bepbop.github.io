@@ -1,0 +1,25 @@
+---
+import Timeline from "../molecules/Timeline.jsx";
+import Jobs from "../molecules/Jobs.astro";
+---
+
+<div id="Section-1" class="margin">
+  <Timeline client:only="react" transition:name="trans" transition:persist />
+
+  <div id="one" class="grid">
+    <div class="eye-brow-header">Hello World</div>
+    <div class="header">I'm Gyan Anjay</div>
+    <div class="sub-header">
+      <!--      I'm UI/UX Designer and Front-end Developer.-->
+      <!--      I'm deeply interested in frontend development, from UI/UX design to actual coding.-->
+      <!--I create what I love, Hope you too!-->
+      I strive to create an experience, that is visually appealing and easy to use!
+    </div>
+  </div>
+
+  <div class="grid">
+    <div id="tl.dr">TL;DR: I'M A DESIGNER WHO CODES</div>
+  </div>
+
+  <Jobs />
+</div>

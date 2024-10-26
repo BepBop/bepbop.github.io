@@ -1,0 +1,34 @@
+---
+
+---
+
+<div
+  id="project_slider"
+  class="slider"
+  style="background-image: url('/img/projects.svg');"
+>
+</div>
+
+<script is:inline data-astro-rerun>
+  (function () {
+    const projectSlider = document.getElementById("project_slider");
+    let scrollPosition = 0;
+
+    function animateSlider() {
+      scrollPosition -= 2;
+      projectSlider.style.backgroundPositionX = `${scrollPosition}px`;
+      requestAnimationFrame(animateSlider);
+    }
+
+    if (projectSlider) {
+      requestAnimationFrame(animateSlider);
+    }
+  })();
+</script>
+
+<style>
+  #project_slider {
+    z-index: 999;
+    position: relative;
+  }
+</style>

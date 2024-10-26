@@ -1,0 +1,192 @@
+<footer>
+  <div id="footer">
+    <hr />
+
+    <div class="container">
+      <div class="flex-column">
+        <div class="thank2">Made With &lt;/&gt; By Me</div>
+        <div class="thank">Thanks! for visiting <br /> my website</div>
+        <div id="footer-content">
+          <div class="footer-text">bepbop.<br />github.io</div>
+          <img src="/icon.svg" alt="logo" />
+        </div>
+      </div>
+      <div class="contact-column">
+        <div class="flex-column">
+          <div class="contact-text">Contact me</div>
+          <div class="flex-inline">
+            <div class="heading">AnjayGyan@gmail.com</div>
+          </div>
+          <div class="flex-inline">
+            <div class="heading">GitHub</div>
+          </div>
+        </div>
+        <div class="flex-column">
+          <div class="timeline-text">Timeline</div>
+          <div class="timeline">
+            <div class="heading">2022 &bull;</div>
+            <div class="heading">2023 &bull;</div>
+            <div class="heading">2024</div>
+          </div>
+        </div>
+      </div>
+      <div class="flex-column">
+        <div class="nav-text">Navigation</div>
+        <div class="heading">Who</div>
+        <div class="heading">What I do</div>
+        <div class="heading">What I have done</div>
+        <div class="heading">What I can do</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+  <defs>
+    <filter id="turbulence-shimmer">
+      <feTurbulence
+        type="fractalNoise"
+        baseFrequency="0.01 0.05"
+        numOctaves="2"
+        result="noise"
+        seed="0"
+      >
+        <animate
+          attributeName="seed"
+          from="0"
+          to="100"
+          dur="8s"
+          repeatCount="indefinite"></animate>
+      </feTurbulence>
+      <feDisplacementMap
+        in="SourceGraphic"
+        in2="noise"
+        scale="5"
+        xChannelSelector="R"
+        yChannelSelector="G"></feDisplacementMap>
+    </filter>
+  </defs>
+</svg>
+
+<style>
+  footer {
+    background: var(--dark);
+    font-family: var(--font-sans);
+    filter: url(#noise1);
+    padding: 56px 36px 100px 36px;
+  }
+
+  @scope (footer) {
+    .container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      row-gap: 56px;
+      margin: 0
+        calc(
+          clamp(10vw, calc(10vw + (8 * ((100vw - 1440px) / 480))), 18vw) - 40px
+        );
+    }
+
+    .thank {
+      font-size: var(--font-size-13); /* 2rem - 32px */
+      font-weight: 400;
+      color: var(--white);
+      margin-top: -8px;
+    }
+
+    .thank2 {
+      font-size: var(--font-size-3); /* 14px */
+      font-weight: 400;
+      color: var(--white);
+      text-transform: uppercase;
+    }
+
+    .flex-column,
+    .contact-column {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .flex-column {
+      gap: 12px;
+    }
+
+    .flex-inline,
+    .timeline {
+      display: flex;
+      align-items: center;
+    }
+
+    .flex-inline {
+      gap: 0.75rem;
+    }
+
+    .timeline {
+      gap: 0.5rem;
+    }
+
+    .nav-text,
+    .contact-text,
+    .timeline-text,
+    .heading {
+      word-wrap: break-word;
+    }
+
+    .nav-text,
+    .contact-text,
+    .timeline-text {
+      color: var(--white);
+      font: 400 var(--font-size-3) var(--font-mono); /* 0.8rem - 12.8px */
+      text-transform: uppercase;
+    }
+
+    .heading {
+      color: var(--green);
+      font-size: var(--font-size-11); /* 1.7rem - 27.2px */
+      font-weight: 500;
+    }
+
+    .heading .nav-text {
+      display: none;
+    }
+
+    #footer {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    #footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    #footer-content > :nth-child(1) {
+      color: var(--green);
+      font-size: var(--font-size-7); /* 1.25rem - 20px */
+      font-family: var(--font-mono);
+      font-weight: 400;
+      text-transform: uppercase;
+      word-wrap: break-word;
+    }
+
+    #footer-content > :nth-child(2) {
+      /* Styles for the second child of footer-content */
+      &:hover {
+        filter: url(#turbulence-shimmer);
+      }
+    }
+
+    hr {
+      height: 6px;
+      width: 100%;
+      border: 0;
+      background-color: var(--green);
+    }
+  }
+</style>
