@@ -1,317 +1,494 @@
 ---
 import productList from "../../content/projects-list.json";
+import {ViewTransitions} from "astro:transitions";
 
 export async function getStaticPaths() {
-  return productList.map((product) => ({
-    params: { name: product.title.toString() },
-    props: { title: product.title },
-  }));
+    return productList.map((product) => ({
+        params: {name: product.title.toString()},
+        props: {title: product.title},
+    }));
 }
 
-const { name } = Astro.params;
-const { Index, Description } = await import(`../../content/${name}.js`);
+const {name} = Astro.params;
+const {Index, Description, DesignProcess, Features} = await import(
+    `../../content/${name}.js`
+    );
 ---
 
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{Index["Project Overview"].Name}</title>
-    <link rel="stylesheet" href="/css/Root.css" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>{Index["Overview"].Name}</title>
+    <link rel="stylesheet" href="/css/Root.css"/>
+    <ViewTransitions/>
+
     <style>
-      :root {
-        --timing: 0.42s;
-        --ease: linear(
-          0 0%,
-          0.0036 9.62%,
-          0.0185 16.66%,
-          0.0489 23.03%,
-          0.0962 28.86%,
-          0.1705 34.93%,
-          0.269 40.66%,
-          0.3867 45.89%,
-          0.5833 52.95%,
-          0.683 57.05%,
-          0.7829 62.14%,
-          0.8621 67.46%,
-          0.8991 70.68%,
-          0.9299 74.03%,
-          0.9545 77.52%,
-          0.9735 81.21%,
-          0.9865 85%,
-          0.9949 89.15%,
-          1 100%
-        );
-      }
 
-      body {
-        margin: 0;
-        padding: 0;
-        background: black;
-        display: flex;
-        font-family: var(--font-sans);
-        height: 100vh;
-      }
-
-      .text-wrapper {
-        flex-basis: 100%;
-        overflow: scroll;
-        text-wrap: balance;
-        color: var(--white);
-
-        & .meta-data {
-          font-size: var(--font-size-5);
-          font-family: var(--font-mono);
-          margin-bottom: 32px;
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            overflow: clip;
+            justify-content: space-between;
+            flex-direction: row;
+            background: black;
         }
 
-        & .label {
-          font-family: var(--font-sans);
-          font-size: var(--font-size-9);
-          font-weight: 500;
-          color: var(--green);
-          margin-bottom: 8px;
-        }
-
-        & li {
-          font-size: var(--font-size-5);
-          margin-bottom: 8px;
-          font-family: var(--font-mono);
-
-          &:last-child {
-            margin-bottom: 0;
-          }
-        }
-      }
-
-      .main-container {
-        padding: 32px;
-        border-left: 1px rgba(255, 255, 255, 0.1) solid;
-        background: rgba(255, 255, 255, 0.08);
-        color: rgba(255, 255, 255, 0.76);
-        overflow: scroll;
-        popover-open: none;
-
-        & .section,
-        & .subsection {
-          margin-bottom: 32px;
-          animation: fadeIn 0.4s ease-out forwards;
-
-          &:last-child {
-            margin-bottom: 0;
-          }
-        }
-
-        & .title {
-          font-size: var(--font-size-10);
-          font-weight: 500;
-          margin-bottom: 24px;
-          transition: transform 0.3s ease;
-
-          &:hover {
-            color: var(--white);
-            transform: translateX(4px);
-            cursor: pointer;
-          }
-        }
-
-        & .subtitle {
-          font-size: var(--font-size-8);
-          margin-bottom: 8px;
-          transition: transform 0.3s ease;
-
-          &:hover {
-            color: var(--white);
-            transform: translateX(4px);
-            cursor: pointer;
-          }
-        }
-
-        & .paragraph {
-          font-size: var(--font-size-3);
-          line-height: 1.6;
-          margin-bottom: 16px;
-          //display: -webkit-box;
-          //-webkit-box-orient: vertical;
-          //-webkit-line-clamp: 2;
-          //overflow: hidden;
-          text-wrap: pretty;
-        }
-
-        & ul {
-          font-size: var(--font-size-3);
-          line-height: 1.4;
-          margin: 0;
-          padding-left: 16px;
-
-          & li {
-            margin-bottom: 8px;
-
-            &:last-child {
-              margin-bottom: 0;
+        @keyframes scroll {
+            0% {
+                width: 4vw;
             }
-          }
-        }
-      }
-
-      .toggle-button {
-        display: none;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .section:nth-child(n),
-      .subsection:nth-child(n) {
-        animation-delay: calc(0.1s * var(--n));
-      }
-
-      @media (width > 800px) {
-        #mainContent {
-          display: block !important;
-          height: auto !important;
-          position: static !important;
-          margin: 0 !important;
-          padding: 40px !important;
-          border: none !important;
-          border-left: 1px rgba(255, 255, 255, 0.1) solid !important;
-        }
-      }
-
-      @media (width <= 800px) {
-        .layout {
-          flex-direction: column;
+            100% {
+                width: 100vw;
+            }
         }
 
-        .main-container {
-          position: fixed;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          max-height: 80vh;
-          overflow-y: auto;
-          background: #171616;
-          popover: auto;
+        .green {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width: 4vw;
+            height: 12px;
+            background: var(--green);
+            animation: scroll linear;
+            animation-timeline: --page-scroll;
+        }
 
-          &[popover] {
-            margin: auto;
-            width: calc(64%);
+        .back-button {
+            all: unset;
+            position: fixed;
+            top: 3rem;
+            left: 5rem;
+            width: 40px; /* Ensures a consistent size */
+            height: 40px; /* Matches the width */
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s ease;
+            color: rgba(255, 255, 255, 0.48);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+
+
+
+            & svg {
+                width: 28px;
+                height: 28px;
+                stroke: currentColor;
+                stroke-width: 2.5;
+                fill: none;
+            }
+
+            &:hover {
+                background-color: var(--white);
+                color: var(--black3);
+                scale: 1.05;
+            }
+
+            &:active {
+                transform: scale(0.95);
+            }
+
+            @media (max-width: 1140px) {
+
+
+                position: fixed;
+                width: 40px;
+                height: 40px;
+                top: 91.5vh;
+                left: 20px;
+                background-color: var(--white);
+                color: var(--dark);
+                box-shadow: 0 2px 8px rgba(var(--green), 0.25);
+
+                &:hover {
+                    box-shadow: 0 4px 16px rgba(var(--green), 0.4),
+                    0 0 8px rgba(var(--green), 0.2);
+                }
+
+                & svg {
+                    margin: 7px;
+                }
+            }
+        }
+
+
+        .text-wrapper {
+            flex: 1 1 auto;
+            scroll-timeline: --page-scroll block;
+            text-wrap: pretty;
+            color: var(--white);
+            overflow: scroll;
+            gap: 3.2vw;
+            background: var(--dark);
+
+            & .text {
+                flex: 1 1 auto;
+            }
+
+            & .meta-data {
+                font-size: var(--font-size-6);
+                line-height: 1.6;
+                font-family: var(--font-sans);
+                margin-bottom: 32px;
+                //max-width: 72ch;
+            }
+
+            & .label {
+                font-family: var(--font-sans);
+                font-size: var(--font-size-11);
+                color: var(--green);
+                font-weight: 500;
+                margin-bottom: 8px;
+            }
+
+            & ol {
+                font-size: var(--font-size-6);
+                font-family: var(--font-sans);
+
+                & li {
+                    margin-bottom: 8px;
+
+                    &:last-child {
+                        margin-bottom: 32px;
+                    }
+                }
+
+                & li:has(iframe) > * {
+                    list-style-type: none;
+                    padding-left: 0;
+                    margin-left: 0;
+                }
+            }
+
+            & ul {
+                margin-top: 12px;
+                padding-left: 16px;
+                font-family: var(--font-sans);
+
+                &:last-child {
+                    margin-bottom: 32px;
+                }
+            }
+
+            iframe {
+                width: 100%;
+                height: 64vh;
+                border: none;
+                margin-bottom: 12px;
+            }
+
+            .background {
+                background: url(/cool2.jpg) center/cover;
+                width: 100%;
+                height: calc(24vh - 20px);
+                margin-bottom: 40px;
+            }
+        }
+
+        #index {
+            display: block;
+            height: 100%;
+            flex: 1 0 36ch;
+            position: static;
+            padding: 40px 36px;
             border: none;
-            border-radius: 4px;
-            box-shadow:
-              rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-              rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-          }
+            background: rgba(255, 255, 255, 0.04);
+            color: rgba(255, 255, 255, 0.76) !important;
+            overflow: scroll;
 
-          &[popover]::backdrop {
-            background: rgba(0, 0, 0, 0.75);
-            backdrop-filter: grayscale(1);
-          }
+            & .section,
+            & .subsection {
+                margin-bottom: 24px;
+                animation: fadeIn 0.4s ease-out forwards;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            & .subsection {
+                margin-left: 12px;
+            }
+
+            & .title {
+                font-size: var(--font-size-10);
+                font-weight: 500;
+                margin-bottom: 24px;
+                transition: transform 0.4s ease;
+                font-family: var(--font-sans);
+            }
+
+            & .subtitle {
+                text-decoration: none;
+                color: inherit;
+                line-height: 2;
+                font-size: var(--font-size-7);
+                transition: transform 0.3s ease;
+                font-family: var(--font-sans);
+
+                &:hover {
+                    color: var(--white);
+                    transform: translateX(4px);
+                    cursor: pointer;
+                }
+            }
+
+            & .paragraph {
+                font-size: var(--font-size-2);
+                line-height: 1.6;
+                margin-bottom: 16px;
+                font-family: var(--font-mono);
+                //display: -webkit-box;
+                //-webkit-box-orient: vertical;
+                //-webkit-line-clamp: 2;
+                //overflow: hidden;
+                text-wrap: pretty;
+                white-space: wrap;
+            }
+
+            & ul {
+                font-size: var(--font-size-3);
+                line-height: 1.4;
+                padding-left: 16px;
+                margin: 0;
+                font-family: var(--font-mono);
+
+                & li {
+                    margin-bottom: 4px;
+                }
+
+                &:last-child {
+                    margin-bottom: 32px;
+                }
+            }
+
+
         }
+
 
         .toggle-button {
-          /* Positioning */
-          position: fixed;
-          bottom: 24px;
-          right: 24px;
-          z-index: 1000;
-
-          /* Display & Size */
-          display: block;
-          font-size: var(--font-size-4);
-          padding: 12px 24px;
-
-          /* Visual Style */
-          background-color: #ffffff;
-          color: #000000;
-          border: 1px solid rgba(0, 0, 0, 0.1);
-          border-radius: 24px;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-
-          /* Interaction */
-          cursor: pointer;
-          transition: all 0.2s ease-in-out;
-          popovertarget: mainContent;
-
-          /* States */
-          &:hover {
-            background-color: #f5f5f5;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-          }
-
-          &:active {
-            transform: translateY(0);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-          }
-
-          &:not(:defined) {
             display: none;
-          }
         }
-      }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (width <= 906px) {
+            #index {
+                display: none;
+
+                &[popover] {
+                    margin: auto;
+                    margin-bottom: 16px;
+                    width: 72%;
+                    border-radius: 4px;
+                    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+                    0 4px 6px -4px rgb(0 0 0 / 0.1);
+                }
+
+                &[popover]:popover-open {
+                    display: block;
+                    max-height: 82vh;
+                    background: var(--dark);
+                }
+
+                &[popover]::backdrop {
+                    background: rgb(0 0 0 / 0.75);
+                    backdrop-filter: grayscale(80%) brightness(80%);
+                }
+            }
+
+            .toggle-button {
+                position: fixed;
+                bottom: 24px;
+                right: 24px;
+                display: block;
+                font-size: var(--font-size-6);
+                background-color: var(--green);
+                color: var(--dark);
+                padding: 12px 24px;
+                border-radius: 24px;
+                border: none;
+                box-shadow: 0 2px 8px rgba(var(--green), 0.25);
+                cursor: pointer;
+                transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                popover-target: index;
+
+                &:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 16px rgba(var(--green), 0.4),
+                    0 0 8px rgba(var(--green), 0.2);
+                }
+
+                &:active {
+                    transform: translateY(1px);
+                    box-shadow: 0 1px 4px rgba(var(--green), 0.3);
+                }
+
+                &:focus-visible {
+                    outline: 2px solid rgba(var(--green), 0.5);
+                    outline-offset: 2px;
+                }
+            }
+        }
+
+        .padding {
+
+            @media (width <= 1336px) {
+                padding: 2.8rem 4vw;
+            }
+            @media (1336px < width) {
+                padding: 2.8rem 8vw;
+            }
+        }
+
+
     </style>
-  </head>
-  <body>
-    <div class="text-wrapper margin">
-      {
-        Object.entries(Description).map(([key, value]) => (
-          <div>
-            <div class="label">{key}</div>
-            {typeof value === "object" ? (
-              Object.keys(value).map((k) => (
-                <li>
-                  {k}: {value[k]}
-                </li>
-              ))
-            ) : (
-              <div class="meta-data">{value}</div>
-            )}
-          </div>
-        ))
-      }
+</head>
+<body class="margin">
+<button class="back-button" aria-label="Go back" onclick="window.location.href='/#Projects'">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M15 18l-6-6 6-6"/>
+    </svg>
+</button>
+<div class="text-wrapper">
+    <div id="green" class="green"></div>
+
+
+    <div class="text">
+        <div class="background"></div>
+        <>
+            {
+                Object.entries(Description).map(([key, value]) => (
+                        <>
+                            <div class="label" id={key}>
+                                {key}
+                            </div>
+                            {typeof value === "object" ? (
+                                    <ol>
+                                        {Object.keys(value).map((k) => (
+                                                <li>
+                                                    {k}: {value[k]}
+                                                </li>
+                                        ))}
+                                    </ol>
+                            ) : (
+                                    <div class="meta-data">{value}</div>
+                            )}
+                        </>
+                ))
+            }
+        </>
+        <>
+            {
+                Object.entries(DesignProcess).map(([key, value]) => (
+                        <>
+                            <div class="label" id={key}>
+                                {key}
+                            </div>
+                            {typeof value === "object" ? (
+                                    <ol>
+                                        {Object.keys(value).map((k) => (
+                                                <li>
+                                                    {k}:
+                                                    {typeof value[k] === "object" ? (
+                                                            <ul>
+                                                                {Object.keys(value[k]).map((nestedKey) => (
+                                                                        <>
+                                                                            {nestedKey == "Link" ? (
+                                                                                    <iframe
+                                                                                            allowfullscreen
+                                                                                            src={value[k][nestedKey]}
+                                                                                    />
+                                                                            ) : (
+                                                                                    <li>{value[k][nestedKey]}</li>
+                                                                            )}
+                                                                        </>
+                                                                ))}
+                                                            </ul>
+                                                    ) : (
+                                                        value[k]
+                                                    )}
+                                                </li>
+                                        ))}
+                                    </ol>
+                            ) : (
+                                    <div class="meta-data">{value}</div>
+                            )}
+                        </>
+                ))
+            }
+        </>
+        <>
+            {
+                Object.entries(Features).map(([key, value]) => (
+                        <>
+                            <div class="label" id={key}>
+                                {key}
+                            </div>
+                            <div class="meta-data">
+                                {Object.keys(value).map((nestedKey) =>
+                                    nestedKey === "Link" ? (
+                                            <iframe allowFullScreen src={value[nestedKey]}/>
+                                    ) : (
+                                            <>{value[nestedKey]}</>
+                                    ),
+                                )}
+                            </div>
+                        </>
+                ))
+            }
+        </>
     </div>
-    <div class="main-container" id="mainContent" popover="auto">
-      {
+
+</div>
+<div id="index" popover="auto">
+    {
         Object.entries(Index).map(([key, value], index) => (
-          <div class="section" style={{ "--n": index + 1 }} key={key}>
-            <div class="title">{key}</div>
-            {typeof value === "object" && value !== null ? (
-              Object.entries(value).map(
-                ([nestedKey, nestedValue], nestedIndex) => (
-                  <div
-                    class="subsection"
-                    style={{ "--n": nestedIndex + 1 }}
-                    key={nestedKey}
-                  >
-                    <div class="subtitle">{nestedKey}</div>
-                    {typeof nestedValue === "object" && nestedValue !== null ? (
-                      <ul>
-                        {Object.keys(nestedValue).map((deepKey) => (
-                          <li key={deepKey}>{deepKey}</li>
-                        ))}
-                      </ul>
+                <div class="section">
+                    <div class="title">
+                        {key}</div>
+                    {typeof value === "object" && value !== null ? (
+                        Object.entries(value).map(
+                            ([nestedKey, nestedValue], nestedIndex) => (
+                                    <div class="subsection">
+                                        <a class="subtitle" href=`#${nestedKey}`>{nestedKey}</a>
+                                        {typeof nestedValue === "object" && nestedValue !== null ? (
+                                                <ul>
+                                                    {Object.keys(nestedValue).map((deepKey) => (
+                                                            <li key={deepKey}>{deepKey}</li>
+                                                    ))}
+                                                </ul>
+                                        ) : (
+                                                <div class="paragraph">{nestedValue}</div>
+                                        )}
+                                    </div>
+                            ),
+                        )
                     ) : (
-                      <div class="paragraph">{nestedValue}</div>
+                            <a class="subtitle" href=`#${value}`>{value}</a>
                     )}
-                  </div>
-                ),
-              )
-            ) : (
-              <div class="subtitle">{value}</div>
-            )}
-          </div>
+                </div>
         ))
-      }
-    </div>
-    <button class="toggle-button" popovertarget="mainContent"> Index</button>
-  </body>
+    }
+</div>
+<button class="toggle-button" popovertarget="index"> Index</button>
+
+</body>
+
 </html>

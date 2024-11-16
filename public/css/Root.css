@@ -1,14 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap");
 
+html {
+    scroll-behavior: smooth !important;
+    scroll-padding: 16px !important;
+}
+
+
 :root {
+
     /* Colors */
-    --dark: hsla(0, 0%, 0%, 0.98); /* black */
-    --black: hsl(0 0% 13.3%); /* #222 */
-    --black2: hsl(0 0% 13.3% / 72%); /* rgba(34, 34, 34, 0.72) */
-    --black3: hsl(210, 15%, 16%); /* #37404a */
+    --dark: hsla(0, 0%, 4%);
+    --black: hsl(0 0% 13.3%);
+    --black2: hsl(0 0% 13.3% / 72%);
+    --black3: hsl(210, 15%, 16%);
     --green: hsl(90 100% 49%); /* lawngreen */
-    --white: hsl(0 0% 98.8%); /* FFFAFAFF (snow) */
+    --white: hsl(0, 80%, 100%); /* FFFAFAFF (snow) */
     --pure-white: hsl(0 0% 100%); /* FFFFFF (white) */
 
 
@@ -18,7 +25,7 @@
 
 
 
-    /* Font Sizes - sorted by size, duplicates removed */
+    /* Font Sizes - sorted by size, */
     --font-size-1: clamp(0.75rem, 1vw + 0.375rem, 1.25rem); /* between 12px and 20px */
     --font-size-2: 0.8rem; /* 12.8px */
     --font-size-3: 0.875rem; /* 14px */
@@ -75,7 +82,7 @@
 }
 
 .font-28 {
-    font-family: var(--font-sans); /* Add or remove as needed */
+    font-family: var(--font-sans); 
     font-size: var(--font-size-12); /* 28px */
     line-height: 2.75rem;
     color: var(--green);
@@ -84,29 +91,29 @@
 .font-40 {
     font-family: var(--font-mono);
     font-size: var(--font-size-16); /* 40px */
-    line-height: 1.2; /* Adjust as needed */
+    line-height: 1.2; 
     color: var(--green);
 }
 
 .font-size-42 {
-    font-family: var(--font-sans); /* Add or remove as needed */
+    font-family: var(--font-sans); 
     font-size: var(--font-size-14); /* between 32px and 38px */
-    line-height: 1.2; /* Adjust as needed */
+    line-height: 1.2; 
 }
 
 .font-48 {
-    font-family: var(--font-sans); /* Add or remove as needed */
+    font-family: var(--font-sans); 
     font-weight: 525;
     font-size: var(--font-size-15); /* between 36px and 48px */
-    line-height: 1.2; /* Adjust as needed */
+    line-height: 1.2; 
     color: var(--green);
 }
 
 .font-64 {
-    font-family: var(--font-sans); /* Add or remove as needed */
+    font-family: var(--font-sans); 
     font-weight: 500;
     font-size: var(--font-size-18); /* between 56px and 60px */
-    line-height: 1.1; /* Adjust as needed */
+    line-height: 1.1; 
     color: var(--green);
 }
 
@@ -114,6 +121,6 @@
     font-family: var(--font-mono);
     font-weight: 500;
     font-size: var(--font-size-22); /* 104px */
-    line-height: 1; /* Adjust as needed */
+    line-height: 1; 
     color: var(--white);
 }
