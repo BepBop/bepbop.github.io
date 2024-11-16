@@ -1,118 +1,214 @@
 export const Index = {
-  "Project Overview": {
-    Name: "Landing Pages Pro",
+  Overview: {
+    Name: "Pop-Up Builder",
     Description:
-      "A no-code website builder focused on enabling non-tech, non-designers to easily build landing pages",
+      "A standalone product designed to enable users to create and deploy pop-ups with ease, using a guided and self-serve approach based on competitive and customer research.",
     Duration: "3 months",
     Problem:
-      "Non-technical users found creating professional landing pages challenging and time-consuming",
+      "Users found creating and customizing pop-ups for different use-cases challenging and often required technical assistance.",
     Solution:
-      "Intuitive, drag-and-drop interface with pre-designed, customizable templates",
+      "Self-serve, user-guided journey with customizable options to fit various use-cases and minimize dependency on technical teams.",
     Impact: {
-      "User Satisfaction": "40% increase in satisfaction scores",
-      Efficiency: "60% decrease in average time to create a landing page",
-      "Task Completion": "25% reduction in task completion time",
+      "User Satisfaction": "35% increase in satisfaction scores",
+      Efficiency: "50% reduction in time to create and launch pop-ups",
+      "Task Completion": "30% decrease in time spent on customizing pop-ups",
     },
   },
   "Design Process": {
     "Discovery And Research": {
-      UserInterviews: {
-        Description: "One-on-one discussions to gather user insights",
+      "User Interviews": {
+        Description:
+          "One-on-one discussions to understand pop-up needs and challenges",
         Outcomes: [
-          "Identified key pain points",
-          "Understood design template preferences",
+          "Identified key pain points in existing solutions",
+          "Captured insights into preferred customization options",
         ],
       },
       Surveys: {
-        Description: "Questionnaires to collect quantitative data",
+        Description: "Quantitative data collection on feature preferences",
         Outcomes: [
-          "Gathered data on desired features",
-          "Identified challenges faced by non-technical users",
+          "Recognized desired use-cases for pop-ups",
+          "Documented common obstacles for non-technical users",
         ],
       },
       "Competitive Analysis": {
-        Description: "Evaluated landing page builders in the market",
+        Description: "Studied similar pop-up builders on the market",
         Outcomes: [
-          "Identified gaps in current tools",
-          "Determined unique selling points for the product",
+          "Highlighted unique features lacking in other products",
+          "Identified competitive advantages for a user-guided product",
         ],
       },
     },
     "Definition And Planning": {
       "Information Architecture": {
-        Description: "Organized content and features",
-        Outcomes: ["Created a sitemap", "Defined navigation structure"],
+        Description: "Structured content to support an intuitive user journey",
+        Outcomes: [
+          "Created a content hierarchy",
+          "Defined a simple navigation flow",
+        ],
       },
-      "User FlowMapping": {
-        Description: "Charted the step-by-step journey",
-        Outcomes: ["Outlined key steps", "Optimized flow to reduce friction"],
+      "User Flow Mapping": {
+        Description: "Planned the end-to-end experience for creating a pop-up",
+        Outcomes: [
+          "Outlined essential steps",
+          "Reduced user effort at key touchpoints",
+        ],
       },
     },
     "Design And Prototyping": {
       Wireframing: {
-        Description: "Low-fidelity layouts",
+        Description: "Low-fidelity layouts for key screens",
         Outcomes: [
-          "Developed wireframes for the dashboard",
-          "Sketched template selection and customization layouts",
+          "Drafted initial layouts for pop-up creation and customization",
+          "Sketched options for template selection and preview",
         ],
       },
       "Interactive Prototyping": {
-        Description: "Clickable prototypes to test user interactions",
+        Description: "Clickable prototypes to simulate user journey",
         Outcomes: [
-          "Created a high-fidelity drag-and-drop editor prototype",
-          "Simulated template customization and publishing",
+          "Developed a high-fidelity prototype with guided steps",
+          "Tested customization and deployment workflows",
         ],
       },
     },
     Testing: {
-      UsabilityTesting: {
-        Description: "Evaluated ease of use",
+      "Usability Testing": {
+        Description: "Assessed ease of use and guidance effectiveness",
         Outcomes: [
-          "Identified areas of confusion",
-          "Collected feedback on drag-and-drop functionality",
+          "Refined guided steps based on user feedback",
+          "Enhanced feature discoverability and clarity",
         ],
       },
       ABTesting: {
-        Description: "Compared different versions of features",
+        Description: "Tested variations in guided journey",
         Outcomes: [
-          "Tested template gallery layouts",
-          "Optimized the onboarding process",
+          "Optimized layout for template gallery",
+          "Refined onboarding sequence for better user engagement",
         ],
       },
     },
   },
   "Key Features": {
-    "Drag And Drop Interface":
-      "Intuitive design allowing users to easily arrange elements by dragging and dropping.",
+    "Guided Journey":
+      "Step-by-step guidance enabling users to create and customize pop-ups with minimal effort.",
     "Customizable Templates":
-      "Pre-designed layouts that users can personalize to fit their branding and content needs.",
-    "Mobile Responsive Designs":
-      "Layouts that automatically adapt to different screen sizes for optimal viewing on any device.",
-    "Integrated Analytics":
-      "Built-in tools to track user behavior and performance metrics directly within the platform.",
-    "Review Page":
-      "A dedicated section for stakeholders to provide feedback and approval on designs before finalization.",
-    "SEO Tools":
-      "Features that help users improve their website's visibility on search engines through best practices.",
+      "Versatile layouts that users can tailor to fit their specific needs and branding.",
+    "Responsive Designs":
+      "Pop-ups that adapt seamlessly to different devices for an optimal user experience.",
+    "Behavior Triggers":
+      "Options to set pop-up triggers based on user actions, time on site, or page scroll.",
+    "Analytics Integration":
+      "Tools to track engagement metrics directly within the platform for performance insights.",
+    "Approval Workflow":
+      "Review feature allowing team members to provide feedback and approve pop-ups before deployment.",
+    "SEO Optimized":
+      "Settings to ensure pop-ups follow SEO best practices, minimizing impact on search engine rankings.",
   },
 };
 
 export const Description = {
-  Name: "Landing Pages Pro",
+  Name: "Pop-up Builder",
   Description:
-    "Landing Pages Pro is a no-code website builder specifically designed to help non-tech, non-designers effortlessly create professional-grade landing pages. By providing an intuitive drag-and-drop interface paired with pre-designed, fully customizable templates, the platform eliminates the need for coding or advanced design skills. The platform is geared towards small business owners, marketers, and entrepreneurs looking to quickly develop high-quality landing pages without technical assistance. With easy-to-use tools and seamless integrations, Landing Pages Pro empowers users to independently build impactful landing pages that drive conversions and enhance their digital presence.",
+    "Pop-up Builder is a no-code tool designed to empower non-technical and non-design users to create engaging and conversion-driven pop-ups effortlessly. Featuring an intuitive drag-and-drop interface and a wide array of fully customizable templates, it enables users to design professional-grade pop-ups without any coding or advanced design skills. This tool is ideal for marketers, small business owners, and entrepreneurs who aim to capture leads, promote offers, and improve user engagement with minimal effort. With seamless integrations and user-friendly controls, Pop-up Builder Pro streamlines the process of creating impactful pop-ups that drive results.",
   Problem:
-    "Non-technical users often struggle to build landing pages that meet professional standards. Many existing tools are either too complicated for the average user or too simplistic to create a polished result. Without coding knowledge or design skills, these users find it challenging to customize pages effectively, leading to frustration and lost time. Additionally, the process can feel intimidating, particularly for users unfamiliar with UI/UX best practices, causing many to abandon the task or rely on expensive external help.\n",
-  Details:
-    "As a designer on this project for three months, I focused on ensuring the platform was as user-friendly as possible, catering to the specific needs of non-technical audiences. The solution incorporates drag-and-drop functionality to streamline layout modifications, enabling users to swap and adjust components like text blocks, images, forms, and buttons effortlessly. The templates offered are professionally designed with modern web design standards and can be tailored to suit various industries and branding needs. Each template is fully customizable, allowing users to change colors, fonts, and imagery to reflect their brand.\n" +
-    "\n" +
-    "In addition to design ease, Landing Pages Pro is equipped with integrated marketing tools such as SEO optimization, analytics tracking, and CRM integrations to support broader campaign goals. The platform’s mobile-responsive design ensures that landing pages look sharp on any device, improving user experience and engagement. A/B testing and lead capture features are also included to further enhance the effectiveness of marketing efforts.\n" +
-    "\n" +
-    "Solution:\n" +
-    "The solution was an intuitive, drag-and-drop interface that allows users to build landing pages quickly and easily, even without prior design or coding knowledge. The system includes a variety of pre-designed, customizable templates that cater to different industries and use cases. Users can modify these templates to match their branding and objectives, while advanced options remain accessible for users who wish to further personalize their pages.",
+    "Creating effective pop-ups often requires technical expertise or design knowledge, leaving non-technical users overwhelmed by complex tools or dissatisfied with overly basic ones. These users struggle to customize pop-ups to match their branding, optimize for different devices, or integrate them with marketing tools, leading to missed opportunities for engagement and conversions.",
+  Solution:
+    "Over a three-month development period, this tool was crafted to address the needs of non-technical users. The platform offers a drag-and-drop interface for seamless design, paired with pre-designed, fully customizable templates tailored to various use cases. Users can modify layouts, colors, fonts, and images to match their branding effortlessly. Built-in features [1] include mobile responsiveness to ensure consistent performance across devices, integration options with CRM and analytics tools for tracking performance, and advanced targeting options [2] to show the right pop-ups to the right audience. Additionally, optimization tools like A/B testing and lead capture forms help users maximize engagement and conversions with minimal effort.",
   Impact: {
-    "User Satisfaction": "40% increase in satisfaction scores",
-    Efficiency: "60% decrease in average time to create a landing page",
-    "Task Completion": "25% reduction in task completion time",
+    "User Satisfaction": "50% increase in satisfaction scores from users",
+    Efficiency:
+      "70% reduction in the time required to design and deploy a pop-up",
+    "Engagement Rates": "35% improvement in average click-through rates",
+  },
+};
+
+export const DesignProcess = {
+  "Discovery And Research": {
+    "User Interviews": {
+      Link: "https://embed.figma.com/proto/NpB1Q0WFt7vDuk8kjsNIEk/Widget---UX-Audit?page-id=0%3A1&node-id=1-5&node-type=frame&viewport=412%2C205%2C0.28&scaling=scale-down&content-scaling=fixed&embed-host=share",
+      Outcomes:
+        "Identified key pain points in pop-up creation and understood preferences for design templates and targeting options",
+    },
+    Surveys: {
+      Description: "Questionnaires to collect quantitative data",
+      Outcomes:
+        "Gathered insights on desired features like advanced targeting and ease of customization, and identified non-technical challenges",
+    },
+    "Competitive Analysis": {
+      Link: "https://embed.figma.com/proto/FHMvA7UKI6XKXPI6Y2NdVD/Landing-Page-Pro-(Before-Marvin)?page-id=6227%3A24&node-id=6227-3005&node-type=frame&viewport=417%2C275%2C0.04&scaling=scale-down&content-scaling=fixed&embed-host=share",
+      Outcomes:
+        "Pinpointed gaps in existing pop-up tools and determined unique selling points like ease of use and advanced integrations",
+    },
+  },
+  "Definition And Planning": {
+    "Information Architecture": {
+      Description: "Structured features and tool layout",
+      Outcomes:
+        "Defined a content hierarchy and navigation structure tailored for pop-up creation",
+    },
+    "User Flow Mapping": {
+      Description: "Charted the step-by-step user journey",
+      Outcomes:
+        "Outlined key actions such as selecting templates, customizing designs, and integrating with marketing tools",
+    },
+  },
+  "Design And Prototyping": {
+    Wireframing: {
+      Link: "https://embed.figma.com/proto/FHMvA7UKI6XKXPI6Y2NdVD/Landing-Page-Pro-(Before-Marvin)?page-id=158%3A2025&node-id=158-2032&node-type=section&viewport=771%2C215%2C0.05&scaling=scale-down&content-scaling=fixed&starting-point-node-id=158%3A2028&embed-host=share",
+      Outcomes:
+        "Created wireframes for the dashboard and designed layouts for pop-up customization and targeting options",
+    },
+    "Interactive Prototyping": {
+      Link: "https://embed.figma.com/proto/U2B34GH0cOGO0I1VMsSRZP/Landing-Page-Pro-Final?page-id=5867%3A38678&node-id=5867-39016&node-type=frame&viewport=2944%2C2170%2C0.02&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=5867%3A39016&embed-host=share",
+      Outcomes:
+        "Built a high-fidelity prototype showcasing drag-and-drop customization, targeting options, and integration workflows",
+    },
+  },
+  Testing: {
+    "Usability Testing": {
+      Description: "Assessed ease of use and functionality",
+      Outcomes:
+        "Collected feedback on drag-and-drop editor, identified usability challenges, and refined template customization",
+    },
+    ABTesting: {
+      Link: "https://embed.figma.com/proto/FHMvA7UKI6XKXPI6Y2NdVD/Landing-Page-Pro-(Before-Marvin)?page-id=6227%3A5943&node-id=6227-7089&node-type=frame&viewport=5314%2C750%2C0.29&scaling=scale-down&content-scaling=fixed&starting-point-node-id=6227%3A7089&embed-host=share",
+      Outcomes:
+        "Tested template gallery layouts, optimized audience targeting features, and improved the onboarding process",
+    },
+  },
+};
+
+export const Features = {
+  "Drag and Drop Interface": {
+    Description:
+      "User-friendly interface for creating pop-ups effortlessly by dragging and arranging elements. Features precise positioning, grid alignment, and real-time previews. Includes content blocks like text, images, buttons, and custom widgets for building engaging pop-ups.",
+  },
+  "Customizable Templates": {
+    Link: "https://embed.figma.com/proto/U2B34GH0cOGO0I1VMsSRZP/Landing-Page-Pro-Final?page-id=5867%3A38678&node-id=6187-22733&node-type=frame&viewport=14401%2C9637%2C0.13&scaling=scale-down&content-scaling=fixed&starting-point-node-id=5867%3A39016&embed-host=share",
+    Description:
+      "Pre-built pop-up designs tailored for various use cases such as lead capture, promotions, and announcements. Customization options include editable colors, typography, animations, and layout sections. Templates are optimized for engagement and user retention.",
+  },
+  "Mobile Responsive Designs": {
+    Description:
+      "Pop-ups that adjust dynamically to fit screens of all sizes for an optimal user experience. Features responsive breakpoints, adaptive scaling, and automatic rearrangement of elements. Includes device preview mode to test designs across mobile, tablet, and desktop.",
+  },
+  "Integrated Analytics": {
+    Link: "https://embed.figma.com/proto/U2B34GH0cOGO0I1VMsSRZP/Landing-Page-Pro-Final?page-id=5867%3A38678&node-id=16464-11027&node-type=frame&viewport=14401%2C9637%2C0.13&scaling=scale-down&content-scaling=fixed&starting-point-node-id=5867%3A39016&embed-host=share",
+    Description:
+      "Track the performance of your pop-ups with real-time analytics. Measure key metrics such as impressions, clicks, conversion rates, and user interactions. Includes visual dashboards and reporting tools for actionable insights.",
+  },
+  "Targeting Options": {
+    Description:
+      "Advanced targeting tools to show pop-ups to the right audience. Features include geo-targeting, time-based triggers, scroll-based activations, and exit intent detection. Customize targeting rules for maximum impact and higher conversions.",
+  },
+  "A/B Testing": {
+    Link: "https://embed.figma.com/proto/U2B34GH0cOGO0I1VMsSRZP/Landing-Page-Pro-Final?page-id=5867%3A38678&node-id=6227-7089&node-type=frame&viewport=5314%2C750%2C0.29&scaling=scale-down&content-scaling=fixed&starting-point-node-id=6227%3A7089&embed-host=share",
+    Description:
+      "Test different variations of pop-ups to identify the most effective design. Features include multiple test setups, statistical performance comparison, and real-time adjustment based on results.",
+  },
+  "Review and Approval Workflow": {
+    Link: "https://embed.figma.com/proto/U2B34GH0cOGO0I1VMsSRZP/Landing-Page-Pro-Final?page-id=5867%3A38678&node-id=5867-51985&node-type=frame&viewport=14401%2C9637%2C0.13&scaling=scale-down&content-scaling=fixed&starting-point-node-id=5867%3A39016&embed-host=share",
+    Description:
+      "Collaborative features for team feedback and approval. Includes threaded comments, visual annotations, and version history. Ensure all stakeholders align on the final pop-up design before publishing.",
   },
 };

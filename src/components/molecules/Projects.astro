@@ -1,18 +1,18 @@
 ---
 import Card from "../atoms/card.astro";
-import test from "/src/content/projects-list.json";
+import projectList from "/src/content/projects-list.json";
 ---
 
 <div id="Projects">
   <div class="card-container grd">
     {
-      test.map((item) => (
+      projectList.map((item) => (
         <Card
           title={item.title}
           tag={item.tag}
           eyebrow={item.eyebrow}
           paragraph={item.paragraph}
-          link={item.link}
+          link={`/Case Study/${item.title}`}
         />
       ))
     }
@@ -23,10 +23,11 @@ import test from "/src/content/projects-list.json";
   #Projects {
     //padding: 2.5% 0 5% 0;
     //padding: clamp(72px, 6vw + 1rem, 120px) 2.5% 180px 2.5%;
-    padding: clamp(36px, 2.4vw + 1rem, 72px) 2.5% 108px 2.5%;
+    //padding: clamp(36px, 2.4vw + 1rem, 72px) 2.5% 108px 2.5%;
     //height: fit-content;
     overflow-x: auto;
-    transition: all 4s ease-in-out;
+    transition: all 1s ease-in-out;
+    padding: 2.5%;
     //position: relative;
     //scroll-snap-type: x mandatory;
   }
@@ -38,7 +39,7 @@ import test from "/src/content/projects-list.json";
     .grd {
       display: grid;
       grid-template: auto / repeat(12, minmax(380px, 1fr));
-      gap: clamp(1rem, 1.5vw, 2rem);
+      gap: clamp(1.2rem, 1.5vw, 2rem);
       overflow-x: auto;
       //cursor: none;
       padding: 5% 0;
