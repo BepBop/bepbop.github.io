@@ -34,6 +34,7 @@ const {Index, Description, DesignProcess, Features} = await import(
             justify-content: space-between;
             flex-direction: row;
             background: black;
+            gap: 3rem;
         }
 
         @keyframes scroll {
@@ -60,8 +61,8 @@ const {Index, Description, DesignProcess, Features} = await import(
         .back-button {
             all: unset;
             position: fixed;
-            top: 3rem;
-            left: 5rem;
+            top: 4rem;
+            left: 3rem;
             width: 40px; /* Ensures a consistent size */
             height: 40px; /* Matches the width */
             border: 2px solid rgba(255, 255, 255, 0.1);
@@ -126,6 +127,7 @@ const {Index, Description, DesignProcess, Features} = await import(
             overflow: scroll;
             gap: 3.2vw;
             background: var(--dark);
+            padding: 24px 40px;
 
             & .text {
                 flex: 1 1 auto;
@@ -196,9 +198,9 @@ const {Index, Description, DesignProcess, Features} = await import(
             height: 100%;
             flex: 1 0 36ch;
             position: static;
-            padding: 40px 36px;
+            padding: 24px 36px;
             border: none;
-            background: rgba(255, 255, 255, 0.04);
+            background: var(--dark);
             color: rgba(255, 255, 255, 0.76) !important;
             overflow: scroll;
 
@@ -360,7 +362,7 @@ const {Index, Description, DesignProcess, Features} = await import(
 
     </style>
 </head>
-<body class="margin">
+<body class="padding">
 <button class="back-button" aria-label="Go back" onclick="window.location.href='/#Projects'">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
         <path d="M15 18l-6-6 6-6"/>
