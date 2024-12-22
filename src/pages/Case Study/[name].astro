@@ -5,7 +5,7 @@ import {ClientRouter} from "astro:transitions";
 export async function getStaticPaths() {
     return productList.map((product) => ({
         params: {name: product.title.toString()},
-        props: {title: product.title, thumbnail: product.thumbnail},
+        props: {thumbnail: product.thumbnail},
     }));
 }
 
@@ -31,7 +31,7 @@ const {Index, Description, DesignProcess, Features} = await import(
 
     <ClientRouter/>
 
-    <style define:vars={{ image: `url("./thumbnail/${thumbnail}")` }} >
+    <style define:vars={{ image: `url("/thumbnail/${thumbnail}")` }} >
 
         body {
             margin: 0;

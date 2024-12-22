@@ -13,7 +13,7 @@ import projectList from "/src/content/projects-list.json";
           eyebrow={item.eyebrow}
           paragraph={item.paragraph}
           link={`/Case Study/${item.title}`}
-          thumbnail={`./thumbnail/${item.thumbnail}`}
+          thumbnail={`/thumbnail/${item.thumbnail}`}
         />
       ))
     }
@@ -33,10 +33,7 @@ import projectList from "/src/content/projects-list.json";
     //scroll-snap-type: x mandatory;
   }
 
-  @scope (
-    #Projects
-
-    ) {
+  @scope (#Projects) {
     .grd {
       display: grid;
       grid-template: auto / repeat(12, minmax(380px, 1fr));
@@ -84,8 +81,24 @@ import projectList from "/src/content/projects-list.json";
     function scrollFunction(e) {
       if (cardContainerIntersection && !cardContainerLastChildIntersection) {
         e.preventDefault();
-        cardContainer.scrollLeft +=
-          Math.sign(e.deltaY || e.deltaX) * Math.abs(e.deltaY || e.deltaX);
+
+        const deltaX = e.deltaX;
+        const deltaY = e.deltaY;
+
+        const isHorizontalScroll = Math.abs(deltaX) > Math.abs(deltaY);
+        const primaryDelta = isHorizontalScroll ? deltaX : deltaY;
+
+        if (Math.abs(primaryDelta) < 0.2) {
+          return;
+        }
+
+        // cardContainer.scrollLeft +=
+        //   Math.sign(e.deltaY || e.deltaX) * Math.abs(e.deltaY || e.deltaX);
+
+        const scrollAmount =
+          Math.sign(primaryDelta) * Math.abs(primaryDelta) * 0.8;
+
+        cardContainer.scrollLeft += scrollAmount;
       }
     }
   }
