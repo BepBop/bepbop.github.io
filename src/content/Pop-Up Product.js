@@ -125,7 +125,6 @@ export const Description = {
 export const DesignProcess = {
   "Discovery And Research": {
     "User Interviews": {
-      Link: "https://embed.figma.com/proto/NpB1Q0WFt7vDuk8kjsNIEk/Widget---UX-Audit?page-id=0%3A1&node-id=1-5&node-type=frame&viewport=412%2C205%2C0.28&scaling=scale-down&content-scaling=fixed&embed-host=share",
       Outcomes:
         "Identified key pain points in pop-up creation and understood preferences for design templates and targeting options",
     },
@@ -135,7 +134,6 @@ export const DesignProcess = {
         "Gathered insights on desired features like advanced targeting and ease of customization, and identified non-technical challenges",
     },
     "Competitive Analysis": {
-      Link: "https://embed.figma.com/proto/FHMvA7UKI6XKXPI6Y2NdVD/Landing-Page-Pro-(Before-Marvin)?page-id=6227%3A24&node-id=6227-3005&node-type=frame&viewport=417%2C275%2C0.04&scaling=scale-down&content-scaling=fixed&embed-host=share",
       Outcomes:
         "Pinpointed gaps in existing pop-up tools and determined unique selling points like ease of use and advanced integrations",
     },
@@ -154,12 +152,12 @@ export const DesignProcess = {
   },
   "Design And Prototyping": {
     Wireframing: {
-      Link: "https://embed.figma.com/proto/FHMvA7UKI6XKXPI6Y2NdVD/Landing-Page-Pro-(Before-Marvin)?page-id=158%3A2025&node-id=158-2032&node-type=section&viewport=771%2C215%2C0.05&scaling=scale-down&content-scaling=fixed&starting-point-node-id=158%3A2028&embed-host=share",
+      Link: "https://embed.figma.com/proto/gn5HZnesAn1Xhp5kHWFsOh/Pop-up?page-id=2587%3A8920&node-id=2587-9128&node-type=frame&viewport=2754%2C2624%2C0.37&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=2587%3A10986&scaling=scale-down-width&content-scaling=fixed&embed-host=share",
       Outcomes:
         "Created wireframes for the dashboard and designed layouts for pop-up customization and targeting options",
     },
     "Interactive Prototyping": {
-      Link: "https://embed.figma.com/proto/U2B34GH0cOGO0I1VMsSRZP/Landing-Page-Pro-Final?page-id=5867%3A38678&node-id=5867-39016&node-type=frame&viewport=2944%2C2170%2C0.02&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=5867%3A39016&embed-host=share",
+      Link: "https://embed.figma.com/proto/gn5HZnesAn1Xhp5kHWFsOh/Pop-up?page-id=2587%3A8920&node-id=2587-9526&node-type=frame&viewport=2754%2C2624%2C0.37&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=2587%3A10986&scaling=scale-down-width&content-scaling=fixed&embed-host=share",
       Outcomes:
         "Built a high-fidelity prototype showcasing drag-and-drop customization, targeting options, and integration workflows",
     },
@@ -171,7 +169,7 @@ export const DesignProcess = {
         "Collected feedback on drag-and-drop editor, identified usability challenges, and refined template customization",
     },
     ABTesting: {
-      Link: "https://embed.figma.com/proto/FHMvA7UKI6XKXPI6Y2NdVD/Landing-Page-Pro-(Before-Marvin)?page-id=6227%3A5943&node-id=6227-7089&node-type=frame&viewport=5314%2C750%2C0.29&scaling=scale-down&content-scaling=fixed&starting-point-node-id=6227%3A7089&embed-host=share",
+      Link: "https://embed.figma.com/proto/gn5HZnesAn1Xhp5kHWFsOh/Pop-up?page-id=2587%3A8920&node-id=2587-11115&node-type=frame&viewport=2754%2C2624%2C0.37&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=2587%3A11115&scaling=scale-down-width&content-scaling=fixed&embed-host=share",
       Outcomes:
         "Tested template gallery layouts, optimized audience targeting features, and improved the onboarding process",
     },
@@ -193,21 +191,18 @@ export const Features = {
       "Pop-ups that adjust dynamically to fit screens of all sizes for an optimal user experience. Features responsive breakpoints, adaptive scaling, and automatic rearrangement of elements. Includes device preview mode to test designs across mobile, tablet, and desktop.",
   },
   "Integrated Analytics": {
-    Link: "https://embed.figma.com/proto/U2B34GH0cOGO0I1VMsSRZP/Landing-Page-Pro-Final?page-id=5867%3A38678&node-id=16464-11027&node-type=frame&viewport=14401%2C9637%2C0.13&scaling=scale-down&content-scaling=fixed&starting-point-node-id=5867%3A39016&embed-host=share",
+    Link: "https://embed.figma.com/proto/gn5HZnesAn1Xhp5kHWFsOh/Pop-up?page-id=2587%3A8920&node-id=2587-10870&viewport=-1691%2C1500%2C0.18&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=2587%3A10986&embed-host=share",
     Description:
       "Track the performance of your pop-ups with real-time analytics. Measure key metrics such as impressions, clicks, conversion rates, and user interactions. Includes visual dashboards and reporting tools for actionable insights.",
   },
   "Targeting Options": {
     Description:
       "Advanced targeting tools to show pop-ups to the right audience. Features include geo-targeting, time-based triggers, scroll-based activations, and exit intent detection. Customize targeting rules for maximum impact and higher conversions.",
+    Link: "https://embed.figma.com/proto/gn5HZnesAn1Xhp5kHWFsOh/Pop-up?page-id=2587%3A8920&node-id=2587-9976&viewport=-1691%2C1500%2C0.18&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=2587%3A10986&embed-host=share",
   },
-  "A/B Testing": {
-    Link: "https://embed.figma.com/proto/U2B34GH0cOGO0I1VMsSRZP/Landing-Page-Pro-Final?page-id=5867%3A38678&node-id=6227-7089&node-type=frame&viewport=5314%2C750%2C0.29&scaling=scale-down&content-scaling=fixed&starting-point-node-id=6227%3A7089&embed-host=share",
-    Description:
-      "Test different variations of pop-ups to identify the most effective design. Features include multiple test setups, statistical performance comparison, and real-time adjustment based on results.",
-  },
+
   "Review and Approval Workflow": {
-    Link: "https://embed.figma.com/proto/U2B34GH0cOGO0I1VMsSRZP/Landing-Page-Pro-Final?page-id=5867%3A38678&node-id=5867-51985&node-type=frame&viewport=14401%2C9637%2C0.13&scaling=scale-down&content-scaling=fixed&starting-point-node-id=5867%3A39016&embed-host=share",
+    Link: "https://embed.figma.com/proto/gn5HZnesAn1Xhp5kHWFsOh/Pop-up?page-id=2587%3A8920&node-id=2590-14945&viewport=-1691%2C1500%2C0.18&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=2587%3A10986&embed-host=share",
     Description:
       "Collaborative features for team feedback and approval. Includes threaded comments, visual annotations, and version history. Ensure all stakeholders align on the final pop-up design before publishing.",
   },

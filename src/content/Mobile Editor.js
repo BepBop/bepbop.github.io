@@ -123,7 +123,6 @@ export const Description = {
 export const DesignProcess = {
   "Discovery And Research": {
     "User Interviews": {
-      Link: "https://embed.figma.com/proto/NpB1Q0WFt7vDuk8kjsNIEk/Widget---UX-Audit?page-id=0%3A1&node-id=1-5&node-type=frame&viewport=412%2C205%2C0.28&scaling=scale-down&content-scaling=fixed&embed-host=share",
       Outcomes:
         "Identified specific pain points in mobile page design and customization",
     },
@@ -133,7 +132,6 @@ export const DesignProcess = {
         "Highlighted the demand for mobile-specific customization tools",
     },
     "Competitive Analysis": {
-      Link: "https://embed.figma.com/proto/FHMvA7UKI6XKXPI6Y2NdVD/Landing-Page-Pro-(Before-Marvin)?page-id=6227%3A24&node-id=6227-3005&node-type=frame&viewport=417%2C275%2C0.04&scaling=scale-down&content-scaling=fixed&embed-host=share",
       Outcomes:
         "Identified gaps in existing tools related to mobile customization",
     },
@@ -150,12 +148,11 @@ export const DesignProcess = {
   },
   "Design And Prototyping": {
     Wireframing: {
-      Link: "https://embed.figma.com/proto/FHMvA7UKI6XKXPI6Y2NdVD/Landing-Page-Pro-(Before-Marvin)?page-id=158%3A2025&node-id=158-2032&node-type=section&viewport=771%2C215%2C0.05&scaling=scale-down&content-scaling=fixed&starting-point-node-id=158%3A2028&embed-host=share",
       Outcomes:
         "Created wireframes for the mobile layout editor and customization options",
     },
     "Interactive Prototyping": {
-      Link: "https://embed.figma.com/proto/U2B34GH0cOGO0I1VMsSRZP/Landing-Page-Pro-Final?page-id=5867%3A38678&node-id=5867-39016&node-type=frame&viewport=2944%2C2170%2C0.02&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=5867%3A39016&embed-host=share",
+      Link: "https://embed.figma.com/proto/YLGtJ6ZEVez7h04Fv6qAsE/Mobile-Editor?page-id=295%3A5601&node-id=295-5636&viewport=1172%2C599%2C0.06&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=295%3A5636&embed-host=share",
       Outcomes:
         "Built a functional prototype showcasing mobile editing and live preview",
     },
@@ -167,7 +164,6 @@ export const DesignProcess = {
         "Addressed usability challenges and gathered feedback for improvement",
     },
     ABTesting: {
-      Link: "https://embed.figma.com/proto/FHMvA7UKI6XKXPI6Y2NdVD/Landing-Page-Pro-(Before-Marvin)?page-id=6227%3A5943&node-id=6227-7089&node-type=frame&viewport=5314%2C750%2C0.29&scaling=scale-down&content-scaling=fixed&starting-point-node-id=6227%3A7089&embed-host=share",
       Outcomes:
         "Validated the effectiveness of mobile preview and adjustment tools",
     },

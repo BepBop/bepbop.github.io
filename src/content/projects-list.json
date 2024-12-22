@@ -8,7 +8,8 @@
     "2022",
     "SASS Product"
   ],
-  "paragraph": "In developing the 'Landing Page Pro Product,' I managed end-to-end design and user research, aligning the product with user needs and stakeholder expectations."
+  "paragraph": "In developing the 'Landing Page Pro Product,' I managed end-to-end design and user research, aligning the product with user needs and stakeholder expectations.",
+    "thumbnail": "LPP.png"
 },
   {
     "eyebrow": "Zero To Hero",
@@ -19,7 +20,8 @@
       "2024",
       "SASS Product"
     ],
-    "paragraph": "At LeadSquared, I designed and developed the 'Pop-Up' feature, turning a concept into a live product. This involved in-depth user research and SASS integration to meet our design goals."
+    "paragraph": "At LeadSquared, I designed and developed the 'Pop-Up' feature, turning a concept into a live product. This involved in-depth user research and SASS integration to meet our design goals.",
+    "thumbnail": "Pop-Up.png"
   },
   {
   "eyebrow": "User Research",
@@ -31,7 +33,8 @@
     "Persona Building",
     "Empathy Mapping"
   ],
-  "paragraph": "Conducting 'User Shadowing' provided deep insights into user behavior, which were crucial for persona building and empathy mapping in my design projects."
+  "paragraph": "Conducting 'User Shadowing' provided deep insights into user behavior, which were crucial for persona building and empathy mapping in my design projects.",
+    "thumbnail": "shadow.png"
 },
   {
     "eyebrow": "Product Feature",
@@ -42,7 +45,8 @@
       "2024",
       "No Code Website Builder"
     ],
-    "paragraph": "I led the design of the 'Mobile Editor' feature for our no-code website builder, focusing on mobile usability and intuitive design to enhance user interactions."
+    "paragraph": "I led the design of the 'Mobile Editor' feature for our no-code website builder, focusing on mobile usability and intuitive design to enhance user interactions.",
+    "thumbnail": "Mobile.png"
   },
   {
     "eyebrow": "Product Feature",
@@ -53,7 +57,8 @@
       "2023",
       "No Code Website Builder"
     ],
-    "paragraph": "The 'Hide on Device' feature was designed to give users control over content visibility on various devices, improving flexibility and responsiveness in our no-code website builder."
+    "paragraph": "The 'Hide on Device' feature was designed to give users control over content visibility on various devices, improving flexibility and responsiveness in our no-code website builder.",
+    "thumbnail": "Hide.png"
   },
   {
     "eyebrow": "Product Feature",
@@ -64,7 +69,8 @@
       "2023",
       "No Code Website Builder"
     ],
-    "paragraph": "I developed the 'Scroll To' feature, enhancing user navigation within our no-code website builder to ensure a seamless and engaging experience."
+    "paragraph": "I developed the 'Scroll To' feature, enhancing user navigation within our no-code website builder to ensure a seamless and engaging experience.",
+    "thumbnail": "Scroll.png"
   },
   {
     "eyebrow": "Product Feature",
@@ -75,7 +81,8 @@
       "2023",
       "Forms"
     ],
-    "paragraph": "For the 'Save As Draft' feature, I focused on creating a smooth process for users to save their form progress, adding a layer of convenience and flexibility."
+    "paragraph": "For the 'Save As Draft' feature, I focused on creating a smooth process for users to save their form progress, adding a layer of convenience and flexibility.",
+    "thumbnail": "Draft.png"
   },
   {
     "eyebrow": "Figma Implementation",
@@ -87,7 +94,8 @@
       "Figma",
       "Atomic Design"
     ],
-    "paragraph": "I implemented a comprehensive 'Design System' using Figma and Atomic Design principles, streamlining our design process and improving team collaboration."
+    "paragraph": "I implemented a comprehensive 'Design System' using Figma and Atomic Design principles, streamlining our design process and improving team collaboration.",
+    "thumbnail": "Marvin.png"
   },
   {
     "eyebrow": "Landing Page Templates",
@@ -99,6 +107,7 @@
       "BFSI",
       "Healthcare"
     ],
-    "paragraph": "I created tailored 'BFSI & Healthcare Design Templates,' focusing on industry-specific needs to deliver effective solutions for these sectors."
+    "paragraph": "I created tailored 'BFSI & Healthcare Design Templates,' focusing on industry-specific needs to deliver effective solutions for these sectors.",
+    "thumbnail": "Template.png"
   }
 ]

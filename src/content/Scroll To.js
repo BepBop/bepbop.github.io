@@ -151,6 +151,7 @@ export const DesignProcess = {
       Description: "Built a prototype to simulate scrolling behavior.",
       Outcomes:
         "Tested scrolling functionality and visual feedback for targeted sections.",
+      Link: "https://embed.figma.com/proto/7EqHxrYYQlU2CQFe9nG8B9/Scroll-To?page-id=0%3A1&node-id=0-870&viewport=1183%2C163%2C0.22&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=0%3A870&embed-host=share",
     },
   },
   Testing: {
@@ -180,13 +181,5 @@ export const Features = {
   "Scroll Speed and Easing Options": {
     Description:
       "Supports adjustable scrolling speed and easing for a customizable experience.",
-  },
-  "Section Highlighting": {
-    Description:
-      "Visually indicates the target section after scrolling, ensuring clarity for users.",
-  },
-  "Responsive Behavior": {
-    Description:
-      "Guarantees smooth functionality across all devices and screen sizes.",
   },
 };

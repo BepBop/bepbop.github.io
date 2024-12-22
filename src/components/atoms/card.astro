@@ -4,7 +4,7 @@ const { tag } = Astro.props;
 const { title } = Astro.props;
 const { paragraph } = Astro.props;
 const { link } = Astro.props;
-console.log(link);
+const { thumbnail } = Astro.props;
 ---
 
 <a class="card" href={link}>
@@ -22,7 +22,7 @@ console.log(link);
     </div>
   </div>
 
-  <style>
+  <style define:vars={{ image: `url("${thumbnail}")` }}>
     .card {
       display: grid;
       grid-template-rows: repeat(24, 1fr);
@@ -40,15 +40,16 @@ console.log(link);
 
       &:hover {
         transform: scale(1.05);
-        cursor: url("./img/arrow_cursour.svg"), auto;
+        cursor: url("./img/arrow_cursor.svg"), auto;
       }
     }
 
     @scope (.card) {
       .card_img {
         grid-row: 1 / 16;
-        background: url("/cool2.jpg") center;
+        background: var(--image) center no-repeat;
         background-size: contain;
+        background-color: #10253f;
       }
 
       .card_info {
@@ -105,4 +106,22 @@ console.log(link);
       }
     }
   </style>
+
+  <script>
+    document.querySelector(
+      "#Projects > div > a:nth-child(1) > div.card_img",
+    ).style.backgroundColor = "#123715";
+
+    document.querySelector(
+      "#Projects > div > a:nth-child(2) > div.card_img",
+    ).style.backgroundColor = "#123715";
+
+    document.querySelector(
+      "#Projects > div > a:nth-child(8) > div.card_img",
+    ).style.backgroundColor = "black";
+
+    document.querySelector(
+      "#Projects > div > a:nth-child(3) > div.card_img",
+    ).style.backgroundColor = "#04182F";
+  </script>
 </a>

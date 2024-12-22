@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import Timeline from "../components/molecules/Timeline.jsx";
 import Slider from "../components/atoms/skill_slider.astro";
 ---
@@ -83,13 +83,7 @@ import Slider from "../components/atoms/skill_slider.astro";
       }
     </script>
 
-    <!-- Analytics (load asynchronously for better performance) -->
-    <script
-      defer
-      src="https://cloud.umami.is/script.js"
-      data-website-id="818ff8d6-209c-425f-b3f3-bb9c51e37a8e"></script>
-
-    <ViewTransitions />
+    <ClientRouter />
   </head>
 
   <body>
