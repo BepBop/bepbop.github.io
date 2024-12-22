@@ -1,15 +1,16 @@
 ---
 import productList from "../../content/projects-list.json";
-import {ViewTransitions} from "astro:transitions";
+import {ClientRouter} from "astro:transitions";
 
 export async function getStaticPaths() {
     return productList.map((product) => ({
         params: {name: product.title.toString()},
-        props: {title: product.title},
+        props: {title: product.title, thumbnail: product.thumbnail},
     }));
 }
 
 const {name} = Astro.params;
+const {thumbnail} = Astro.props;
 const {Index, Description, DesignProcess, Features} = await import(
     `../../content/${name}.js`
     );
@@ -21,9 +22,16 @@ const {Index, Description, DesignProcess, Features} = await import(
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>{Index["Overview"].Name}</title>
     <link rel="stylesheet" href="/css/Root.css"/>
-    <ViewTransitions/>
 
-    <style>
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="apple-touch-icon" href="/icon.svg" />
+
+
+
+    <ClientRouter/>
+
+    <style define:vars={{ image: `url("./thumbnail/${thumbnail}")` }} >
 
         body {
             margin: 0;
@@ -33,8 +41,11 @@ const {Index, Description, DesignProcess, Features} = await import(
             overflow: clip;
             justify-content: space-between;
             flex-direction: row;
+            //background: rgba(0, 0, 0, 0.94);
+            //background-blend-mode: overlay;
+            //background-color: black;
             background: black;
-            gap: 3rem;
+            gap: 4rem;
         }
 
         @keyframes scroll {
@@ -61,20 +72,23 @@ const {Index, Description, DesignProcess, Features} = await import(
         .back-button {
             all: unset;
             position: fixed;
-            top: 4rem;
-            left: 3rem;
-            width: 40px; /* Ensures a consistent size */
-            height: 40px; /* Matches the width */
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            cursor: pointer;
-            transition: 0.3s ease;
-            color: rgba(255, 255, 255, 0.48);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            align-content: center;
+            z-index: 2;
 
+            left: 2rem;
+            width: 44px;
+            height: 44px;
+            border: 2px solid rgb(26, 26, 26);
+            background: var(--dark);
+            cursor: pointer;
+            transition: 0.2s ease;
+            color: rgba(255, 255, 255, 0.48);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            box-shadow: 0 4px 12px 0 hsla(0, 0%, 10%, 0.1);
+            border-radius: 8px;
 
 
             & svg {
@@ -97,40 +111,31 @@ const {Index, Description, DesignProcess, Features} = await import(
 
             @media (max-width: 1140px) {
 
-
                 position: fixed;
-                width: 40px;
-                height: 40px;
                 top: 91.5vh;
                 left: 20px;
                 background-color: var(--white);
                 color: var(--dark);
-                box-shadow: 0 2px 8px rgba(var(--green), 0.25);
-
-                &:hover {
-                    box-shadow: 0 4px 16px rgba(var(--green), 0.4),
-                    0 0 8px rgba(var(--green), 0.2);
-                }
-
-                & svg {
-                    margin: 7px;
-                }
+                border: none !important;
             }
         }
 
 
         .text-wrapper {
             flex: 1 1 auto;
+            position: relative;
             scroll-timeline: --page-scroll block;
-            text-wrap: pretty;
             color: var(--white);
             overflow: scroll;
             gap: 3.2vw;
             background: var(--dark);
-            padding: 24px 40px;
+            padding: 0 4vw 4vw 3.2vw;
+
+
 
             & .text {
                 flex: 1 1 auto;
+                margin-top: 40vh;
             }
 
             & .meta-data {
@@ -164,7 +169,7 @@ const {Index, Description, DesignProcess, Features} = await import(
                 & li:has(iframe) > * {
                     list-style-type: none;
                     padding-left: 0;
-                    margin-left: 0;
+                    margin-left: -6%;
                 }
             }
 
@@ -179,30 +184,35 @@ const {Index, Description, DesignProcess, Features} = await import(
             }
 
             iframe {
-                width: 100%;
+                width: 112%;
                 height: 64vh;
                 border: none;
                 margin-bottom: 12px;
+                margin-left: -6%;
             }
 
             .background {
-                background: url(/cool2.jpg) center/cover;
+                position: absolute;
+                background: var(--image) center/cover;
                 width: 100%;
-                height: calc(24vh - 20px);
-                margin-bottom: 40px;
+                height: 32vh;
+                top: 0;
+                left: 0;
+
             }
         }
 
         #index {
             display: block;
-            height: 100%;
+            margin: initial;
+            height: 80%;
             flex: 1 0 36ch;
             position: static;
-            padding: 24px 36px;
+            padding: 24px 36px 24px 28px;
             border: none;
             background: var(--dark);
             color: rgba(255, 255, 255, 0.76) !important;
-            overflow: scroll;
+            overflow: auto;
 
             & .section,
             & .subsection {
@@ -228,15 +238,16 @@ const {Index, Description, DesignProcess, Features} = await import(
 
             & .subtitle {
                 text-decoration: none;
-                color: inherit;
+                color: rgba(125, 250, 0, 0.80);
+
                 line-height: 2;
                 font-size: var(--font-size-7);
                 transition: transform 0.3s ease;
                 font-family: var(--font-sans);
 
                 &:hover {
-                    color: var(--white);
-                    transform: translateX(4px);
+                    color: var(--green);
+                    scale: 1.05;
                     cursor: pointer;
                 }
             }
@@ -312,6 +323,12 @@ const {Index, Description, DesignProcess, Features} = await import(
                     background: rgb(0 0 0 / 0.75);
                     backdrop-filter: grayscale(80%) brightness(80%);
                 }
+
+                & .paragraph {
+                   font-size: var(--font-size-3);
+                }
+
+
             }
 
             .toggle-button {
@@ -323,7 +340,7 @@ const {Index, Description, DesignProcess, Features} = await import(
                 background-color: var(--green);
                 color: var(--dark);
                 padding: 12px 24px;
-                border-radius: 24px;
+                border-radius:8px;
                 border: none;
                 box-shadow: 0 2px 8px rgba(var(--green), 0.25);
                 cursor: pointer;
@@ -332,13 +349,12 @@ const {Index, Description, DesignProcess, Features} = await import(
                 popover-target: index;
 
                 &:hover {
-                    transform: translateY(-2px);
+                    scale: 1.05;
                     box-shadow: 0 4px 16px rgba(var(--green), 0.4),
                     0 0 8px rgba(var(--green), 0.2);
                 }
 
                 &:active {
-                    transform: translateY(1px);
                     box-shadow: 0 1px 4px rgba(var(--green), 0.3);
                 }
 
@@ -352,10 +368,10 @@ const {Index, Description, DesignProcess, Features} = await import(
         .padding {
 
             @media (width <= 1336px) {
-                padding: 2.8rem 4vw;
+                margin: 3rem 6vw;
             }
             @media (1336px < width) {
-                padding: 2.8rem 8vw;
+                margin: 3rem 8vw;
             }
         }
 
@@ -490,6 +506,12 @@ const {Index, Description, DesignProcess, Features} = await import(
     }
 </div>
 <button class="toggle-button" popovertarget="index"> Index</button>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <filter id="blur-filter" x="0" y="0" width="100%" height="100%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
+    </filter>
+</svg>
 
 </body>
 

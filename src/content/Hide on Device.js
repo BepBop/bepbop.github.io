@@ -129,7 +129,6 @@ export const Description = {
 export const DesignProcess = {
   "Discovery And Research": {
     "User Interviews": {
-      Link: "https://embed.figma.com/proto/xyz",
       Outcomes:
         "Identified user frustration with irrelevant content on mobile and desktop views, leading to the idea for visibility toggles.",
     },
@@ -140,7 +139,7 @@ export const DesignProcess = {
         "Collected feedback on the necessity of device-specific toggles and discovered that most users preferred mobile-first designs.",
     },
     "Competitive Analysis": {
-      Link: "https://embed.figma.com/proto/xyz",
+      Link: "https://embed.figma.com/proto/Pw0ForTKAL3kP9lAvxnEtn/Hide-on-Device?page-id=72%3A2&node-id=790-386&viewport=-2929%2C550%2C0.06&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=790%3A386&embed-host=share",
       Outcomes:
         "Found that competitors lacked intuitive device-specific content management features, highlighting the uniqueness of this feature.",
     },
@@ -160,12 +159,11 @@ export const DesignProcess = {
   },
   "Design And Prototyping": {
     Wireframing: {
-      Link: "https://embed.figma.com/proto/xyz",
       Outcomes:
         "Designed wireframes that clearly show how content would appear or disappear on mobile and desktop.",
     },
     "Interactive Prototyping": {
-      Link: "https://embed.figma.com/proto/xyz",
+      Link: "https://embed.figma.com/proto/Pw0ForTKAL3kP9lAvxnEtn/Hide-on-Device?page-id=2119%3A575&node-id=2528-409&viewport=2479%2C-667%2C0.38&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=2528%3A409&embed-host=share",
       Outcomes:
         "Created interactive prototypes to simulate how hiding content would work seamlessly on both mobile and desktop.",
     },
@@ -178,7 +176,7 @@ export const DesignProcess = {
         "Identified areas for improvement in the toggle interface and refined usability.",
     },
     ABTesting: {
-      Link: "https://embed.figma.com/proto/xyz",
+      Link: "https://embed.figma.com/proto/Pw0ForTKAL3kP9lAvxnEtn/Hide-on-Device?page-id=2119%3A575&node-id=2529-748&viewport=2479%2C-667%2C0.38&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=2529%3A748&embed-host=share",
       Outcomes:
         "Tested multiple versions of content visibility toggles and refined the best approach for intuitive use.",
     },

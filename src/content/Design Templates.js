@@ -2,14 +2,14 @@ export const Index = {
   Overview: {
     Name: "Design Templates",
     Description:
-      "A comprehensive library of customizable templates empowering non-technical users to create professional-quality designs effortlessly. Templates cater to diverse industries and support extensive customization for various business needs.",
+      "A library of customizable templates enabling non-technical users to create professional designs for diverse industries and business needs",
     Duration: "3 months",
     Problem:
-      "Non-designers face challenges in creating polished designs due to limited skills and inadequate tools, resulting in poor user experiences and ineffective business materials.",
+      "Non-designers face challenges in creating polished designs due to limited skills, resulting in poor Design Quality (DQ).",
     Solution:
       "A robust library of pre-designed templates with extensive customization options, enabling users to adapt designs to align with their brand identity and goals easily.",
     Impact: {
-      UserSatisfaction:
+      "User Satisfaction":
         "35% increase in satisfaction scores, reflecting enhanced usability and design quality.",
       Efficiency:
         "50% reduction in design creation time, boosting productivity by simplifying the process.",
@@ -17,87 +17,35 @@ export const Index = {
         "20% increase in platform usage post-launch, showcasing higher engagement and user value.",
     },
   },
-  DesignProcess: {
-    DiscoveryAndResearch: {
-      UserInterviews: {
-        Description:
-          "Interviews with non-designers and professionals to uncover pain points and identify essential template features.",
-        Outcomes: [
-          "Identified critical elements like color schemes, typography, and layout preferences.",
-          "Highlighted demand for industry-specific templates in healthcare, technology, and marketing.",
-        ],
-      },
-      Surveys: {
-        Description:
-          "Online surveys to collect broad feedback on challenges and desired features in design tools.",
-        Outcomes: [
-          "Uncovered common use cases such as marketing campaigns, newsletters, and presentations.",
-          "Emphasized customization needs like logo uploads and flexible color adjustments.",
-        ],
-      },
-      CompetitiveAnalysis: {
-        Description:
-          "Analyzed competitors to identify market trends and opportunities for differentiation.",
-        Outcomes: [
-          "Discovered preferences for minimalistic vs. intricate designs and common customization options.",
-          "Found opportunities to stand out with industry-specific templates and AI-driven recommendations.",
-        ],
-      },
+  "Design Process": {
+    "Discovery And Research": {
+      "User Interviews": {},
+      Surveys: {},
+      "Competitive Analysis": {},
     },
-    DefinitionAndPlanning: {
-      InformationArchitecture: {
-        Description:
-          "Structured the template library to ensure easy navigation, categorizing templates by industry, use case, and complexity.",
-        Outcomes: [
-          "Created a hierarchy for industries (e.g., healthcare, marketing) and use cases (e.g., email, social media).",
-          "Improved searchability with intuitive filters, labels, and preview functionality.",
-        ],
-      },
-      UserFlowMapping: {
-        Description:
-          "Mapped the user journey to optimize the process from template selection to export.",
-        Outcomes: [
-          "Streamlined critical steps like customization and previewing to minimize friction.",
-          "Implemented progress indicators to enhance clarity in the design workflow.",
-        ],
-      },
+    "Definition And Planning": {
+      "Information Architecture": {},
+      "User FlowMapping": {},
     },
-    DesignAndPrototyping: {
-      Wireframing: {
-        Description:
-          "Created low-fidelity wireframes to visualize the layout and user interactions.",
-        Outcomes: [
-          "Prioritized accessible navigation and streamlined customization workflows.",
-          "Refined the user flow to enhance engagement and ease of use.",
-        ],
-      },
-      InteractivePrototyping: {
-        Description:
-          "Developed prototypes to test and refine key features like selection and customization.",
-        Outcomes: [
-          "Validated smooth transitions and interactions for an intuitive user experience.",
-          "Improved user feedback mechanisms during template customization.",
-        ],
-      },
+    "Design And Prototyping": {
+      Wireframing: {},
+      "Interactive Prototyping": {},
     },
     Testing: {
-      UsabilityTesting: {
-        Description:
-          "Ensured the tool was user-friendly and accessible to non-designers.",
-        Outcomes: [
-          "Simplified navigation and browsing for better usability.",
-          "Enhanced customization tools to reduce complexity and improve engagement.",
-        ],
-      },
-      ABTesting: {
-        Description:
-          "Compared variations in layouts and UI elements to optimize engagement.",
-        Outcomes: [
-          "Improved interaction rates by 15% with optimized template layouts.",
-          "Refined filtering and categorization based on user preferences.",
-        ],
-      },
+      "Usability Testing": {},
+      ABTesting: {},
     },
+  },
+
+  Features: {
+    "Template Library":
+      "A categorized collection of professional templates designed for various industries and use cases.",
+    "Extensive Customization":
+      "Intuitive tools for modifying colors, fonts, layouts, and images to suit individual needs.",
+    "Responsive Designs":
+      "Automatically adapts templates to any screen size for an optimal experience.",
+    "RealTime Previews":
+      "Provides live visualization of changes for confident customization.",
   },
 };
 
@@ -109,8 +57,8 @@ export const Description = {
 };
 
 export const DesignProcess = {
-  DiscoveryAndResearch: {
-    UserInterviews: {
+  "Discovery And Research": {
+    "User Interviews": {
       Description:
         "Gathered insights into user pain points and feature preferences through direct interviews.",
       Outcomes: [
@@ -126,7 +74,7 @@ export const DesignProcess = {
         "Provided insights into key design challenges users face.",
       ],
     },
-    CompetitiveAnalysis: {
+    "Competitive Analysis": {
       Description:
         "Studied competitors to understand the landscape and discover differentiation opportunities.",
       Outcomes: [
@@ -135,8 +83,8 @@ export const DesignProcess = {
       ],
     },
   },
-  DefinitionAndPlanning: {
-    InformationArchitecture: {
+  " Definition And Planning": {
+    "Information Architecture": {
       Description:
         "Designed an intuitive structure to facilitate easy template discovery.",
       Outcomes: [
@@ -144,7 +92,7 @@ export const DesignProcess = {
         "Ensured logical categorization for user clarity.",
       ],
     },
-    UserFlowMapping: {
+    "User Flow Mapping": {
       Description:
         "Optimized user journey to minimize friction and ensure seamless design creation.",
       Outcomes: [
@@ -153,7 +101,7 @@ export const DesignProcess = {
       ],
     },
   },
-  DesignAndPrototyping: {
+  "Design And Prototyping": {
     Wireframing: {
       Description:
         "Developed wireframes to lay the foundation for intuitive interactions.",
@@ -162,7 +110,7 @@ export const DesignProcess = {
         "Simplified layout to support accessibility and ease of use.",
       ],
     },
-    InteractivePrototyping: {
+    "Interactive Prototyping": {
       Description: "Tested functional prototypes to refine user experience.",
       Outcomes: [
         "Optimized customization tools based on usability feedback.",
@@ -171,14 +119,14 @@ export const DesignProcess = {
     },
   },
   Testing: {
-    UsabilityTesting: {
+    "Usability Testing": {
       Description: "Validated ease of use through testing with target users.",
       Outcomes: [
         "Simplified user interface for non-designers.",
         "Enhanced tooltips and guides for better usability.",
       ],
     },
-    ABTesting: {
+    "AB Testing": {
       Description:
         "Compared design variations to identify optimal user engagement strategies.",
       Outcomes: [
@@ -190,20 +138,27 @@ export const DesignProcess = {
 };
 
 export const Features = {
-  TemplateLibrary:
-    "A categorized collection of professional templates designed for various industries and use cases.",
-  ExtensiveCustomization:
-    "Intuitive tools for modifying colors, fonts, layouts, and images to suit individual needs.",
-  ResponsiveDesigns:
-    "Automatically adapts templates to any screen size for an optimal experience.",
-  RealTimePreviews:
-    "Provides live visualization of changes for confident customization.",
-  TemplateRecommendations:
-    "AI-driven suggestions to help users find the most relevant templates efficiently.",
-  ExportOptions:
-    "Supports multiple formats (PDF, PNG, JPEG) for sharing across channels.",
-  EasyIntegration:
-    "Seamlessly integrates with tools like email platforms and websites.",
-  CloudStorage:
-    "Enables secure access and collaboration on designs from any device.",
+  "Template Library": {
+    details:
+      "A rich collection of professionally designed templates for industries like technology, healthcare, education, and e-commerce. These templates cater to use cases such as landing pages, portfolios, blogs, newsletters, and event invitations, giving users a strong starting point for their projects with modern designs and functionality.",
+  },
+  "Extensive Customization": {
+    details:
+      "Easy-to-use tools let users modify every part of a template, including colors, fonts, layouts, and images. Features like drag-and-drop editing, global styles, and animation options make it simple to create designs that match personal or brand needs while keeping them polished and consistent.",
+  },
+  "Responsive Designs": {
+    details:
+      "Templates are built to look great and work smoothly on any device, whether it’s a smartphone, tablet, or desktop. They use modern design techniques like scalable graphics and touch-friendly elements to ensure a professional appearance and excellent user experience across all screen sizes.",
+  },
+  "Real-Time Previews": {
+    details:
+      "This feature lets users see changes instantly as they customize their designs. It shows exactly how the design will look on different devices, making it easy to spot and fix issues before publishing, ensuring a polished final product.",
+  },
+
+  "Credit Card Template": {
+    Link: "https://embed.figma.com/proto/8lAI2WpFtwLqxnTFBV7VOB/Credit-Card-Template?page-id=403%3A3429&node-id=403-3432&viewport=519%2C642%2C0.12&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=403%3A3432&embed-host=share",
+  },
+  "Life Insurance Template": {
+    Link: "https://embed.figma.com/proto/9a3L3V5aOPOx2ev516Syxy/Life-Insurance-Template?page-id=0%3A1&node-id=145-106&viewport=-4703%2C-146%2C0.1&scaling=scale-down-width&content-scaling=fixed&embed-host=share",
+  },
 };

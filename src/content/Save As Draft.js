@@ -93,8 +93,6 @@ export const Index = {
       "Allows users to save their progress at any stage of form filling with a single click.",
     "Resume Forms":
       "Provides users with an option to resume incomplete forms from where they left off.",
-    "Automatic Save":
-      "Ensures drafts are auto-saved periodically to prevent data loss during interruptions.",
     "Draft Management Dashboard":
       "A centralized section where users can view, edit, or delete saved drafts.",
     "Notification and Alerts":
@@ -167,11 +165,6 @@ export const DesignProcess = {
       Outcomes:
         "Gathered feedback on draft accessibility and retrieval and Refined UI elements for better visibility of saved drafts",
     },
-    ABTesting: {
-      Link: "https://embed.figma.com/proto/SaveDraftABTesting",
-      Outcomes:
-        "Optimized the placement of draft-saving actions and Improved clarity of notifications confirming save success",
-    },
   },
 };
 
@@ -191,14 +184,10 @@ export const Features = {
   "Draft Management Dashboard": {
     Link: "https://embed.figma.com/proto/SaveDraftManagementDashboard",
     Description:
-      "A centralized section where users can view, edit, or delete saved drafts. Features sorting options, status indicators, and direct resumption links.",
+      "A centralized section where users can view, edit, or delete saved drafts.",
   },
   "Notification and Alerts": {
     Description:
-      "Informs users when progress is saved and provides reminders for incomplete forms. Includes email notifications and in-app alerts for comprehensive coverage.",
-  },
-  "Mobile and Desktop Sync": {
-    Description:
-      "Seamless synchronization of saved drafts across devices for convenience. Supports automatic syncing with real-time updates to avoid inconsistencies.",
+      "Informs users when progress is saved and provides reminders for incomplete forms.",
   },
 };

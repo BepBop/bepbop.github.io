@@ -172,11 +172,6 @@ export const Features = {
     Description:
       "Modular design components tailored for reuse across various products and platforms. Includes dynamic resizing, flexible styling, and robust support for localization and theming.",
   },
-  "Real-Time Collaboration": {
-    Link: "https://embed.figma.com/proto/design-system-migration/real-time-collaboration",
-    Description:
-      "Enhanced workflows through Figma's collaborative features, allowing multiple designers and developers to work simultaneously in shared files.",
-  },
   "Enhanced Prototypes": {
     Description:
       "Interactive prototypes showcasing the functionality of migrated components. Includes animations, transitions, and real-world use-case scenarios for testing and feedback.",
