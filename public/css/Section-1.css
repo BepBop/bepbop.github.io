@@ -113,6 +113,12 @@ summary {
   font-size: var(--font-size-9); /* 24px */
   font-weight: 400;
   color: var(--black2);
+
+  @media (width <= 1000px) {
+  font-size: var(--font-size-8); /* 24px */
+  }
+
+
 }
 
 .bold {

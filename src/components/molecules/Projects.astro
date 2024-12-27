@@ -88,7 +88,7 @@ import projectList from "/src/content/projects-list.json";
         const isHorizontalScroll = Math.abs(deltaX) > Math.abs(deltaY);
         const primaryDelta = isHorizontalScroll ? deltaX : deltaY;
 
-        if (Math.abs(primaryDelta) < 0.2) {
+        if (Math.abs(primaryDelta) < 0.1) {
           return;
         }
 
