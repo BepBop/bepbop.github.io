@@ -2,62 +2,43 @@
 import { ClientRouter } from "astro:transitions";
 import Timeline from "../components/molecules/Timeline.jsx";
 import Slider from "../components/atoms/skill_slider.astro";
+
+// SEO metadata
+const title = "Gyan Anjay's Portfolio | Jobs, Projects and Skills";
+const description =
+  "Explore Gyan Anjay's portfolio showcasing professional projects, skills, and achievements. Discover how I can contribute to your team's success.";
+const baseUrl = "https://bepbop.github.io/2024";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Set character encoding for the document -->
     <meta charset="utf-8" />
-
-    <!-- Instruct Internet Explorer to use its latest rendering engine -->
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-
-    <!-- Viewport for responsive web design -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Document Title -->
-    <title>Gyan Anjay's Portfolio | Professional Projects and Skills</title>
+    <!-- Basic SEO -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={baseUrl} />
 
-    <!-- Meta Description -->
-    <meta
-      name="description"
-      content="Explore Gyan Anjay's portfolio showcasing professional projects, skills, and achievements. Discover how I can contribute to your team's success."
-    />
-
-    <!-- Open Graph / Facebook Meta Tags -->
-    <meta
-      property="og:title"
-      content="Gyan Anjay's Portfolio | Professional Projects and Skills"
-    />
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://bepbop.github.io" />
+    <meta property="og:url" content={baseUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
     <meta property="og:image" content="/icon.svg" />
-    <meta
-      property="og:description"
-      content="Explore Gyan Anjay's portfolio showcasing professional projects, skills, and achievements. Discover how I can contribute to your team's success."
-    />
 
-    <!-- Twitter Card Meta Tags -->
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Gyan Anjay's Portfolio | Professional Projects and Skills"
-    />
-    <meta
-      name="twitter:description"
-      content="Explore Gyan Anjay's portfolio showcasing professional projects, skills, and achievements. Discover how I can contribute to your team's success."
-    />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="/icon.svg" />
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://bepbop.github.io" />
-
-    <!-- Favicon -->
+    <!-- Icons -->
+    <link rel="shortcut icon" type="image/svg+xml" href="/icon.svg" />
     <link rel="apple-touch-icon" href="/icon.svg" />
-    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
 
-    <!-- Stylesheet -->
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="/css/normalize.css" />
 
     <!-- Custom stylesheets for different sections of the webpage -->
@@ -66,26 +47,38 @@ import Slider from "../components/atoms/skill_slider.astro";
     <link rel="stylesheet" href="/css/Section-2.css" />
     <link rel="stylesheet" href="/css/Section-3.css" />
 
-    <!-- Theme Color for browser UI -->
+    <!-- Theme -->
     <meta name="theme-color" content="#fafafa" />
 
-    <!-- Structured Data -->
+    <!-- Enhanced Structured Data for Portfolio -->
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
-        "@type": "Person",
-        "name": "Gyan Anjay",
-        "url": "https://bepbop.github.io",
-        "sameAs": [
-          "https://linkedin.com/in/gyananjay",
-          "https://github.com/bepbop"
-        ]
+        "@type": "ProfilePage",
+        "mainEntity": {
+          "@type": "Person",
+          "name": "Gyan Anjay",
+          "description": "Software Developer and Technology Professional",
+          "url": "https://bepbop.github.io",
+          "sameAs": [
+            "https://linkedin.com/in/gyananjay",
+            "https://github.com/bepbop"
+          ],
+          "jobTitle": "Software Developer",
+          "knowsAbout": [
+            "Software Development",
+            "Web Development",
+            "JavaScript",
+            "React",
+            "Node.js"
+          ],
+          "image": "/icon.svg"
+        }
       }
     </script>
 
     <ClientRouter />
   </head>
-
   <body>
     <div class="rectangle"></div>
     <div class="vertical-font-design flex-container">

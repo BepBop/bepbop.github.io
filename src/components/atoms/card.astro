@@ -21,107 +21,106 @@ const { thumbnail } = Astro.props;
       {tag.map((item) => <div class="tags"> #{item} </div>)}
     </div>
   </div>
+</a>
+<style define:vars={{ image: `url("${thumbnail}")` }}>
+  .card {
+    display: grid;
+    grid-template-rows: repeat(24, 1fr);
+    height: 620px;
+    transition: ease-in-out 0.5s all;
+    background: var(--white);
 
-  <style define:vars={{ image: `url("${thumbnail}")` }}>
-    .card {
-      display: grid;
-      grid-template-rows: repeat(24, 1fr);
-      height: 620px;
-      transition: ease-in-out 0.5s all;
-      background: var(--white);
+    text-decoration: none;
+    color: inherit;
+    font: inherit;
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
 
-      text-decoration: none;
-      color: inherit;
-      font: inherit;
-      border: none;
-      padding: 0;
-      margin: 0;
-      outline: none;
+    &:hover {
+      transform: scale(1.05);
+      cursor: url("/img/arrow_cursor.svg"), auto;
+    }
+  }
 
-      &:hover {
-        transform: scale(1.05);
-        cursor: url("/img/arrow_cursor.svg"), auto;
-      }
+  @scope (.card) {
+    .card_img {
+      grid-row: 1 / 16;
+      background: var(--image) center no-repeat;
+      background-size: contain;
+      background-color: #10253f;
     }
 
-    @scope (.card) {
-      .card_img {
-        grid-row: 1 / 16;
-        background: var(--image) center no-repeat;
-        background-size: contain;
-        background-color: #10253f;
-      }
+    .card_info {
+      grid-row: 16 / 24;
+      padding: 16px;
 
-      .card_info {
-        grid-row: 16 / 24;
-        padding: 16px;
-
-        .card_eyebrow {
-          font-family: var(--font-sans);
-          font-size: var(--font-size-3); /* Using 14px equivalent */
-          font-weight: 400;
-          color: var(--black2);
-          line-height: 1.4;
-          margin-bottom: 2px;
-        }
-        .card_title {
-          font-family: var(--font-sans);
-          font-size: var(--font-size-13); /* 32px */
-          font-weight: 500;
-          color: var(--black);
-          margin-bottom: 10px;
-        }
-
-        .card_paragraph {
-          font-family: var(--font-sans);
-          font-size: var(--font-size-6); /* 18px */
-          font-weight: 400;
-          color: var(--black);
-          line-height: 1.4;
-          display: -webkit-box;
-          -webkit-box-orient: vertical;
-          -webkit-line-clamp: 3;
-          overflow: hidden;
-        }
-      }
-
-      .card_footer {
-        grid-row: auto / 25;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 12px;
-      }
-
-      .tags {
-        display: inline-block;
-        color: var(--black);
-        padding: 6px 8px;
-        margin: 6px;
-        background: var(--green);
-        border-radius: 1px;
+      .card_eyebrow {
         font-family: var(--font-sans);
-        font-size: var(--font-size-5); /* 16px */
+        font-size: var(--font-size-3); /* Using 14px equivalent */
         font-weight: 400;
+        color: var(--black2);
+        line-height: 1.4;
+        margin-bottom: 2px;
+      }
+
+      .card_title {
+        font-family: var(--font-sans);
+        font-size: var(--font-size-13); /* 32px */
+        font-weight: 500;
+        color: var(--black);
+        margin-bottom: 10px;
+      }
+
+      .card_paragraph {
+        font-family: var(--font-sans);
+        font-size: var(--font-size-6); /* 18px */
+        font-weight: 400;
+        color: var(--black);
+        line-height: 1.4;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
       }
     }
-  </style>
 
-  <script>
+    .card_footer {
+      grid-row: auto / 25;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px;
+    }
+
+    .tags {
+      display: inline-block;
+      color: var(--black);
+      padding: 6px 8px;
+      margin: 6px;
+      background: var(--green);
+      border-radius: 1px;
+      font-family: var(--font-sans);
+      font-size: var(--font-size-5); /* 16px */
+      font-weight: 400;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
     document.querySelector(
       "#Projects > div > a:nth-child(1) > div.card_img",
     ).style.backgroundColor = "#123715";
-
-    document.querySelector(
-      "#Projects > div > a:nth-child(2) > div.card_img",
-    ).style.backgroundColor = "#123715";
-
-    document.querySelector(
-      "#Projects > div > a:nth-child(8) > div.card_img",
-    ).style.backgroundColor = "black";
-
     document.querySelector(
       "#Projects > div > a:nth-child(3) > div.card_img",
+    ).style.backgroundColor = "#123715";
+    document.querySelector(
+      "#Projects > div > a:nth-child(9) > div.card_img",
+    ).style.backgroundColor = "black";
+    document.querySelector(
+      "#Projects > div > a:nth-child(4) > div.card_img",
     ).style.backgroundColor = "#04182F";
-  </script>
-</a>
+  });
+</script>

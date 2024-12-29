@@ -1,5 +1,6 @@
 #Section-1 {
-  overflow: clip;
+  overflow-y: clip;
+  overflow-x: visible;
 }
 
 .flex-container {

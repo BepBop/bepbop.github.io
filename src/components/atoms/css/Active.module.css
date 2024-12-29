@@ -28,6 +28,7 @@ a {
   justify-content: center;
   align-content: center;
   grid-row: 6;
+  height:63px;
 }
 
 .test > div {
