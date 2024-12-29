@@ -102,11 +102,10 @@ const {Index, Description, DesignProcess, Features} = await import(
             &:hover {
                 background-color: var(--white);
                 color: var(--black3);
-                scale: 1.05;
             }
 
             &:active {
-                transform: scale(0.95);
+
             }
 
             @media (max-width: 1140px) {
@@ -346,12 +345,11 @@ const {Index, Description, DesignProcess, Features} = await import(
                 border: none;
                 box-shadow: 0 2px 8px rgba(var(--green), 0.25);
                 cursor: pointer;
-                transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1),
                 box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                 popover-target: index;
 
                 &:hover {
-                    scale: 1.05;
                     box-shadow: 0 4px 16px rgba(var(--green), 0.4),
                     0 0 8px rgba(var(--green), 0.2);
                 }
