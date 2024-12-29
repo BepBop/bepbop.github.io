@@ -32,7 +32,7 @@ html {
     --font-size-3: 0.875rem; /* 14px */
     --font-size-4: clamp(1rem, 0.5vw + 0.8125rem, 1.25rem); /* between 16px and 20px */
     --font-size-5: 1rem; /* 16px */
-    --font-size-6: 1.125rem; /* 18px */
+    --font-size-6: 1.12rem; /* 18px */
     --font-size-7: 1.25rem; /* 20px */
     --font-size-8: clamp(1.25rem, 0.2vw + 1.175rem, 1.5rem); /* between 20px and 24px */
     --font-size-9: 1.5rem; /* 24px */

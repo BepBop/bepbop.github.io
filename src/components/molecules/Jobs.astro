@@ -150,7 +150,7 @@
   .div4 {
     grid-area: 3 / 11 / 11/ 21;
     z-index: 0;
-    padding: 0 !important;
+    padding: 12px 0 !important;
 
     @media (width <= 1000px) {
       grid-column: 1 / 24;
@@ -158,7 +158,7 @@
     }
 
     > span {
-      background: url("./img/summary.svg") center no-repeat;
+      background: url("/img/summary.svg") center no-repeat;
       width: 100%;
       height: 100%;
       background-size: contain;
@@ -220,9 +220,6 @@
     font: 400 var(--font-size-9) var(--font-sans);
     position: relative;
     align-self: stretch;
-    @media (width <= 1000px) {
-      font-size: var(--font-size-10);
-    }
   }
 </style>
 
@@ -240,7 +237,7 @@
   function handleMouseEnter(event) {
     const hoveredDiv = event.target;
 
-    jobDivs.forEach((div, index) => {
+    jobDivs.forEach((div) => {
       if (div === hoveredDiv) {
         div.style.transform = "scale(1.05)";
         div.style.zIndex = "1000"; // Ensure hovered div is on top
@@ -278,7 +275,7 @@
     });
   }
 
-  jobDivs.forEach((div, index) => {
+  jobDivs.forEach((div) => {
     div.addEventListener("mouseenter", handleMouseEnter);
 
     div.addEventListener("click", handleMouseClick);

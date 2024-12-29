@@ -14,13 +14,17 @@
 
 .toy button {
     font-family: var(--font-sans);
-    font-size: var(--font-size-9); /* 24px */
+    font-size: var(--font-size-7);
     background: var(--green);
     padding: 16px 32px;
     width: max-content;
     box-shadow: 0 4px 12px 0 hsla(90, 100%, 49%, 0.2);
     border: none;
     border-radius: 8px;
+   display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
 
     &:hover {
         box-shadow: 0px 0px 0px 1px rgba(124, 252, 0, 0.1),
