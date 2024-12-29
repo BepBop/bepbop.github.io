@@ -116,6 +116,7 @@ a:hover,
 a:active {
   color: var(--green) !important;
   cursor: pointer;
+  font-size: var(--font-size-7);
 }
 
 a:hover {

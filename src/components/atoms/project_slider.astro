@@ -9,6 +9,13 @@
 >
 </div>
 
+<style>
+  #project_slider {
+    z-index: 999;
+    position: relative;
+  }
+</style>
+
 <script is:inline data-astro-rerun>
   (function () {
     const projectSlider = document.getElementById("project_slider");
@@ -25,10 +32,3 @@
     }
   })();
 </script>
-
-<style>
-  #project_slider {
-    z-index: 999;
-    position: relative;
-  }
-</style>
