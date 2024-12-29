@@ -20,7 +20,7 @@ const {Index, Description, DesignProcess, Features} = await import(
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>{Index["Overview"].Name}</title>
+    <title>{name}</title>
     <link rel="stylesheet" href="/css/Root.css"/>
 
     <!-- Icons -->
@@ -45,7 +45,7 @@ const {Index, Description, DesignProcess, Features} = await import(
             //background-blend-mode: overlay;
             //background-color: black;
             background: black;
-            gap: 4rem;
+            gap: 4%;
         }
 
         @keyframes scroll {
@@ -301,13 +301,13 @@ const {Index, Description, DesignProcess, Features} = await import(
             }
         }
 
-        @media (width <= 906px) {
+        @media (width <= 1140px) {
             #index {
                 display: none;
 
                 &[popover] {
                     margin: auto;
-                    margin-bottom: 16px;
+                    //margin-bottom: 24px;
                     width: 72%;
                     border-radius: 4px;
                     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
@@ -316,13 +316,13 @@ const {Index, Description, DesignProcess, Features} = await import(
 
                 &[popover]:popover-open {
                     display: block;
-                    max-height: 82vh;
+                    max-height: 88svh;
                     background: var(--dark);
                 }
 
                 &[popover]::backdrop {
                     background: rgb(0 0 0 / 0.75);
-                    backdrop-filter: grayscale(80%) brightness(80%);
+                    backdrop-filter: grayscale(90%) brightness(45%);
                 }
 
                 & .paragraph {
@@ -480,16 +480,16 @@ const {Index, Description, DesignProcess, Features} = await import(
         Object.entries(Index).map(([key, value], index) => (
                 <div class="section">
                     <div class="title">
-                        {key}</div>
+                        {++index}. { key}</div>
                     {typeof value === "object" && value !== null ? (
                         Object.entries(value).map(
-                            ([nestedKey, nestedValue], nestedIndex) => (
+                            ([nestedKey, nestedValue]) => (
                                     <div class="subsection">
                                         <a class="subtitle" href=`#${nestedKey}`>{nestedKey}</a>
                                         {typeof nestedValue === "object" && nestedValue !== null ? (
                                                 <ul>
                                                     {Object.keys(nestedValue).map((deepKey) => (
-                                                            <li key={deepKey}>{deepKey}</li>
+                                                            <li>{deepKey}</li>
                                                     ))}
                                                 </ul>
                                         ) : (
