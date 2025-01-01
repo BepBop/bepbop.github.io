@@ -33,18 +33,22 @@ const {Index, Description, DesignProcess, Features} = await import(
 
     <style define:vars={{ image: `url("/thumbnail/${thumbnail}")` }} >
 
+
+        html {
+            scroll-timeline: --page-scroll block;
+        }
+
         body {
-            margin: 0;
-            padding: 0;
             display: flex;
-            height: 100vh;
-            overflow: clip;
             justify-content: space-between;
             flex-direction: row;
+            background-image: url('/img/Project_Bg.svg');
+            background-color: rgba(0, 0, 0, 0.98);
             //background: rgba(0, 0, 0, 0.94);
-            //background-blend-mode: overlay;
-            //background-color: black;
-            background: black;
+            background-blend-mode: overlay;
+            background-size: contain;      /* Covers the entire container */
+            background-position: bottom center; /* Centers the background image */
+            background-repeat: no-repeat; /* Prevents image repetition */
             gap: 4%;
         }
 
@@ -77,7 +81,7 @@ const {Index, Description, DesignProcess, Features} = await import(
             left: 2rem;
             width: 44px;
             height: 44px;
-            border: 2px solid rgb(16, 16, 17);
+            border: 2px solid rgb(40, 40, 48);
             background: var(--dark);
             cursor: pointer;
             transition: 0.2s ease;
@@ -123,7 +127,6 @@ const {Index, Description, DesignProcess, Features} = await import(
         .text-wrapper {
             flex: 1 1 auto;
             position: relative;
-            scroll-timeline: --page-scroll block;
             color: var(--white);
             overflow: scroll;
             gap: 3.2vw;
@@ -206,9 +209,9 @@ const {Index, Description, DesignProcess, Features} = await import(
         #index {
             display: block;
             margin: initial;
-            height: 80%;
+            height: 80svh;
             flex: 1 0 36ch;
-            position: static;
+            position: sticky;
             padding: 24px 36px 24px 28px;
             border: none;
             background: var(--dark);
