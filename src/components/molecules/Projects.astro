@@ -39,7 +39,7 @@ import projectList from "/src/content/projects-list.json";
       grid-template: auto / repeat(12, minmax(380px, 1fr));
       gap: clamp(1.2rem, 1.5vw, 2rem);
       overflow-x: auto;
-      //cursor: none;
+      cursor: none;
       padding: 5% 0;
 
       @media (width <= 1000px) {
@@ -49,57 +49,112 @@ import projectList from "/src/content/projects-list.json";
   }
 </style>
 
+<!--<script is:inline data-astro-rerun>-->
+<!--  if (window.innerWidth > 1000) {-->
+<!--    const cardContainer = document.querySelector(".card-container");-->
+
+<!--    const cardContainerLastChild = cardContainer.lastElementChild;-->
+
+<!--    let cardContainerIntersection = false;-->
+<!--    let cardContainerLastChildIntersection = false;-->
+
+<!--    const observer = new IntersectionObserver(-->
+<!--      (entries) => {-->
+<!--        entries.forEach((entry) => {-->
+<!--          if (entry.target === cardContainer) {-->
+<!--            cardContainerIntersection = entry.isIntersecting;-->
+<!--          } else if (entry.target === cardContainerLastChild) {-->
+<!--            cardContainerLastChildIntersection = entry.isIntersecting;-->
+<!--          }-->
+<!--        });-->
+<!--      },-->
+<!--      {-->
+<!--        threshold: [0.9, 0.9],-->
+<!--      },-->
+<!--    );-->
+
+<!--    observer.observe(cardContainer);-->
+<!--    observer.observe(cardContainerLastChild);-->
+
+<!--    cardContainer.addEventListener("wheel", scrollFunction, { passive: false });-->
+
+<!--    function scrollFunction(e) {-->
+<!--      if (cardContainerIntersection && !cardContainerLastChildIntersection) {-->
+<!--        e.preventDefault();-->
+
+<!--        const deltaX = e.deltaX;-->
+<!--        const deltaY = e.deltaY;-->
+
+<!--        const isHorizontalScroll = Math.abs(deltaX) > Math.abs(deltaY);-->
+<!--        const primaryDelta = isHorizontalScroll ? deltaX : deltaY;-->
+
+<!--        if (Math.abs(primaryDelta) < 0.1) {-->
+<!--          return;-->
+<!--        }-->
+
+<!--        // cardContainer.scrollLeft +=-->
+<!--        //   Math.sign(e.deltaY || e.deltaX) * Math.abs(e.deltaY || e.deltaX);-->
+
+<!--        const scrollAmount =-->
+<!--          Math.sign(primaryDelta) * Math.abs(primaryDelta) * 0.8;-->
+
+<!--        cardContainer.scrollLeft += scrollAmount;-->
+<!--      }-->
+<!--    }-->
+<!--  }-->
+<!--</script>-->
+
 <script is:inline data-astro-rerun>
   if (window.innerWidth > 1000) {
-    const cardContainer = document.querySelector(".card-container");
+    document.addEventListener("astro:page-load", () => {
+      const Container = document.querySelector("#Projects > div");
+      const cardContainerLastChild = document.querySelector(
+        "#Projects > div > a:nth-child(10) > div.card_footer > div",
+      );
+      let ContainerIsIntersecting = false;
+      let cardContainerLastChildIntersection = false;
 
-    const cardContainerLastChild = cardContainer.lastElementChild;
+      const observeCardContainer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.target === Container) {
+              ContainerIsIntersecting = entry.isIntersecting;
+            }
+            if (entry.target === cardContainerLastChild) {
+              cardContainerLastChildIntersection = entry.isIntersecting;
+            }
+          });
+        },
+        { threshold: 0.7 },
+      );
 
-    let cardContainerIntersection = false;
-    let cardContainerLastChildIntersection = false;
+      const handleWheel = (e) => {
+        if (ContainerIsIntersecting && !cardContainerLastChildIntersection) {
+          e.preventDefault();
+          requestAnimationFrame(() => {
+            console.log(
+              ContainerIsIntersecting && !cardContainerLastChildIntersection,
+              ContainerIsIntersecting,
+              cardContainerLastChildIntersection,
+            );
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.target === cardContainer) {
-            cardContainerIntersection = entry.isIntersecting;
-          } else if (entry.target === cardContainerLastChild) {
-            cardContainerLastChildIntersection = entry.isIntersecting;
-          }
-        });
-      },
-      {
-        threshold: [0.8, 0.9],
-      },
-    );
-
-    observer.observe(cardContainer);
-    observer.observe(cardContainerLastChild);
-
-    cardContainer.addEventListener("wheel", scrollFunction, { passive: false });
-
-    function scrollFunction(e) {
-      if (cardContainerIntersection && !cardContainerLastChildIntersection) {
-        e.preventDefault();
-
-        const deltaX = e.deltaX;
-        const deltaY = e.deltaY;
-
-        const isHorizontalScroll = Math.abs(deltaX) > Math.abs(deltaY);
-        const primaryDelta = isHorizontalScroll ? deltaX : deltaY;
-
-        if (Math.abs(primaryDelta) < 0.1) {
-          return;
+            Container.scrollIntoView({ behavior: "auto", block: "center" });
+            const scrollBy =
+              Math.sign(e.deltaY || e.deltaX) * Math.abs(e.deltaY || e.deltaX);
+            Container.scrollBy({
+              top: 0,
+              left: scrollBy,
+              behavior: "auto",
+            });
+          });
         }
+      };
 
-        // cardContainer.scrollLeft +=
-        //   Math.sign(e.deltaY || e.deltaX) * Math.abs(e.deltaY || e.deltaX);
-
-        const scrollAmount =
-          Math.sign(primaryDelta) * Math.abs(primaryDelta) * 0.8;
-
-        cardContainer.scrollLeft += scrollAmount;
-      }
-    }
+      observeCardContainer.observe(Container);
+      observeCardContainer.observe(cardContainerLastChild);
+      document
+        .querySelector("#Section-2")
+        .addEventListener("wheel", handleWheel, { passive: false });
+    });
   }
 </script>
