@@ -125,14 +125,14 @@ import projectList from "/src/content/projects-list.json";
             }
           });
         },
-        { threshold: 0.75 },
+        { threshold: 0.64 },
       );
 
       const handleWheel = (e) => {
         if (ContainerIsIntersecting && !cardContainerLastChildIntersection) {
           e.preventDefault();
           requestAnimationFrame(() => {
-            Container.scrollIntoView({ behavior: "smooth", block: "center" });
+            Container.scrollIntoView({ behavior: "auto", block: "center" });
             const scrollBy =
               Math.sign(e.deltaY || e.deltaX) * Math.abs(e.deltaY || e.deltaX);
             Container.scrollBy({
