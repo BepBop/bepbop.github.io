@@ -132,12 +132,6 @@ import projectList from "/src/content/projects-list.json";
         if (ContainerIsIntersecting && !cardContainerLastChildIntersection) {
           e.preventDefault();
           requestAnimationFrame(() => {
-            console.log(
-              ContainerIsIntersecting && !cardContainerLastChildIntersection,
-              ContainerIsIntersecting,
-              cardContainerLastChildIntersection,
-            );
-
             Container.scrollIntoView({ behavior: "auto", block: "center" });
             const scrollBy =
               Math.sign(e.deltaY || e.deltaX) * Math.abs(e.deltaY || e.deltaX);
