@@ -24,14 +24,13 @@ const {Index, Description, DesignProcess, Features} = await import(
     <link rel="stylesheet" href="/css/Root.css"/>
 
     <!-- Icons -->
-    <link rel="shortcut icon" type="image/svg+xml" href="/icon.svg" />
-    <link rel="apple-touch-icon" href="/icon.svg" />
-
+    <link rel="shortcut icon" type="image/svg+xml" href="/icon.svg"/>
+    <link rel="apple-touch-icon" href="/icon.svg"/>
 
 
     <ClientRouter/>
 
-    <style define:vars={{ image: `url("/thumbnail/${thumbnail}")` }} >
+    <style define:vars={{image: `url("/thumbnail/${thumbnail}")`}}>
 
 
         html {
@@ -44,10 +43,9 @@ const {Index, Description, DesignProcess, Features} = await import(
         }
 
 
-        .CaseStudy{
+        .CaseStudy {
 
-            margin-top: 40vh;
-
+            margin-top: 4vw;
             display: flex;
             justify-content: space-between;
             flex-direction: row;
@@ -56,12 +54,9 @@ const {Index, Description, DesignProcess, Features} = await import(
         }
 
         .background {
-            position: absolute;
             background: var(--image) center/cover;
             width: 100%;
             height: 32vh;
-            top: 0;
-            left: 0;
 
         }
 
@@ -91,11 +86,11 @@ const {Index, Description, DesignProcess, Features} = await import(
             all: unset;
             position: fixed;
             z-index: 2;
-
+            top: 3rem;
             left: 2rem;
             width: 44px;
             height: 44px;
-            border: 2px solid rgb(40, 40, 48);
+            border: 2px solid rgb(26, 26, 38);
             background: var(--dark);
             cursor: pointer;
             transition: 0.2s ease;
@@ -146,7 +141,6 @@ const {Index, Description, DesignProcess, Features} = await import(
             gap: 3.2vw;
             //background: var(--dark);
             //padding: 0 4vw 4vw 3.2vw;
-
 
 
             & .text {
@@ -335,7 +329,7 @@ const {Index, Description, DesignProcess, Features} = await import(
                 }
 
                 & .paragraph {
-                   font-size: var(--font-size-3);
+                    font-size: var(--font-size-3);
                 }
 
 
@@ -350,7 +344,7 @@ const {Index, Description, DesignProcess, Features} = await import(
                 background-color: var(--green);
                 color: var(--dark);
                 padding: 12px 24px;
-                border-radius:8px;
+                border-radius: 8px;
                 border: none;
                 box-shadow: 0 2px 8px rgba(var(--green), 0.25);
                 cursor: pointer;
@@ -392,139 +386,139 @@ const {Index, Description, DesignProcess, Features} = await import(
 <div class="background"></div>
 <div class="CaseStudy">
 
-<button class="back-button" aria-label="Go back" onclick="window.location.href='/2024#Projects'">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M15 18l-6-6 6-6"/>
-    </svg>
-</button>
-<div class="text-wrapper">
-    <div id="green" class="green"></div>
+    <button class="back-button" aria-label="Go back" onclick="window.location.href='/2024#Projects'">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M15 18l-6-6 6-6"/>
+        </svg>
+    </button>
+    <div class="text-wrapper">
+        <div id="green" class="green"></div>
 
 
-    <div class="text">
+        <div class="text">
 
-        <>
-            {
-                Object.entries(Description).map(([key, value]) => (
-                        <>
-                            <div class="label" id={key}>
-                                {key}
-                            </div>
-                            {typeof value === "object" ? (
-                                    <ol>
-                                        {Object.keys(value).map((k) => (
-                                                <li>
-                                                    {k}: {value[k]}
-                                                </li>
-                                        ))}
-                                    </ol>
-                            ) : (
-                                    <div class="meta-data">{value}</div>
-                            )}
-                        </>
-                ))
-            }
-        </>
-        <>
-            {
-                Object.entries(DesignProcess).map(([key, value]) => (
-                        <>
-                            <div class="label" id={key}>
-                                {key}
-                            </div>
-                            {typeof value === "object" ? (
-                                    <ol>
-                                        {Object.keys(value).map((k) => (
-                                                <li>
-                                                    {k}:
-                                                    {typeof value[k] === "object" ? (
-                                                            <ul>
-                                                                {Object.keys(value[k]).map((nestedKey) => (
-                                                                        <>
-                                                                            {nestedKey == "Link" ? (
-                                                                                    <iframe
-                                                                                            allowfullscreen
-                                                                                            src={value[k][nestedKey]}
-                                                                                    />
-                                                                            ) : (
-                                                                                    <li>{value[k][nestedKey]}</li>
-                                                                            )}
-                                                                        </>
-                                                                ))}
-                                                            </ul>
-                                                    ) : (
-                                                        value[k]
-                                                    )}
-                                                </li>
-                                        ))}
-                                    </ol>
-                            ) : (
-                                    <div class="meta-data">{value}</div>
-                            )}
-                        </>
-                ))
-            }
-        </>
-        <>
-            {
-                Object.entries(Features).map(([key, value]) => (
-                        <>
-                            <div class="label" id={key}>
-                                {key}
-                            </div>
-                            <div class="meta-data">
-                                {Object.keys(value).map((nestedKey) =>
-                                    nestedKey === "Link" ? (
-                                            <iframe allowFullScreen src={value[nestedKey]}/>
-                                    ) : (
-                                            <>{value[nestedKey]}</>
-                                    ),
+            <>
+                {
+                    Object.entries(Description).map(([key, value]) => (
+                            <>
+                                <div class="label" id={key}>
+                                    {key}
+                                </div>
+                                {typeof value === "object" ? (
+                                        <ol>
+                                            {Object.keys(value).map((k) => (
+                                                    <li>
+                                                        {k}: {value[k]}
+                                                    </li>
+                                            ))}
+                                        </ol>
+                                ) : (
+                                        <div class="meta-data">{value}</div>
                                 )}
-                            </div>
-                        </>
-                ))
-            }
-        </>
-    </div>
-
-</div>
-<div id="index" popover="auto">
-    {
-        Object.entries(Index).map(([key, value], index) => (
-                <div class="section">
-                    <div class="title">
-                        {++index}. { key}</div>
-                    {typeof value === "object" && value !== null ? (
-                        Object.entries(value).map(
-                            ([nestedKey, nestedValue]) => (
-                                    <div class="subsection">
-                                        <a class="subtitle" href=`#${nestedKey}`>{nestedKey}</a>
-                                        {typeof nestedValue === "object" && nestedValue !== null ? (
-                                                <ul>
-                                                    {Object.keys(nestedValue).map((deepKey) => (
-                                                            <li>{deepKey}</li>
-                                                    ))}
-                                                </ul>
+                            </>
+                    ))
+                }
+            </>
+            <>
+                {
+                    Object.entries(DesignProcess).map(([key, value]) => (
+                            <>
+                                <div class="label" id={key}>
+                                    {key}
+                                </div>
+                                {typeof value === "object" ? (
+                                        <ol>
+                                            {Object.keys(value).map((k) => (
+                                                    <li>
+                                                        {k}:
+                                                        {typeof value[k] === "object" ? (
+                                                                <ul>
+                                                                    {Object.keys(value[k]).map((nestedKey) => (
+                                                                            <>
+                                                                                {nestedKey == "Link" ? (
+                                                                                        <iframe
+                                                                                                allowfullscreen
+                                                                                                src={value[k][nestedKey]}
+                                                                                        />
+                                                                                ) : (
+                                                                                        <li>{value[k][nestedKey]}</li>
+                                                                                )}
+                                                                            </>
+                                                                    ))}
+                                                                </ul>
+                                                        ) : (
+                                                            value[k]
+                                                        )}
+                                                    </li>
+                                            ))}
+                                        </ol>
+                                ) : (
+                                        <div class="meta-data">{value}</div>
+                                )}
+                            </>
+                    ))
+                }
+            </>
+            <>
+                {
+                    Object.entries(Features).map(([key, value]) => (
+                            <>
+                                <div class="label" id={key}>
+                                    {key}
+                                </div>
+                                <div class="meta-data">
+                                    {Object.keys(value).map((nestedKey) =>
+                                        nestedKey === "Link" ? (
+                                                <iframe allowFullScreen src={value[nestedKey]}/>
                                         ) : (
-                                                <div class="paragraph">{nestedValue}</div>
-                                        )}
-                                    </div>
-                            ),
-                        )
-                    ) : (
-                            <a class="subtitle" href=`#${value}`>{value}</a>
-                    )}
-                </div>
-        ))
-    }
-</div>
-<button class="toggle-button" popovertarget="index"> Index</button>
+                                                <>{value[nestedKey]}</>
+                                        ),
+                                    )}
+                                </div>
+                            </>
+                    ))
+                }
+            </>
+        </div>
 
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-    <filter id="blur-filter" x="0" y="0" width="100%" height="100%">
-        <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
-    </filter>
-</svg>
+    </div>
+    <div id="index" popover="auto">
+        {
+            Object.entries(Index).map(([key, value], index) => (
+                    <div class="section">
+                        <div class="title">
+                            {++index}. {key}</div>
+                        {typeof value === "object" && value !== null ? (
+                            Object.entries(value).map(
+                                ([nestedKey, nestedValue]) => (
+                                        <div class="subsection">
+                                            <a class="subtitle" href=`#${nestedKey}`>{nestedKey}</a>
+                                            {typeof nestedValue === "object" && nestedValue !== null ? (
+                                                    <ul>
+                                                        {Object.keys(nestedValue).map((deepKey) => (
+                                                                <li>{deepKey}</li>
+                                                        ))}
+                                                    </ul>
+                                            ) : (
+                                                    <div class="paragraph">{nestedValue}</div>
+                                            )}
+                                        </div>
+                                ),
+                            )
+                        ) : (
+                                <a class="subtitle" href=`#${value}`>{value}</a>
+                        )}
+                    </div>
+            ))
+        }
+    </div>
+    <button class="toggle-button" popovertarget="index"> Index</button>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <filter id="blur-filter" x="0" y="0" width="100%" height="100%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10"/>
+        </filter>
+    </svg>
 </div>
 </body>
 
