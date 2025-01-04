@@ -112,10 +112,7 @@ const {Index, Description, DesignProcess, Features} = await import(
                 fill: none;
             }
 
-            &:hover {
-                background-color: var(--white);
-                color: var(--black3);
-            }
+
 
             &:active {
 
@@ -129,6 +126,13 @@ const {Index, Description, DesignProcess, Features} = await import(
                 background-color: var(--white);
                 color: var(--dark);
                 border: none !important;
+
+
+                &:hover {
+                    background-color: var(--white);
+                    color: var(--black3);
+                }
+
             }
         }
 
@@ -179,8 +183,9 @@ const {Index, Description, DesignProcess, Features} = await import(
                 & li:has(iframe) > * {
                     list-style-type: none;
                     padding-left: 0;
-                    margin-left: -6%;
+                    margin-left: -3%;
                     margin-top: 2%;
+
                 }
             }
 
@@ -195,11 +200,11 @@ const {Index, Description, DesignProcess, Features} = await import(
             }
 
             iframe {
-                width: 112%;
+                width: 106%;
                 height: 64vh;
                 border: none;
                 margin-bottom: 12px;
-                margin-left: -6%;
+                margin-left: -5%;
                 margin-top: 2%;
             }
 
@@ -212,6 +217,7 @@ const {Index, Description, DesignProcess, Features} = await import(
             height: 80svh;
             flex: 1 0 36ch;
             position: sticky;
+            top: 2rem;
             padding: 24px 36px 24px 28px;
             border: none;
             background: var(--dark);
