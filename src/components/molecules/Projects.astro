@@ -131,15 +131,13 @@ import projectList from "/src/content/projects-list.json";
       const handleWheel = (e) => {
         if (ContainerIsIntersecting && !cardContainerLastChildIntersection) {
           e.preventDefault();
-          requestAnimationFrame(() => {
-            Container.scrollIntoView({ behavior: "auto", block: "center" });
-            const scrollBy =
-              Math.sign(e.deltaY || e.deltaX) * Math.abs(e.deltaY || e.deltaX);
-            Container.scrollBy({
-              top: 0,
-              left: scrollBy,
-              behavior: "auto",
-            });
+
+          const scrollBy =
+            Math.sign(e.deltaY || e.deltaX) * Math.abs(e.deltaY || e.deltaX);
+          Container.scrollBy({
+            top: 0,
+            left: scrollBy,
+            behavior: "auto",
           });
         }
       };
