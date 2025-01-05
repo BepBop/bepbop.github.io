@@ -2,6 +2,7 @@
 import { ClientRouter } from "astro:transitions";
 import Timeline from "../components/molecules/Timeline.jsx";
 import Slider from "../components/atoms/skill_slider.astro";
+import { fade } from "astro:transitions";
 
 // SEO metadata
 const title = "Gyan Anjay's Portfolio | Jobs, Projects and Skills";
@@ -89,6 +90,7 @@ const baseUrl = "https://bepbop.github.io/2024";
         client:only="react"
         transition:name="trans"
         transition:persist
+        transition:animate="slide"
       />
 
       <div id="one" class="grid">

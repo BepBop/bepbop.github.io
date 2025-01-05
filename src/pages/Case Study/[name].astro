@@ -1,5 +1,6 @@
 ---
 import productList from "../../content/projects-list.json";
+import Projects  from "../../components/molecules/Projects.astro"
 import {ClientRouter} from "astro:transitions";
 
 export async function getStaticPaths() {
@@ -42,6 +43,18 @@ const {Index, Description, DesignProcess, Features} = await import(
 
         }
 
+        .other {
+            font-family: var(--font-sans) !important;
+            font-size: var(--font-size-14)  !important;
+            color: var(--green)  !important;
+            font-weight: 500  !important;
+
+             #Projects {
+                padding: 0.5% !important;
+                margin-top: -32px !important;
+            }
+
+        }
 
         .CaseStudy {
 
@@ -383,8 +396,9 @@ const {Index, Description, DesignProcess, Features} = await import(
 
     </style>
 </head>
-<body class="padding">
+<body >
 <div id="green" class="green"></div>
+<div class="padding">
 <div class="background"></div>
 <div class="CaseStudy">
 
@@ -521,6 +535,17 @@ const {Index, Description, DesignProcess, Features} = await import(
         </filter>
     </svg>
 </div>
+</div>
+
+
+<div class="other">
+
+
+
+    <Projects/>
+</div>
+
+
 </body>
 
 </html>
