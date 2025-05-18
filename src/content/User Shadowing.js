@@ -69,21 +69,21 @@ export const Index = {
     },
   },
   "Key Insights": {
-    "Major Pain Points": [
-      "Confusing navigation",
-      "Unintuitive task flows",
-      "Lack of feedback for errors",
-    ],
-    "User Expectations": [
-      "Simplified workflows",
-      "Clearer guidance for task completion",
-      "Faster performance during key interactions",
-    ],
-    "Opportunities for Improvement": [
-      "Streamlining navigation",
-      "Adding contextual help and tooltips",
-      "Improving system feedback mechanisms",
-    ],
+    "Major Pain Points": {
+      "Confusing navigation": {},
+      "Unintuitive task flows": {},
+      "Lack of feedback for errors": {},
+    },
+    "User Expectations": {
+      "Simplified workflows": {},
+      "Clearer guidance for task completion": {},
+      "Faster performance during key interactions": {},
+    },
+    "Opportunities for Improvement": {
+      "Streamlining navigation": {},
+      "Adding contextual help and tooltips": {},
+      "Improving system feedback mechanisms": {},
+    },
   },
 };
 
@@ -105,9 +105,9 @@ export const Description = {
 export const DesignProcess = {
   "Discovery And Research": {
     "User Interviews": {
-      Link: "https://embed.figma.com/proto/ExampleLink",
       Outcomes:
         "Identified recurring pain points and gathered insights on task completion struggles",
+      Link: "https://www.figma.com/embed/interstitial?embed_host=share&embed_path=%2Fproto%2Fi9K4Mzlhoxsa8TvF6MeBlm%2FShadowing%3Fcontent-scaling%3Dfixed%26embed-host%3Dshare%26kind%3Dproto%26node-id%3D878-45%26page-id%3D855%253A40%26scaling%3Dscale-down-width%26theme%3Dlight%26version%3D2&theme=light&version=2",
     },
     Surveys: {
       Description: "Structured questionnaires to gather quantitative data",
@@ -115,9 +115,9 @@ export const DesignProcess = {
         "Highlighted key feature gaps and ranked common user challenges by impact",
     },
     "Task Analysis": {
-      Link: "https://embed.figma.com/proto/ExampleLink",
       Outcomes:
         "Mapped complex workflows and identified friction points in task flows",
+      Link: "https://www.figma.com/embed/interstitial?embed_host=share&embed_path=%2Fproto%2Fi9K4Mzlhoxsa8TvF6MeBlm%2FShadowing%3Fcontent-scaling%3Dfixed%26embed-host%3Dshare%26kind%3Dproto%26node-id%3D855-10%26page-id%3D855%253A2%26scaling%3Dscale-down-width%26theme%3Dlight%26version%3D2&theme=light&version=2",
     },
   },
   "Definition And Insights": {
@@ -132,15 +132,14 @@ export const DesignProcess = {
     },
   },
   "Testing And Validation": {
-    Prototyping: {
-      Link: "https://embed.figma.com/proto/ExampleLink",
-      Outcomes:
-        "Validated concepts through user feedback and refined solutions based on iterative testing",
-    },
-    "Usability Testing": {
-      Link: "https://embed.figma.com/proto/ExampleLink",
-      Outcomes:
-        "Validated reduction in friction and collected both qualitative and quantitative feedback",
+    "Testing And Validation": {
+      Outcomes: [
+        "Validated concepts through user feedback",
+        "Refined solutions based on iterative testing",
+        "Validated reduction in friction",
+        "Collected both qualitative and quantitative feedback",
+      ],
+      Link: "https://www.figma.com/embed/interstitial?embed_host=share&embed_path=%2Fproto%2Fi9K4Mzlhoxsa8TvF6MeBlm%2FShadowing%3Fcontent-scaling%3Dfixed%26embed-host%3Dshare%26kind%3Dproto%26node-id%3D864-44%26page-id%3D855%253A40%26scaling%3Dscale-down-width%26theme%3Dlight%26version%3D2&theme=light&version=2",
     },
   },
 };
