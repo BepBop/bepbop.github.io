@@ -18,6 +18,31 @@ import projectList from "/src/content/projects-list.json";
       ))
     }
   </div>
+
+  <dialog
+    id="contactDialog"
+    class="contact-dialog"
+    aria-labelledby="dialogTitle"
+    aria-describedby="dialogBody"
+  >
+    <header class="flex">
+      <h2 id="dialogTitle" class="dialog-title">Let's Connect</h2>
+      <button id="closeDialogBtn" class="dialog-close-btn" aria-label="Close"
+        >&times;</button
+      >
+    </header>
+
+    <p id="dialogBody" class="dialog-body">
+      Thank you for showing interest in this project. I’d be glad to share more
+      insights and details with you. The Contact Me button below will open your
+      email client with a direct email to anjaygyan@gmail.com!
+    </p>
+
+    <a class="btn-contact" href="mailto:AnjayGyan@gmail.com">
+      Contact Me
+      <img src="/img/arrow.svg" alt="" />
+    </a>
+  </dialog>
 </div>
 
 <style>
@@ -47,4 +72,127 @@ import projectList from "/src/content/projects-list.json";
       }
     }
   }
+
+  .contact-dialog {
+    padding: 32px;
+    background: #ffffff;
+    color: #4b5563;
+    border: 1px solid #d1d5db;
+    border-radius: 0;
+    font-family: var(--font-sans), sans-serif;
+    max-width: 500px;
+    width: 80%;
+    cursor: default;
+
+    &::backdrop {
+      background: rgba(31, 41, 55, 0.75);
+    }
+
+    .flex {
+      align-items: center;
+      justify-content: center;
+      display: flex;
+    }
+
+    .dialog-title {
+      flex-grow: 1;
+      margin: 0 0 16px 0;
+      font: 500 var(--font-size-10) var(--font-sans, sans-serif);
+      color: #111827;
+    }
+
+    .dialog-body {
+      margin: 0 0 24px 0;
+      color: #4b5563;
+      font: 400 var(--font-size-6) / 1.64 var(--font-sans, sans-serif);
+    }
+
+    .dialog-close-btn {
+      flex-shrink: 0;
+      padding: 0;
+      line-height: 1;
+      font-size: 28px;
+      color: #9ca3af;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: color 0.15s ease;
+
+      &:hover {
+        color: #1f2937;
+      }
+    }
+
+    .btn-contact {
+      &,
+      &:link,
+      &:visited {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 24px;
+        background-color: var(--green);
+        color: #111827 !important;
+        text-decoration: none;
+        border: none;
+        border-radius: 6px;
+        font: 500 var(--font-size-6) var(--font-sans, sans-serif);
+        cursor: pointer;
+        transition:
+          box-shadow 0.2s ease-out,
+          filter 0.2s ease-out;
+      }
+
+      &:hover {
+        box-shadow:
+          0px 0px 0px 1px rgba(124, 252, 0, 0.1),
+          0px 5px 10px 0px rgba(124, 252, 0, 0.2),
+          0px 15px 40px 0px rgba(124, 252, 0, 0.4);
+      }
+
+      &:active {
+        box-shadow:
+          0px 0px 0px 1px rgba(124, 252, 0, 0.1),
+          0px 5px 10px 0px rgba(124, 252, 0, 0.2),
+          0px 15px 40px 0px rgba(124, 252, 0, 0.4);
+      }
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
 </style>
+
+<script>
+  const dialog = document.getElementById("contactDialog");
+  const openButtons = document.querySelectorAll(".card-container");
+  const closeButton = document.getElementById("closeDialogBtn");
+
+  openButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      dialog.showModal();
+      document.body.classList.add("dialog-open"); // <-- ADD THIS LINE
+    });
+  });
+
+  closeButton.addEventListener("click", () => {
+    dialog.close();
+    // We don't need to remove the class here, see below
+  });
+
+  // Close the dialog if the backdrop is clicked
+  dialog.addEventListener("click", (e) => {
+    if (e.target === dialog) {
+      dialog.close();
+      // We don't need to remove the class here either
+    }
+  });
+
+  // BEST PRACTICE: Listen for the 'close' event on the dialog
+  // This handles all closing methods (button, backdrop, ESC key) in one place.
+  dialog.addEventListener("close", () => {
+    document.body.classList.remove("dialog-open"); // <-- ADD THIS ENTIRE BLOCK
+  });
+</script>

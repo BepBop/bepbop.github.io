@@ -5,7 +5,7 @@ import { globalContext } from "../atoms/context.jsx";
 import Wrapper from "../atoms/active default hover.jsx";
 
 const list_of_years = ["2024", "2023", "2022"];
-export const current_year = list_of_years[0];
+export const current_year = "2024";
 
 // export default function () {
 //   const defaultContext = useMemo(() => {
