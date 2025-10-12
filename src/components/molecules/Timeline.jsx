@@ -4,71 +4,8 @@ import style from "../atoms/css/Container.module.css";
 import { globalContext } from "../atoms/context.jsx";
 import Wrapper from "../atoms/active default hover.jsx";
 
-const list_of_years = ["2024", "2023", "2022"];
+const list_of_years = ["2025", "2024", "2023", "2022"];
 export const current_year = "2024";
-
-// export default function () {
-//   const defaultContext = useMemo(() => {
-//     return new Map(list_of_years.map((year) => [year, year === current_year]));
-//   }, []);
-//   const [load, setLoad] = useState(true);
-//   const [context, setContext] = useState(defaultContext);
-//   const click = useCallback((event) => {
-//     const handle = () => {
-//       setContext((prev) => {
-//         const newContext = new Map(prev);
-//         for (const [key] of newContext) {
-//           newContext.set(
-//             key,
-//             event.target.innerText === key ||
-//               window.location.href.includes(key.toString()),
-//           );
-//         }
-//         return newContext;
-//       });
-//     };
-//
-//     if ("startViewTransition" in document) {
-//       document.startViewTransition(() => handle());
-//     } else {
-//       handle();
-//     }
-//   }, []);
-//
-//   useEffect(() => {
-//     const handle = () => {
-//       setContext((prev) => {
-//         const newContext = new Map(prev);
-//         for (const [key] of newContext) {
-//           newContext.set(key, window.location.href.includes(key.toString()));
-//         }
-//         return newContext;
-//       });
-//     };
-//
-//     if ("startViewTransition" in document) {
-//       document.startViewTransition(() => handle());
-//     } else {
-//       handle();
-//     }
-//
-//     window.addEventListener("load", handle);
-//
-//     return () => {
-//       window.removeEventListener("load", handle);
-//     };
-//   }, []);
-//
-//   return (
-//     <globalContext.Provider value={{ context, setContext }}>
-//       <div className={style.container}>
-//         {Array.from(context).map(([year, value]) => (
-//           <Wrapper year={year} status={value} click={click} />
-//         ))}
-//       </div>
-//     </globalContext.Provider>
-//   );
-// }
 
 export default function () {
   const defaultContext = useMemo(

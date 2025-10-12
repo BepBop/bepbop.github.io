@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
 html {
     scroll-behavior: smooth !important;
@@ -23,7 +22,6 @@ html {
     /* Fonts */
     --font-sans: "IBM Plex Sans", sans-serif;
     --font-mono: "IBM Plex Mono", monospace;
-
 
 
     /* Font Sizes - sorted by size, */
@@ -83,7 +81,7 @@ html {
 }
 
 .font-28 {
-    font-family: var(--font-sans); 
+    font-family: var(--font-sans);
     font-size: var(--font-size-12); /* 28px */
     line-height: 2.75rem;
     color: var(--green);
@@ -92,29 +90,29 @@ html {
 .font-40 {
     font-family: var(--font-mono);
     font-size: var(--font-size-16); /* 40px */
-    line-height: 1.2; 
+    line-height: 1.2;
     color: var(--green);
 }
 
 .font-size-42 {
-    font-family: var(--font-sans); 
+    font-family: var(--font-sans);
     font-size: var(--font-size-14); /* between 32px and 38px */
-    line-height: 1.2; 
+    line-height: 1.2;
 }
 
 .font-48 {
-    font-family: var(--font-sans); 
+    font-family: var(--font-sans);
     font-weight: 525;
     font-size: var(--font-size-15); /* between 36px and 48px */
-    line-height: 1.2; 
+    line-height: 1.2;
     color: var(--green);
 }
 
 .font-64 {
-    font-family: var(--font-sans); 
+    font-family: var(--font-sans);
     font-weight: 500;
     font-size: var(--font-size-18); /* between 56px and 60px */
-    line-height: 1.1; 
+    line-height: 1.1;
     color: var(--green);
 }
 
@@ -122,7 +120,7 @@ html {
     font-family: var(--font-mono);
     font-weight: 500;
     font-size: var(--font-size-22); /* 104px */
-    line-height: 1; 
+    line-height: 1;
     color: var(--white);
 }
 

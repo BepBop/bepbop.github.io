@@ -1,0 +1,481 @@
+---
+import { ClientRouter } from "astro:transitions";
+// SEO metadata
+const title = "Gyan Anjay's Portfolio | Jobs, Projects and Skills";
+const description =
+  "Explore Gyan Anjay's portfolio showcasing professional projects, skills, and achievements. Discover how I can contribute to your team's success.";
+const baseUrl = "https://bepbop.github.io/2025";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Basic SEO -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={baseUrl} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={baseUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/icon.svg" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="/icon.svg" />
+
+    <!-- Icons -->
+    <link rel="shortcut icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="apple-touch-icon" href="/icon.svg" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/Root.css" />
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#fafafa" />
+
+    <!-- Enhanced Structured Data for Portfolio -->
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "ProfilePage",
+        "mainEntity": {
+          "@type": "Person",
+          "name": "Gyan Anjay",
+          "description": "Software Developer and Technology Professional",
+          "url": "https://bepbop.github.io",
+          "sameAs": [
+            "https://linkedin.com/in/gyananjay",
+            "https://github.com/bepbop"
+          ],
+          "jobTitle": "Software Developer",
+          "knowsAbout": [
+            "Software Development",
+            "Web Development",
+            "JavaScript",
+            "React",
+            "Node.js"
+          ],
+          "image": "/icon.svg"
+        }
+      }
+    </script>
+
+    <ClientRouter />
+  </head>
+  <body class="margin">
+    <header id="section-1-2025">
+      <div>
+        <h1>Gyan Anjay</h1>
+        <h2>Associate Product Manager 2</h2>
+      </div>
+      <button onclick="window.location.href='/2024'">2024-2022</button>
+      <button>About</button>
+    </header>
+    <main id="section-2-2025" class="content-layout">
+      <aside class="content-layout__sidebar">
+        <div class="info-card">
+          <ul class="tag-list">
+            <li>CRM</li>
+            <li>B2B</li>
+            <li>SaaS</li>
+            <li>Startup</li>
+          </ul>
+          <p class="info-card__description">
+            APM II with a proven background in a B2B SaaS CRM startup,
+            contributing to early-stage product development.
+          </p>
+        </div>
+
+        <div class="contact-links">
+          <a href="mailto:anjaygyan@gmail.com" class="contact-links__item">
+            <span>anjaygyan@gmail.com</span>
+            <img src="/img/arrow.svg" alt="Arrow icon" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/yourprofile"
+            class="contact-links__item"
+          >
+            <span>LinkedIn</span>
+            <img src="/img/arrow.svg" alt="Arrow icon" />
+          </a>
+        </div>
+      </aside>
+
+      <section class="content-layout__main-panel" id="initial">
+        <div class="content-layout__main-panel-header">
+          <span> Experience</span>
+        </div>
+        <div class="content-layout__main-panel-content">
+          <div class="content-layout__main-panel-content-left">
+            <span> Associate Product Manager 2</span>
+            <p>LeadSquared</p>
+            <p>October 2024 - Present</p>
+          </div>
+          <div class="content-layout__main-panel-content-right">
+            <ul>
+              <li>
+                Spearheaded the 2-quarter product roadmap for 'Landing Pages
+                Pro' and 'Widgets', key drivers for the Marketing CRM's North
+                Star Metrics. Delivered a suite of transformative features
+                including a dynamic 'Add Section' tool, Theme Builder, and
+                Export/Import functionality. Decreased average page creation
+                time by 60% and increased user satisfaction scores by 40%. The
+                'Add Section' feature achieved universal adoption, with 100% of
+                newly created landing pages utilizing it at least once.
+              </li>
+              <li>
+                Pioneered the initial strategy and development for the
+                next-generation AI Page Builder.
+              </li>
+              <li>
+                Successfully championed the development of a new 'Referral
+                Portal' by presenting research that quantified significant unmet
+                demand, including 10+ inbound customer requests per month.
+                Secured executive buy-in and a dedicated engineering pod,
+                positioning the company to capture a high-value customer segment
+                upon launch.
+              </li>
+              <li>
+                Engineered an AI-assisted cohort analysis using Python to
+                visualize adoption trends and identify churn-prone customers,
+                translating insights into targeted interventions that
+                successfully won back 5% of at-risk Customers and accelerated
+                Landing Pages Pro adoption.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="content-layout__main-panel-content">
+          <div class="content-layout__main-panel-content-left">
+            <span> Associate Product Manager / UI/UX Designer</span>
+            <p>LeadSquared</p>
+            <p>Jun 2023 – April 2025</p>
+          </div>
+          <div class="content-layout__main-panel-content-right">
+            <ul>
+              <li>
+                In a hybrid APM & Product Designer role, managed the end-to-end
+                development of the 'Pop-Up Builder,' personally leading all user
+                research, wireframing, and design execution. Empowered
+                non-technical marketing teams and drove a 5% increase in
+                customer conversion rates.
+              </li>
+              <li>
+                Spearheaded the product strategy and executed the complete
+                design for the 'Mobile Editor' and other usability features like
+                'Hide on Device.' This initiative, owned from initial concept to
+                final release, resulted in a 30% increase in mobile builder
+                usage and an 80% reduction in mobile-related support tickets.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="content-layout__main-panel-content">
+          <div class="content-layout__main-panel-content-left">
+            <span> Intern UI/UX Designer</span>
+            <p>LeadSquared</p>
+            <p>Jun 2022 – Jun 2023</p>
+          </div>
+          <div class="content-layout__main-panel-content-right">
+            <ul>
+              <li>
+                Spearheaded the 6-month strategic migration of the company-wide
+                design system from Adobe XD to Figma, a project aimed at
+                increasing product development velocity and eliminating design
+                inconsistencies.
+              </li>
+              <li>
+                Led the foundational design of 'Landing Pages Pro' by
+                translating user research into wireframes and interactive
+                prototypes, securing early stakeholder buy-in for a major new
+                product line.
+              </li>
+              <li>
+                Shipped the 'Save as Draft' feature for forms to directly
+                address a primary cause of user drop-off and improve the lead
+                capture experience.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="content-layout__main-panel-header">
+          <span> Skills</span>
+        </div>
+        <div class="content-layout__main-panel-content">
+          <div class="content-layout__main-panel-content-right">
+            <ul>
+              <li>
+                Spearheaded the 6-month strategic migration of the company-wide
+                design system from Adobe XD to Figma, a project aimed at
+                increasing product development velocity and eliminating design
+                inconsistencies.
+              </li>
+              <li>
+                Led the foundational design of 'Landing Pages Pro' by
+                translating user research into wireframes and interactive
+                prototypes, securing early stakeholder buy-in for a major new
+                product line.
+              </li>
+              <li>
+                Shipped the 'Save as Draft' feature for forms to directly
+                address a primary cause of user drop-off and improve the lead
+                capture experience.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="content-layout__main-panel opacity" id="final">
+        <div class="content-layout__main-panel-header">
+          <span> About</span>
+        </div>
+        <div class="content-layout__main-panel-content">
+          <div class="content-layout__main-panel-content-right">
+            <ul>
+              <li>
+                Associate Product Manager II with 3+ years in building and
+                scaling B2B SaaS CRM and Marketing Website Builder platforms.
+              </li>
+              <li>
+                Former Product Designer with strong UX and systems-thinking
+                foundation; drives data-informed product strategy and
+                cross-functional execution.
+              </li>
+              <li>
+                B.Tech in Computer Science and Engineering with deep frontend
+                expertise, enabling effective collaboration with design and
+                engineering teams.
+              </li>
+              <li>
+                Owns end-to-end delivery of builder ecosystems—leading
+                zero-to-one launches like <strong>Landing Pages Pro</strong> and
+                scaling strategic modules such as <strong
+                  >Design System, Design Templates, Mobile Editor, Pop-Up
+                  Product, Hide on Device, Save as Draft, Scroll To</strong
+                >, and <strong>User Shadowing</strong>.
+              </li>
+              <li>
+                Focused on shipping performant, scalable, and extensible systems
+                that empower non-technical users to create autonomously and
+                drive <strong>product-led growth</strong>.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body><style>
+    :root {
+      --text-primary: #fafafa;
+      --text-secondary: rgba(255, 255, 255, 0.8);
+      --bg-primary: #000;
+      --border-color: rgba(105, 105, 105, 0.64);
+      --font-main: "IBM Plex Sans", sans-serif;
+      --layout-padding: clamp(16px, 1rem + 3vw, 88px);
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-main), sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    #section-1-2025 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 120px;
+      gap: 20px;
+
+      & > div {
+        flex: 1 1 600px !important;
+      }
+
+      h1 {
+        font-weight: 400;
+        font-size: var(--font-size-10);
+        line-height: 1;
+      }
+
+      h2 {
+        color: var(--text-secondary);
+        font-weight: 400;
+        font-size: var(--font-size-8);
+      }
+
+      button {
+        background: none;
+        border: none;
+        color: var(--text-primary);
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 24px;
+        padding: 0;
+      }
+    }
+
+    #section-2-2025.content-layout {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--layout-padding);
+    }
+
+    .content-layout__sidebar {
+      width: clamp(300px, 28%, 500px);
+      flex-shrink: 0;
+      position: sticky;
+      height: fit-content;
+      top: 12px;
+    }
+
+    .info-card {
+      font-weight: 300;
+      line-height: 1.5;
+      border-top: 1px solid var(--border-color);
+      padding: 36px 4px 56px 4px;
+
+      & .info-card__description {
+        margin: 8px 0 0 0 !important;
+        font-size: var(--font-size-7);
+      }
+    }
+
+    .contact-links {
+      border-top: 1px solid var(--border-color);
+    }
+
+    .contact-links__item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 4px;
+      font-size: 16px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem 1.25rem;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      font-size: 16px;
+
+      li:not(:first-child)::before {
+        content: "•";
+        margin-right: 1.25rem;
+        color: var(--border-color);
+        font-size: 1.5em;
+        line-height: 1;
+        vertical-align: middle;
+      }
+    }
+
+    .content-layout__main-panel {
+      background-color: black;
+      flex: 1 1 min-content;
+
+      & > * {
+        border-top: 1px solid var(--border-color);
+        padding: 36px 4px 64px 4px;
+      }
+
+      & .content-layout__main-panel-content {
+        font-size: var(--font-size-6);
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 20px;
+        column-gap: 64px;
+        line-height: 1.6;
+
+        & .content-layout__main-panel-content-left {
+          width: 280px;
+        }
+
+        & .content-layout__main-panel-content-left p {
+          color: var(--border-color);
+          margin: 8px 0 !important;
+        }
+
+        & .content-layout__main-panel-content-right {
+          flex: 1 0 300px;
+
+          & ul {
+            margin-top: 0;
+            padding-left: 20px;
+          }
+
+          & ul li {
+            margin-bottom: 16px;
+          }
+        }
+      }
+    }
+
+    .opacity {
+      display: none;
+    }
+
+    #initial,
+    #final {
+      view-transition-name: my-box;
+    }
+
+    ::view-transition-new(my-box) {
+      animation: fade-in 0.25s ease-out;
+    }
+
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+      }
+    }
+
+    #final > div.content-layout__main-panel-content {
+      font-size: var(--font-size-7);
+    }
+
+    @media (width < 1000px) {
+      #section-2-2025 > aside {
+        width: 100% !important;
+      }
+
+      #initial > div:nth-child(1),
+      #final > div.content-layout__main-panel-header {
+        border-top: 0;
+      }
+
+      #section-2-2025 {
+        gap: 0;
+      }
+    }
+  </style>
+</html>
+
+<script>
+  const toggleButton = document.querySelector("#section-1-2025 > button");
+  const initial = document.querySelector("#initial");
+  const final = document.querySelector("#final");
+
+  toggleButton.addEventListener("click", () => {
+    document.startViewTransition(() => {
+      initial.classList.toggle("opacity");
+      final.classList.toggle("opacity");
+    });
+  });
+</script>
