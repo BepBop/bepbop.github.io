@@ -213,21 +213,59 @@ const baseUrl = "https://bepbop.github.io/2025";
           <div class="content-layout__main-panel-content-right">
             <ul>
               <li>
-                Spearheaded the 6-month strategic migration of the company-wide
-                design system from Adobe XD to Figma, a project aimed at
-                increasing product development velocity and eliminating design
-                inconsistencies.
+                <strong>Product Management & Strategy:</strong> Agile, Scrum, Product
+                Roadmapping, Stakeholder Management, Strategic Prioritization, Backlog
+                & Story Writing (JIRA), Market Research, Competitive Analysis, Requirements
+                Gathering, Product Lifecycle Management
               </li>
               <li>
-                Led the foundational design of 'Landing Pages Pro' by
-                translating user research into wireframes and interactive
-                prototypes, securing early stakeholder buy-in for a major new
-                product line.
+                <strong>Data-Driven Decision Making:</strong> Cohort Analysis, A/B
+                & Z Testing, Statistical Analysis, Python (Pandas), API Integration,
+                Analytics Platforms (Pendo, New Relic, MS Clarity), Data Visualization,
+                Metrics Tracking
               </li>
               <li>
-                Shipped the 'Save as Draft' feature for forms to directly
-                address a primary cause of user drop-off and improve the lead
-                capture experience.
+                <strong>User-Centric Design:</strong> User Research, Usability Testing,
+                User Journey Mapping, Figma, High-Fidelity Prototyping, Interaction
+                Design, UX/UI Principles
+              </li>
+              <li>
+                <strong>Go-to-Market & Enablement:</strong> Customer Onboarding,
+                Sales Enablement, Marketing Campaigns, Competitive Analysis, GTM
+                Strategy, Product Launch, Customer Adoption Metrics
+              </li>
+              <li>
+                <strong>Engineering & Development:</strong> Proficient in front-end
+                technologies
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="content-layout__main-panel-header">
+          <span>Achievements</span>
+        </div>
+        <div class="content-layout__main-panel-content">
+          <div class="content-layout__main-panel-content-right">
+            <ul>
+              <li>
+                <strong>Double Promotion:</strong> Achieved double rapid promotions
+                within <em>[Company Name]</em> by consistently exceeding product
+                KPIs and expectations, leading multi-quarter strategic initiatives
+              </li>
+              <li>
+                <strong>Spotlight Award – Customer First:</strong> Honored for executing
+                customer-first initiatives that significantly improved retention,
+                and CSAT.
+              </li>
+              <li>
+                <strong>Product Growth Leadership:</strong> Led data-informed roadmap
+                decisions that delivered measurable user adoption gains and reduced
+                feature churn through rigorous experimentation and analytics.
+              </li>
+              <li>
+                <strong>Process Innovation:</strong> Introduced structured backlog
+                refinement and prioritization frameworks (RICE, MoSCoW), improving
+                delivery predictability and stakeholder transparency.
               </li>
             </ul>
           </div>
@@ -298,7 +336,9 @@ const baseUrl = "https://bepbop.github.io/2025";
       flex-wrap: wrap;
       justify-content: space-between;
       margin-bottom: 120px;
-      gap: 20px;
+      column-gap: 48px;
+      row-gap: 20px;
+      align-items: center;
 
       & > div {
         flex: 1 1 600px !important;
@@ -318,12 +358,15 @@ const baseUrl = "https://bepbop.github.io/2025";
 
       button {
         background: none;
-        border: none;
+        border: 1px solid var(--border-color);
         color: var(--text-primary);
         cursor: pointer;
         font-family: inherit;
         font-size: 24px;
-        padding: 0;
+        line-height: 0;
+        padding: 8px 16px;
+        box-sizing: border-box;
+        height: 64px;
       }
     }
 
@@ -468,13 +511,25 @@ const baseUrl = "https://bepbop.github.io/2025";
 </html>
 
 <script>
-  const toggleButton = document.querySelector("#section-1-2025 > button");
+  const toggleButton = document.querySelector(
+    "#section-1-2025 > button:nth-child(3)",
+  );
   const initial = document.querySelector("#initial");
   const final = document.querySelector("#final");
 
   toggleButton.addEventListener("click", () => {
     document.startViewTransition(() => {
       initial.classList.toggle("opacity");
+
+      const btn = document.querySelector(
+        "#section-1-2025 > button:nth-child(3)",
+      );
+      if (btn)
+        btn.textContent =
+          btn.textContent === "Experience & Skills"
+            ? "About"
+            : "Experience & Skills";
+
       final.classList.toggle("opacity");
     });
   });
