@@ -1,5 +1,6 @@
 ---
 import { ClientRouter } from "astro:transitions";
+import Timeline from "../components/molecules/Timeline";
 // SEO metadata
 const title = "Gyan Anjay's Portfolio | Jobs, Projects and Skills";
 const description =
@@ -35,7 +36,6 @@ const baseUrl = "https://bepbop.github.io/2025";
     <link rel="apple-touch-icon" href="/icon.svg" />
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="/css/normalize.css" />
     <link rel="stylesheet" href="/css/Root.css" />
 
     <!-- Theme -->
@@ -71,12 +71,17 @@ const baseUrl = "https://bepbop.github.io/2025";
     <ClientRouter />
   </head>
   <body class="margin">
+  <Timeline
+    client:only="react"
+    transition:name="trans"
+    transition:persist
+    transition:animate="slide"
+  />
     <header id="section-1-2025">
       <div>
         <h1>Gyan Anjay</h1>
         <h2>Associate Product Manager 2</h2>
       </div>
-      <button onclick="window.location.href='/2024'">2024-2022</button>
       <button>About</button>
     </header>
     <main id="section-2-2025" class="content-layout">
@@ -100,7 +105,7 @@ const baseUrl = "https://bepbop.github.io/2025";
             <img src="/img/arrow.svg" alt="Arrow icon" />
           </a>
           <a
-            href="https://www.linkedin.com/in/yourprofile"
+            href="https://www.linkedin.com/in/anjaygyan/"
             class="contact-links__item"
           >
             <span>LinkedIn</span>
@@ -249,7 +254,7 @@ const baseUrl = "https://bepbop.github.io/2025";
             <ul>
               <li>
                 <strong>Double Promotion:</strong> Achieved double rapid promotions
-                within <em>[Company Name]</em> by consistently exceeding product
+                within leadsquared by consistently exceeding product
                 KPIs and expectations, leading multi-quarter strategic initiatives
               </li>
               <li>
@@ -311,11 +316,26 @@ const baseUrl = "https://bepbop.github.io/2025";
       </section>
     </main>
   </body><style>
+    //:root {
+    //  --text-primary: #fafafa;
+    //  --text-secondary: rgba(255, 255, 255, 0.8);
+    //  --bg-primary: #000;
+    //  --border-color: rgba(105, 105, 105, 0.64);
+    //  --font-main: "IBM Plex Sans", sans-serif;
+    //  --layout-padding: clamp(16px, 1rem + 3vw, 88px);
+    //}
+    //
+    //body {
+    //  background-color: var(--bg-primary);
+    //  color: var(--text-primary);
+    //  font-family: var(--font-main), sans-serif;
+    //}
+
     :root {
-      --text-primary: #fafafa;
-      --text-secondary: rgba(255, 255, 255, 0.8);
-      --bg-primary: #000;
-      --border-color: rgba(105, 105, 105, 0.64);
+      --text-primary: #111; /* Dark text on white background */
+      --text-secondary: rgba(0, 0, 0, 0.7);
+      --bg-primary: #fff; /* White background */
+      --border-color: rgba(0, 0, 0, 0.5);
       --font-main: "IBM Plex Sans", sans-serif;
       --layout-padding: clamp(16px, 1rem + 3vw, 88px);
     }
@@ -325,6 +345,7 @@ const baseUrl = "https://bepbop.github.io/2025";
       color: var(--text-primary);
       font-family: var(--font-main), sans-serif;
     }
+
 
     a {
       color: inherit;
@@ -379,9 +400,7 @@ const baseUrl = "https://bepbop.github.io/2025";
     .content-layout__sidebar {
       width: clamp(300px, 28%, 500px);
       flex-shrink: 0;
-      position: sticky;
       height: fit-content;
-      top: 12px;
     }
 
     .info-card {
@@ -398,6 +417,7 @@ const baseUrl = "https://bepbop.github.io/2025";
 
     .contact-links {
       border-top: 1px solid var(--border-color);
+      cursor:pointer !important;
     }
 
     .contact-links__item {
@@ -430,7 +450,6 @@ const baseUrl = "https://bepbop.github.io/2025";
     }
 
     .content-layout__main-panel {
-      background-color: black;
       flex: 1 1 min-content;
 
       & > * {
@@ -511,9 +530,7 @@ const baseUrl = "https://bepbop.github.io/2025";
 </html>
 
 <script>
-  const toggleButton = document.querySelector(
-    "#section-1-2025 > button:nth-child(3)",
-  );
+  const toggleButton = document.querySelector("#section-1-2025 > button");
   const initial = document.querySelector("#initial");
   const final = document.querySelector("#final");
 

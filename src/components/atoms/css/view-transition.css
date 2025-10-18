@@ -1,0 +1,83 @@
+/* Root selector fade-slide transition */
+::view-transition-old(year-selector),
+::view-transition-new(year-selector) {
+    animation-duration: 300ms;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    animation-fill-mode: both;
+}
+
+/* Outgoing */
+::view-transition-old(year-selector) {
+    animation-name: fade-slide-out;
+}
+
+/* Incoming */
+::view-transition-new(year-selector) {
+    animation-name: fade-slide-in;
+}
+
+/* Active year button micro-animation */
+::view-transition-old([view-transition-name^="selected-year-"]),
+::view-transition-new([view-transition-name^="selected-year-"]) {
+    animation-duration: 250ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+}
+
+/* Button out (scale-down & fade) */
+::view-transition-old([view-transition-name^="selected-year-"]) {
+    animation-name: button-scale-out;
+}
+
+/* Button in (scale-up & fade-in) */
+::view-transition-new([view-transition-name^="selected-year-"]) {
+    animation-name: button-scale-in;
+}
+
+/* --- Keyframes --- */
+
+/* Page fade-slide */
+@keyframes fade-slide-out {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+}
+
+@keyframes fade-slide-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Button-level animation */
+@keyframes button-scale-out {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0.6;
+        transform: scale(0.92);
+    }
+}
+
+@keyframes button-scale-in {
+    0% {
+        opacity: 0.6;
+        transform: scale(1.08);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,84 @@
+.container {
+    position: fixed;
+    bottom: 56px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 6px;
+    background: rgba(0, 0, 0, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    z-index: 10000;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+/* --- Button States --- */
+.active,
+.inactive {
+    padding: 10px 16px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1;
+    border-radius: 12px;
+    transition: all 0.25s ease;
+    cursor: pointer; /* FIXED cursor */
+    user-select: none;
+}
+
+/* Active (Green) */
+.active {
+    background: #7CFC00;
+    color: #000;
+    box-shadow: 0 0 12px rgba(124, 252, 0, 0.4);
+}
+.active:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 18px rgba(124, 252, 0, 0.6);
+}
+
+/* Inactive (White) */
+.inactive {
+    color: #fff;
+    opacity: 0.7;
+}
+.inactive:hover {
+    opacity: 1;
+    transform: translateY(-1px);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 480px) {
+    .container {
+        width: 90%;
+        bottom: 40px;
+        gap: 6px;
+        padding: 4px;
+        border-radius: 12px;
+    }
+
+    .active,
+    .inactive {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 360px) {
+    .container {
+        width: 92%;
+        bottom: 32px;
+        padding: 3px;
+        gap: 4px;
+    }
+
+    .active,
+    .inactive {
+        font-size: 15px;
+        padding: 7px 10px;
+    }
+}

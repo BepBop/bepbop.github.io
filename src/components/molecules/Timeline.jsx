@@ -1,70 +1,98 @@
-import React, { useCallback, useEffect, useMemo, useState } from "react";
-import style from "../atoms/css/Container.module.css";
-
+import React, { useState, useEffect } from "react";
 import { globalContext } from "../atoms/context.jsx";
 import Wrapper from "../atoms/active default hover.jsx";
+import "../atoms/css/view-transition.css";
 
-const list_of_years = ["2025", "2024", "2023", "2022"];
-export const current_year = "2024";
+import styleDefault from "../atoms/css/Container.module.css";
+import style2025 from "../atoms/css/container 2025.module.css";
 
-export default function () {
-  const defaultContext = useMemo(
-    () => new Map(list_of_years.map((year) => [year, year === current_year])),
-    [list_of_years, current_year],
-  );
+// Constants
+const YEARS = ["2025", "2024", "2023", "2022"];
+const DEFAULT_YEAR = "2024";
 
-  const [context, setContext] = useState(defaultContext);
+export default function YearSelector() {
+  // Detect current path
+  const [selectedYear, setSelectedYear] = useState(() => {
+    if (typeof window === "undefined") return DEFAULT_YEAR;
+    const path = window.location.pathname;
+    return YEARS.find((y) => path.includes(y)) || DEFAULT_YEAR;
+  });
 
-  const updateContext = useCallback((identifier) => {
-    setContext((prev) => {
-      const newContext = new Map(prev);
-      for (const [key] of newContext) {
-        newContext.set(key, identifier === key);
-      }
-      return newContext;
-    });
-  }, []);
-
-  const loadUpdateContext = useCallback(() => {
-    setContext((prev) => {
-      const newContext = new Map(prev);
-      for (const [key] of newContext) {
-        newContext.set(key, window.location.href.includes(key.toString()));
-      }
-      return newContext;
-    });
-  }, []);
-
-  const handleTransition = useCallback((handler) => {
-    document.startViewTransition(handler);
-  }, []);
-
-  const handleClick = useCallback((event) => {
-    handleTransition(updateContext(event.target.innerText));
-  }, []);
-
+  // Sync year on Astro client-side navigation
   useEffect(() => {
-    const handleLoad = () => handleTransition(loadUpdateContext);
-    document.addEventListener("astro:page-load", handleLoad);
-    return () => document.removeEventListener("astro:page-load", handleLoad);
+    const updateYear = () => {
+      const path = window.location.pathname;
+      setSelectedYear(YEARS.find((y) => path.includes(y)) || DEFAULT_YEAR);
+    };
+    document.addEventListener("astro:page-load", updateYear);
+    return () => document.removeEventListener("astro:page-load", updateYear);
   }, []);
 
-  const contextValue = useMemo(
-    () => ({
-      context,
-      setContext,
-    }),
-    [context],
-  );
+  // Safe navigation handler
+  const handleYearClick = async (year) => {
+    if (year === selectedYear) return;
 
-  const yearEntries = useMemo(() => Array.from(context), [context]);
+    // Define a safe navigate function
+    const safeNavigate = async (target) => {
+      if (window.Astro?.navigate) {
+        await window.Astro.navigate(target);
+      } else {
+        window.location.href = target;
+      }
+    };
+
+    // Use View Transition API if supported
+    if (document.startViewTransition) {
+      const transition = document.startViewTransition(async () => {
+        setSelectedYear(year);
+        await safeNavigate(`/${year}`);
+      });
+      await transition.finished;
+    } else {
+      // Fallback: simple navigation
+      await safeNavigate(`/${year}`);
+    }
+  };
+
+  const is2025 =
+    typeof window !== "undefined" && window.location.pathname.includes("/2025");
+  const containerClass = is2025 ? style2025.container : styleDefault.container;
 
   return (
-    <globalContext.Provider value={contextValue}>
-      <div className={style.container}>
-        {yearEntries.map(([year, value]) => (
-          <Wrapper key={year} year={year} status={value} click={handleClick} />
-        ))}
+    <globalContext.Provider
+      value={{ context: selectedYear, setContext: setSelectedYear }}
+    >
+      <div
+        className={containerClass}
+        style={{ viewTransitionName: "year-selector" }}
+      >
+        {YEARS.map((year) => {
+          const isActive = year === selectedYear;
+          const viewName = isActive ? `selected-year-${year}` : "none";
+
+          if (is2025) {
+            return (
+              <div
+                key={year}
+                className={isActive ? style2025.active : style2025.inactive}
+                style={{ viewTransitionName: viewName }}
+                onClick={() => handleYearClick(year)}
+              >
+                {year}
+              </div>
+            );
+          }
+
+          return (
+            <div key={year} style={{ viewTransitionName: viewName }}>
+              <Wrapper
+                year={year}
+                status={isActive}
+                onClick={() => handleYearClick(year)}
+              />
+            </div>
+          );
+        })}
       </div>
     </globalContext.Provider>
   );
