@@ -538,14 +538,12 @@ const baseUrl = "https://bepbop.github.io/2025";
     document.startViewTransition(() => {
       initial.classList.toggle("opacity");
 
-      const btn = document.querySelector(
-        "#section-1-2025 > button:nth-child(3)",
-      );
-      if (btn)
-        btn.textContent =
-          btn.textContent === "Experience & Skills"
+
+      if (toggleButton)
+        toggleButton.textContent =
+          toggleButton.textContent === "Experience"
             ? "About"
-            : "Experience & Skills";
+            : "Experience";
 
       final.classList.toggle("opacity");
     });
