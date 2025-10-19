@@ -166,33 +166,48 @@ import projectList from "/src/content/projects-list.json";
 </style>
 
 <script>
-  const dialog = document.getElementById("contactDialog");
-  const openButtons = document.querySelectorAll(".card-container");
-  const closeButton = document.getElementById("closeDialogBtn");
+  // /src/scripts/contact-dialog.js
+  function initContactDialog() {
+    const dialog = document.getElementById("contactDialog");
+    const openButtons = document.querySelectorAll(".card-container");
+    const closeButton = document.getElementById("closeDialogBtn");
 
-  openButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      dialog.showModal();
-      document.body.classList.add("dialog-open"); // <-- ADD THIS LINE
+    // Exit if dialog not present on current page
+    if (!dialog || !openButtons.length || !closeButton) return;
+
+    // Prevent duplicate event binding on repeated navigations
+    if (dialog.dataset.bound) return;
+    dialog.dataset.bound = "true";
+
+    // Open dialog
+    openButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        dialog.showModal();
+        document.body.classList.add("dialog-open");
+      });
     });
-  });
 
-  closeButton.addEventListener("click", () => {
-    dialog.close();
-    // We don't need to remove the class here, see below
-  });
-
-  // Close the dialog if the backdrop is clicked
-  dialog.addEventListener("click", (e) => {
-    if (e.target === dialog) {
+    // Close dialog (via close button)
+    closeButton.addEventListener("click", () => {
       dialog.close();
-      // We don't need to remove the class here either
-    }
-  });
+    });
 
-  // BEST PRACTICE: Listen for the 'close' event on the dialog
-  // This handles all closing methods (button, backdrop, ESC key) in one place.
-  dialog.addEventListener("close", () => {
-    document.body.classList.remove("dialog-open"); // <-- ADD THIS ENTIRE BLOCK
-  });
+    // Close on backdrop click
+    dialog.addEventListener("click", (e) => {
+      if (e.target === dialog) {
+        dialog.close();
+      }
+    });
+
+    // Handle all closing methods (ESC, button, backdrop)
+    dialog.addEventListener("close", () => {
+      document.body.classList.remove("dialog-open");
+    });
+  }
+
+  // ✅ Run once at first load
+  initContactDialog();
+
+  // ✅ Re-run after each Astro client-side navigation
+  document.addEventListener("astro:page-load", initContactDialog);
 </script>

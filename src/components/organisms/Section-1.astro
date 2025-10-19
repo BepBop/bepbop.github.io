@@ -5,12 +5,7 @@ import { fade } from "astro:transitions";
 ---
 
 <div id="Section-1" class="margin">
-  <Timeline
-    client:only="react"
-    transition:name="trans"
-    transition:persist
-    transition:animate="slide"
-  />
+  <Timeline client:only="react" transition:name="trans" transition:persist />
 
   <div id="one" class="grid">
     <div class="eye-brow-header">Hello World</div>

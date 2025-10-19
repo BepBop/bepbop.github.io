@@ -6,19 +6,20 @@ import "../atoms/css/view-transition.css";
 import styleDefault from "../atoms/css/Container.module.css";
 import style2025 from "../atoms/css/container 2025.module.css";
 
-// Constants
+/* Astro Navigation API */
+import { navigate } from "astro:transitions/client";
+
 const YEARS = ["2025", "2024", "2023", "2022"];
 const DEFAULT_YEAR = "2024";
 
 export default function YearSelector() {
-  // Detect current path
   const [selectedYear, setSelectedYear] = useState(() => {
     if (typeof window === "undefined") return DEFAULT_YEAR;
     const path = window.location.pathname;
     return YEARS.find((y) => path.includes(y)) || DEFAULT_YEAR;
   });
 
-  // Sync year on Astro client-side navigation
+  // Sync state with Astro navigation
   useEffect(() => {
     const updateYear = () => {
       const path = window.location.pathname;
@@ -28,30 +29,10 @@ export default function YearSelector() {
     return () => document.removeEventListener("astro:page-load", updateYear);
   }, []);
 
-  // Safe navigation handler
-  const handleYearClick = async (year) => {
+  // Core handler: lightweight, no manual state mutation
+  const handleYearClick = (year) => {
     if (year === selectedYear) return;
-
-    // Define a safe navigate function
-    const safeNavigate = async (target) => {
-      if (window.Astro?.navigate) {
-        await window.Astro.navigate(target);
-      } else {
-        window.location.href = target;
-      }
-    };
-
-    // Use View Transition API if supported
-    if (document.startViewTransition) {
-      const transition = document.startViewTransition(async () => {
-        setSelectedYear(year);
-        await safeNavigate(`/${year}`);
-      });
-      await transition.finished;
-    } else {
-      // Fallback: simple navigation
-      await safeNavigate(`/${year}`);
-    }
+    document.startViewTransition(() => navigate(`/${year}`));
   };
 
   const is2025 =

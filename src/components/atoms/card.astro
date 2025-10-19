@@ -109,18 +109,24 @@ const { thumbnail } = Astro.props;
 </style>
 
 <script>
-  document.addEventListener("astro:page-load", () => {
-    document.querySelector(
-      "#Projects > div > a:nth-child(1) > div.card_img",
-    ).style.backgroundColor = "#123715";
-    document.querySelector(
-      "#Projects > div > a:nth-child(3) > div.card_img",
-    ).style.backgroundColor = "#123715";
-    document.querySelector(
-      "#Projects > div > a:nth-child(9) > div.card_img",
-    ).style.backgroundColor = "black";
-    document.querySelector(
-      "#Projects > div > a:nth-child(4) > div.card_img",
-    ).style.backgroundColor = "#04182F";
-  });
+  // /src/scripts/projects-color.js
+  function setProjectCardColors() {
+    const projects = document.querySelector("#Projects");
+    if (!projects) return;
+
+    const selectors = [
+      ["#Projects > div > a:nth-child(1) > div.card_img", "#123715"],
+      ["#Projects > div > a:nth-child(3) > div.card_img", "#123715"],
+      ["#Projects > div > a:nth-child(9) > div.card_img", "black"],
+      ["#Projects > div > a:nth-child(4) > div.card_img", "#04182F"],
+    ];
+
+    for (const [selector, color] of selectors) {
+      const el = document.querySelector(selector);
+      if (el) el.style.backgroundColor = color;
+    }
+  }
+
+  setProjectCardColors();
+  document.addEventListener("astro:page-load", setProjectCardColors);
 </script>

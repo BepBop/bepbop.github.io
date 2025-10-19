@@ -9,19 +9,30 @@
 >
 </div>
 
-<script is:inline data-astro-rerun>
-  (function () {
+<script>
+  let skillSliderFrame = null;
+
+  function startSkillSlider() {
     const skillSlider = document.getElementById("skill_slider");
+    if (!skillSlider) return;
+
+    // Prevent multiple animation loops after repeated navigations
+    if (skillSliderFrame) cancelAnimationFrame(skillSliderFrame);
+
     let scrollPosition = 0;
 
     function animateSlider() {
       scrollPosition += 2;
       skillSlider.style.backgroundPositionX = `${scrollPosition}px`;
-      requestAnimationFrame(animateSlider);
+      skillSliderFrame = requestAnimationFrame(animateSlider);
     }
 
-    if (skillSlider) {
-      requestAnimationFrame(animateSlider);
-    }
-  })();
+    skillSliderFrame = requestAnimationFrame(animateSlider);
+  }
+
+  // Run once on first page load
+  startSkillSlider();
+
+  // Re-run after every Astro client-side navigation
+  document.addEventListener("astro:page-load", startSkillSlider);
 </script>

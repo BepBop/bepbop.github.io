@@ -16,19 +16,26 @@
   }
 </style>
 
-<script is:inline data-astro-rerun>
-  (function () {
+<script>
+  let animationFrameId = null;
+
+  function startProjectSlider() {
     const projectSlider = document.getElementById("project_slider");
+    if (!projectSlider) return;
+
+    if (animationFrameId) cancelAnimationFrame(animationFrameId);
+
     let scrollPosition = 0;
 
     function animateSlider() {
       scrollPosition -= 2;
       projectSlider.style.backgroundPositionX = `${scrollPosition}px`;
-      requestAnimationFrame(animateSlider);
+      animationFrameId = requestAnimationFrame(animateSlider);
     }
 
-    if (projectSlider) {
-      requestAnimationFrame(animateSlider);
-    }
-  })();
+    animationFrameId = requestAnimationFrame(animateSlider);
+  }
+
+  startProjectSlider();
+  document.addEventListener("astro:page-load", startProjectSlider);
 </script>
