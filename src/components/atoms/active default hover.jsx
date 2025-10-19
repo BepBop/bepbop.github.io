@@ -1,12 +1,11 @@
-import styleActive from "./css/Active.module.css";
-import styleDefaultHover from "./css/Default Hover.module.css";
+import style from "./css/Active Default Hover.module.css";
 
 function Active({ year }) {
   return (
-    <div className={styleActive.test}>
-      <div className={`${styleActive.selected} ${styleActive.active}`}>
-        <div className={styleActive.subheader}></div>
-        <div className={styleActive.year}>{year}</div>
+    <div className={style.test}>
+      <div className={`${style.selected} ${style.active}`}>
+        <div className={style.subheader}></div>
+        <div className={style.year}>{year}</div>
       </div>
       <img src="/img/indicator.svg" alt="indicator" />
     </div>
@@ -15,13 +14,13 @@ function Active({ year }) {
 
 function DefaultHover({ year }) {
   return (
-    <a href={`/${year}`} className={styleDefaultHover.grid}>
-      <div className={styleDefaultHover.line} />
-      <div className={`${styleDefaultHover.hover} ${styleDefaultHover.active}`}>
-        <div className={styleDefaultHover.year}>{year}</div>
-        <div className={`${styleDefaultHover.big} ${styleDefaultHover.line}`} />
+    <a href={`/${year}`} className={style.grid}>
+      <div className={style.line} />
+      <div className={`${style.hover} ${style.active}`}>
+        <div className={style.year}>{year}</div>
+        <div className={`${style.big} ${style.line}`} />
       </div>
-      <div className={styleDefaultHover.line} />
+      <div className={style.line} />
     </a>
   );
 }

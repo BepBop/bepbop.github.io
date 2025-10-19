@@ -4,7 +4,7 @@ import Wrapper from "../atoms/active default hover.jsx";
 import "../atoms/css/view-transition.css";
 
 import styleDefault from "../atoms/css/Container.module.css";
-import style2025 from "../atoms/css/container 2025.module.css";
+import style2025 from "../atoms/css/Container 2025.module.css";
 
 /* Astro Navigation API */
 import { navigate } from "astro:transitions/client";
