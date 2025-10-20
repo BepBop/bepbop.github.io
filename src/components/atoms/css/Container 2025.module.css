@@ -51,10 +51,8 @@
     transform: translateY(-1px);
 }
 
-/* --- Responsive Design --- */
 @media (max-width: 480px) {
     .container {
-        width: 90%;
         bottom: 40px;
         gap: 6px;
         border-radius: 12px;
@@ -69,7 +67,6 @@
 
 @media (max-width: 360px) {
     .container {
-        width: 90%;
         bottom: 32px;
         gap: 4px;
     }
