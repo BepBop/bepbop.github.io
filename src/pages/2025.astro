@@ -75,8 +75,8 @@ const baseUrl = "https://bepbop.github.io/2025";
   client:only="react"
   transition:name="trans"
   transition:persist
-
 />
+
 <header id="section-1-2025">
   <div>
     <h1>Gyan Anjay</h1>
@@ -315,6 +315,7 @@ const baseUrl = "https://bepbop.github.io/2025";
     </div>
   </section>
 </main>
+
 </body>
 <style>
   //:root {
@@ -382,6 +383,7 @@ const baseUrl = "https://bepbop.github.io/2025";
       padding: 8px 16px;
       box-sizing: border-box;
       height: 64px;
+      border-radius: 4px;
     }
   }
 
@@ -392,7 +394,7 @@ const baseUrl = "https://bepbop.github.io/2025";
   }
 
   .content-layout__sidebar {
-    width: clamp(300px, 28%, 500px);
+    width: clamp(310px, 28%, 500px);
     flex-shrink: 0;
     height: fit-content;
     position: sticky;
@@ -446,7 +448,7 @@ const baseUrl = "https://bepbop.github.io/2025";
   }
 
   .content-layout__main-panel {
-    flex: 1 1 min-content;
+    flex: 1 1 480px;
 
     & > * {
       border-top: 1px solid var(--border-color);
@@ -509,12 +511,13 @@ const baseUrl = "https://bepbop.github.io/2025";
   }
 
   @media (width < 1000px) {
-    #section-2-2025 > aside {
-      position: unset !important;
+
+    .content-layout__sidebar {
+      width: 100%;
+      position: unset;
     }
 
-    #initial > div:nth-child(1),
-    #final > div.content-layout__main-panel-header {
+    #initial > div:nth-child(1) {
       border-top: 0;
     }
 
@@ -522,6 +525,8 @@ const baseUrl = "https://bepbop.github.io/2025";
       gap: 0;
     }
   }
+
+
 </style>
 </html>
 
