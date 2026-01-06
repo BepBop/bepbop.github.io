@@ -12,12 +12,41 @@ import { navigate } from "astro:transitions/client";
 const YEARS = ["2025", "2024", "2023", "2022"];
 const DEFAULT_YEAR = "2024";
 
+function useIsMobile(breakpointPx = 767) {
+  const [isMobile, setIsMobile] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return window.matchMedia(`(max-width: ${breakpointPx}px)`).matches;
+  });
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const mql = window.matchMedia(`(max-width: ${breakpointPx}px)`);
+    const onChange = (e) => setIsMobile(e.matches);
+
+    // Support older Safari
+    if (mql.addEventListener) mql.addEventListener("change", onChange);
+    else mql.addListener(onChange);
+
+    setIsMobile(mql.matches);
+
+    return () => {
+      if (mql.removeEventListener) mql.removeEventListener("change", onChange);
+      else mql.removeListener(onChange);
+    };
+  }, [breakpointPx]);
+
+  return isMobile;
+}
+
 export default function YearSelector() {
   const [selectedYear, setSelectedYear] = useState(() => {
     if (typeof window === "undefined") return DEFAULT_YEAR;
     const path = window.location.pathname;
     return YEARS.find((y) => path.includes(y)) || DEFAULT_YEAR;
   });
+
+  const isMobile = useIsMobile(767);
 
   // Sync state with Astro navigation
   useEffect(() => {
@@ -37,7 +66,15 @@ export default function YearSelector() {
 
   const is2025 =
     typeof window !== "undefined" && window.location.pathname.includes("/2025");
-  const containerClass = is2025 ? style2025.container : styleDefault.container;
+
+  // Use 2025 styles for:
+  // - any /2025 route (all screen sizes)
+  // - all routes on screens <= 767px
+  const use2025Styles = is2025 || isMobile;
+
+  const containerClass = use2025Styles
+    ? style2025.container
+    : styleDefault.container;
 
   return (
     <globalContext.Provider
@@ -51,7 +88,7 @@ export default function YearSelector() {
           const isActive = year === selectedYear;
           const viewName = isActive ? `selected-year-${year}` : "none";
 
-          if (is2025) {
+          if (use2025Styles) {
             return (
               <div
                 key={year}
