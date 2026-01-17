@@ -10,7 +10,7 @@ import style2025 from "../atoms/css/Container 2025.module.css";
 import { navigate } from "astro:transitions/client";
 
 const YEARS = ["2025", "2024", "2023", "2022"];
-const DEFAULT_YEAR = "2024";
+const DEFAULT_YEAR = "2025";
 
 function useIsMobile(breakpointPx = 767) {
   const [isMobile, setIsMobile] = useState(() => {
