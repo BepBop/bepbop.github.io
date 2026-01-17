@@ -4,6 +4,6 @@ import react from "@astrojs/react";
 export default defineConfig({
   integrations: [react()],
   redirects: {
-    "/": "/2024",
+    "/": "/2025",
   },
 });
