@@ -94,221 +94,6 @@ const baseUrl = "https://bepbop.github.io/2025";
         </svg>
       </button>
     </header>
-    <style>
-      :root {
-        --text-primary: #111;
-        --text-secondary: rgba(0, 0, 0, 0.7);
-        --bg-primary: #fff;
-        --border-color: rgba(0, 0, 0, 0.5);
-        --font-main: "IBM Plex Sans", sans-serif;
-      }
-
-      body {
-        color: var(--text-primary);
-        font-family: var(--font-main), sans-serif;
-      }
-
-      /* 👇 Makes bold text "less bold" (medium weight) */
-      strong {
-        font-weight: 500;
-      }
-
-      #section-1-2025 {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin-bottom: 80px;
-        column-gap: 48px;
-        row-gap: 20px;
-        align-items: center;
-      }
-
-      #section-1-2025 > div {
-        flex: 1 1 600px !important;
-      }
-
-      #section-1-2025 h1 {
-        font-weight: 400;
-        font-size: var(--font-size-10);
-        line-height: 1;
-      }
-
-      #section-1-2025 h2 {
-        color: var(--text-secondary);
-        font-weight: 400;
-        font-size: var(--font-size-8);
-      }
-
-      #section-1-2025 button {
-        background: none;
-        border: 0 solid var(--border-color);
-        color: var(--text-primary);
-        cursor: pointer;
-        font-family: inherit;
-        font-size: var(--font-size-8);
-        line-height: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      #section-2-2025.content-layout {
-        display: flex;
-        flex-wrap: wrap;
-        gap: clamp(16px, 1rem + 3vw, 88px);
-      }
-
-      .content-layout__sidebar {
-        width: clamp(310px, 28%, 500px);
-        flex-shrink: 0;
-        height: fit-content;
-        position: sticky;
-        top: 32px;
-      }
-
-      .info-card {
-        font-weight: 300;
-        line-height: 1.5;
-        border-top: 1px solid var(--border-color);
-        padding: 36px 4px 56px 4px;
-      }
-
-      .info-card .info-card__description {
-        margin: 8px 0 0 0 !important;
-        font-size: var(--font-size-7);
-      }
-
-      .contact-links {
-        border-top: 1px solid var(--border-color);
-        cursor: pointer !important;
-      }
-
-      .contact-links__item {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 1.2rem 4px;
-        font-size: 16px;
-        border-bottom: 1px solid var(--border-color);
-        text-decoration: none;
-        color: inherit;
-      }
-
-      .tag-list {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 0.75rem 1.25rem;
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        font-size: 16px;
-      }
-
-      .tag-list li:not(:first-child)::before {
-        content: "•";
-        margin-right: 1.25rem;
-        color: var(--border-color);
-        font-size: 1.5em;
-        line-height: 1;
-        vertical-align: middle;
-      }
-
-      .content-layout__main-panel {
-        flex: 1 1 480px;
-      }
-
-      .content-layout__main-panel > * {
-        border-top: 1px solid var(--border-color);
-        padding: 36px 4px 64px 4px;
-      }
-
-      .content-layout__main-panel-content {
-        font-size: var(--font-size-6);
-        display: flex;
-        flex-wrap: wrap;
-        row-gap: 20px;
-        column-gap: 64px;
-        line-height: 1.6;
-      }
-
-      .content-layout__main-panel-content-left {
-        width: 280px;
-      }
-
-      .content-layout__main-panel-content-left p {
-        color: var(--border-color);
-        margin: 8px 0 !important;
-      }
-
-      .content-layout__main-panel-content-right {
-        flex: 1 0 300px;
-      }
-
-      .content-layout__main-panel-content-right ul {
-        margin-top: 0;
-        padding-left: 20px;
-      }
-
-      .content-layout__main-panel-content-right > ul > li {
-        margin-bottom: 16px;
-      }
-
-      /* 👇 Sub-list styling for cleaner bullets */
-      .sub-list {
-        list-style-type: none;
-        padding-left: 12px !important;
-        margin-top: 8px !important;
-      }
-
-      .sub-list li {
-        position: relative;
-        margin-bottom: 8px !important;
-        color: var(--text-secondary);
-        font-size: 0.95em;
-      }
-
-      ul {
-        list-style-type: none;
-      }
-
-      .opacity {
-        display: none;
-      }
-
-      #initial,
-      #final {
-        view-transition-name: my-box;
-      }
-
-      ::view-transition-new(my-box) {
-        animation: fade-in 0.25s ease-out;
-      }
-
-      @keyframes fade-in {
-        from {
-          opacity: 0;
-        }
-      }
-
-      #final > div.content-layout__main-panel-content {
-        font-size: var(--font-size-6);
-      }
-
-      @media (width < 1000px) {
-        .content-layout__sidebar {
-          width: 100%;
-          position: unset;
-        }
-
-        #initial > div:nth-child(1) {
-          border-top: 0;
-        }
-
-        #section-2-2025 {
-          gap: 0;
-        }
-      }
-    </style>
 
     <main id="section-2-2025" class="content-layout">
       <aside class="content-layout__sidebar">
@@ -691,9 +476,228 @@ const baseUrl = "https://bepbop.github.io/2025";
   </body>
 </html>
 
+<style>
+  :root {
+    --text-primary: #111;
+    --text-secondary: rgba(0, 0, 0, 0.7);
+    --bg-primary: #fff;
+    --border-color: rgba(0, 0, 0, 0.5);
+    --font-main: "IBM Plex Sans", sans-serif;
+  }
+
+  body {
+    color: var(--text-primary);
+    font-family: var(--font-main), sans-serif;
+  }
+
+  /* 👇 Makes bold text "less bold" (medium weight) */
+  strong {
+    font-weight: 500;
+  }
+
+  #section-1-2025 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 80px;
+    column-gap: 48px;
+    row-gap: 20px;
+    align-items: center;
+  }
+
+  #section-1-2025 > div {
+    flex: 1 1 600px !important;
+  }
+
+  #section-1-2025 h1 {
+    font-weight: 400;
+    font-size: var(--font-size-10);
+    line-height: 1;
+  }
+
+  #section-1-2025 h2 {
+    color: var(--text-secondary);
+    font-weight: 400;
+    font-size: var(--font-size-8);
+  }
+
+  #section-1-2025 button {
+    background: none;
+    border: 0 solid var(--border-color);
+    color: var(--text-primary);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: var(--font-size-8);
+    line-height: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  #section-2-2025.content-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(16px, 1rem + 3vw, 88px);
+  }
+
+  .content-layout__sidebar {
+    width: clamp(310px, 28%, 500px);
+    flex-shrink: 0;
+    height: fit-content;
+    position: sticky;
+    top: 32px;
+  }
+
+  .info-card {
+    font-weight: 300;
+    line-height: 1.5;
+    border-top: 1px solid var(--border-color);
+    padding: 36px 4px 56px 4px;
+  }
+
+  .info-card .info-card__description {
+    margin: 8px 0 0 0 !important;
+    font-size: var(--font-size-7);
+  }
+
+  .contact-links {
+    border-top: 1px solid var(--border-color);
+    cursor: pointer !important;
+  }
+
+  .contact-links__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 4px;
+    font-size: 16px;
+    border-bottom: 1px solid var(--border-color);
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1.25rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-size: 16px;
+  }
+
+  .tag-list li:not(:first-child)::before {
+    content: "•";
+    margin-right: 1.25rem;
+    color: var(--border-color);
+    font-size: 1.5em;
+    line-height: 1;
+    vertical-align: middle;
+  }
+
+  .content-layout__main-panel {
+    flex: 1 1 480px;
+  }
+
+  .content-layout__main-panel > * {
+    border-top: 1px solid var(--border-color);
+    padding: 36px 4px 64px 4px;
+  }
+
+  .content-layout__main-panel-content {
+    font-size: var(--font-size-6);
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    column-gap: 64px;
+    line-height: 1.6;
+  }
+
+  .content-layout__main-panel-content-left {
+    width: 280px;
+  }
+
+  .content-layout__main-panel-content-left p {
+    color: var(--border-color);
+    margin: 8px 0 !important;
+  }
+
+  .content-layout__main-panel-content-right {
+    flex: 1 0 300px;
+  }
+
+  .content-layout__main-panel-content-right ul {
+    margin-top: 0;
+    padding-left: 20px;
+  }
+
+  .content-layout__main-panel-content-right > ul > li {
+    margin-bottom: 16px;
+  }
+
+  /* 👇 Sub-list styling for cleaner bullets */
+  .sub-list {
+    list-style-type: none;
+    padding-left: 12px !important;
+    margin-top: 8px !important;
+  }
+
+  .sub-list li {
+    position: relative;
+    margin-bottom: 8px !important;
+    color: var(--text-secondary);
+    font-size: 0.95em;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  .opacity {
+    display: none;
+  }
+
+  #initial,
+  #final {
+    view-transition-name: my-box;
+  }
+
+  ::view-transition-new(my-box) {
+    animation: fade-in 0.25s ease-out;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+  }
+
+  #final > div.content-layout__main-panel-content {
+    font-size: var(--font-size-6);
+  }
+
+  @media (width < 1000px) {
+    .content-layout__sidebar {
+      width: 100%;
+      position: unset;
+    }
+
+    #initial > div:nth-child(1) {
+      border-top: 0;
+    }
+
+    #section-2-2025 {
+      gap: 0;
+    }
+  }
+</style>
+
 <script>
   let isAnimating = false;
+
   document.addEventListener("click", (e) => {
+    if (!(e.target instanceof Element)) return;
+
     const triggerBtn = e.target.closest("#section-1-2025 > button");
     if (!triggerBtn || isAnimating) return;
 
