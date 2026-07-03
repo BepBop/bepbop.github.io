@@ -118,10 +118,11 @@
     margin: 48px auto;
     max-width: 1336px;
     background: white;
+
     @media (width <= 1000px) {
       margin: 64px auto;
       display: flex;
-      flex-flow: column;
+      flex-direction: column;
       gap: 24px;
     }
 
@@ -133,65 +134,56 @@
       box-shadow: 0 0 20px 28px rgba(250, 250, 251, 0.4);
       border: 1px solid rgba(8, 8, 10, 0.04);
       background: white;
-      padding: 32px 32px 20px 32px;
+      padding: 32px 32px 20px;
       display: flex;
       flex-direction: column;
 
       @media (width <= 1000px) {
-        padding: 28px 24px 20px 24px;
-        border: 1px solid rgba(8, 8, 10, 0.1);
+        padding: 28px 24px 20px;
+        border-color: rgba(8, 8, 10, 0.1);
 
-        & ol {
+        ol {
           padding-left: 24px;
         }
       }
+
+      @media (width >= 1000px) {
+        &:hover {
+          transform: scale(1.05);
+          z-index: 1000;
+          box-shadow: 0 0 300px 400px rgba(255, 255, 255, 0.8);
+        }
+      }
     }
-  }
 
-  @media (width >= 1000px) {
-    #jobs > div:hover {
-      transform: scale(1.05);
-      z-index: 1000;
-      box-shadow: 0px 0px 300px 400px rgba(255, 255, 255, 0.8);
+    .div1 {
+      grid-area: 2 / 2 / 8 / 16;
+      z-index: 5;
     }
-  }
-  .div1 {
-    grid-area: 2 / 2 / 8 / 16;
-    z-index: 5;
-    //background: red !important;
 
-    @media (width <= 1000px) {
+    .div2 {
+      grid-area: 4 / 9 / 11 / 24;
+      z-index: 15;
     }
-  }
 
-  .div2 {
-    grid-area: 4 / 9 / 11 / 24;
-    z-index: 15;
-    //background: black !important;
-    @media (width <= 1000px) {
+    .div3 {
+      grid-area: 5 / 4 / 10 / 17;
+      z-index: 10;
     }
-  }
 
-  .div3 {
-    grid-area: 5 / 4 / 10 / 17;
-    z-index: 10;
-    //background: saddlebrown !important;
-    @media (width <= 1000px) {
-    }
-  }
+    .div4 {
+      grid-area: 3 / 12 / 11 / 21;
+      z-index: 0;
+      padding: 12px 0;
 
-  .div4 {
-    grid-area: 3 / 12 / 11/ 21;
-    z-index: 0;
-    padding: 12px 0;
+      > span {
+        background: url("/img/summary.svg") center / contain no-repeat;
+        width: 100%;
+        height: 100%;
 
-    > span {
-      background: url("/img/summary.svg") center no-repeat;
-      width: 100%;
-      height: 100%;
-      background-size: contain;
-      @media (width <= 1000px) {
-        height: 480px;
+        @media (width <= 1000px) {
+          height: 480px;
+        }
       }
     }
   }
