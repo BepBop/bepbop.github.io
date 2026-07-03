@@ -480,7 +480,7 @@ const {Index, Description, DesignProcess, Features} = await import(
                                 <div class="meta-data">
                                     {Object.keys(value).map((nestedKey) =>
                                         nestedKey === "Link" ? (
-                                                <iframe allowFullScreen src={value[nestedKey]}/>
+                                                <iframe allowfullscreen src={value[nestedKey]}></iframe>
                                         ) : (
                                                 <>{value[nestedKey]}</>
                                         ),
