@@ -6,4 +6,9 @@ export default defineConfig({
   redirects: {
     "/": "/2025",
   },
+  vite: {
+    build: {
+      cssMinify: "esbuild",
+    },
+  },
 });
