@@ -1,0 +1,196 @@
+---
+export interface Props {
+  targetId: string;
+  buttonId: string;
+}
+
+const { targetId, buttonId } = Astro.props;
+---
+
+<!-- The Overlays -->
+<div
+  id="glass-zoom-overlay"
+  class="zoom-layer"
+  data-target={targetId}
+  data-btn={buttonId}
+>
+  <div id="glass-magnified-content" class="magnified-content"></div>
+</div>
+
+<!-- The Premium Frosted Glass Lens -->
+<div id="glass-lens-ring" class="lens-ring"></div>
+
+<style>
+  .zoom-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+
+    clip-path: circle(0px at 50% 50%);
+    -webkit-clip-path: circle(0px at 50% 50%);
+    z-index: 50;
+
+    /* STRONGER BLUR + SATURATION:
+       Saturate prevents the blurred grey text from looking muddy on white */
+    backdrop-filter: blur(24px) saturate(150%);
+    -webkit-backdrop-filter: blur(24px) saturate(150%);
+  }
+
+  .magnified-content {
+    width: 100%;
+    height: 100%;
+    transform: scale(1.6);
+    will-change: transform-origin;
+  }
+
+  /* FUN & PRETTY PHYSICAL GLASS */
+  .lens-ring {
+    position: absolute;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 51;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    /* Inner 3D Glass shine */
+    background: radial-gradient(
+      circle at 30% 30%,
+      rgba(255, 255, 255, 0.7) 0%,
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, 0.1) 100%
+    );
+
+    /* Crisp glass edge */
+    border: 1px solid rgba(255, 255, 255, 0.9);
+
+    /*
+      1. Massive outer drop shadow so it floats
+      2. Bright white inner top highlight
+      3. Dark inner bottom shadow for depth
+      4. Subtle blue/cyan glass tint for that "fun" premium optical feel
+    */
+    box-shadow:
+      0 25px 50px rgba(0, 0, 0, 0.15),
+      0 10px 15px rgba(0, 0, 0, 0.05),
+      inset 0 10px 25px rgba(255, 255, 255, 1),
+      inset 0 -10px 20px rgba(0, 0, 0, 0.04),
+      inset 0 0 25px rgba(0, 150, 255, 0.15);
+  }
+</style>
+
+<script>
+  function initGlassZoom() {
+    const overlay = document.getElementById("glass-zoom-overlay");
+    const lensRing = document.getElementById("glass-lens-ring");
+    if (!overlay || !lensRing) return;
+
+    const targetId = overlay.getAttribute("data-target");
+    const btnId = overlay.getAttribute("data-btn");
+
+    const target = document.getElementById(targetId);
+    const btn = document.getElementById(btnId);
+    const magContent = document.getElementById("glass-magnified-content");
+
+    if (!target || !btn || target.dataset.zoomInitialized) return;
+    target.dataset.zoomInitialized = "true";
+
+    target.style.position = "relative";
+
+    // Get background color, default to white
+    let computedBg = window.getComputedStyle(target).backgroundColor;
+    if (computedBg === "rgba(0, 0, 0, 0)" || computedBg === "transparent") {
+      computedBg = window.getComputedStyle(document.body).backgroundColor;
+    }
+    if (computedBg === "rgba(0, 0, 0, 0)" || computedBg === "transparent") {
+      computedBg = "rgb(255, 255, 255)";
+    }
+
+    const rgbMatch = computedBg.match(/\d+/g);
+    if (rgbMatch && rgbMatch.length >= 3) {
+      // LOWER OPACITY (0.4 instead of 0.75)
+      // This ensures the heavy 24px blur is incredibly visible and vibrant!
+      overlay.style.backgroundColor = `rgba(${rgbMatch[0]}, ${rgbMatch[1]}, ${rgbMatch[2]}, 0.4)`;
+    }
+
+    // Clone the content
+    magContent.innerHTML = "";
+    Array.from(target.children).forEach((child) => {
+      if (child.id !== "glass-zoom-overlay" && child.id !== "glass-lens-ring") {
+        magContent.appendChild(child.cloneNode(true));
+      }
+    });
+
+    // Copy exact layout to prevent offset
+    magContent.className = target.className;
+    magContent.classList.add("magnified-content");
+
+    const computedStyle = window.getComputedStyle(target);
+    magContent.style.padding = computedStyle.padding;
+    magContent.style.display = computedStyle.display;
+    magContent.style.flexDirection = computedStyle.flexDirection;
+    magContent.style.justifyContent = computedStyle.justifyContent;
+    magContent.style.alignItems = computedStyle.alignItems;
+    magContent.style.gap = computedStyle.gap;
+
+    target.appendChild(overlay);
+    target.appendChild(lensRing);
+
+    const LENS_MAX_RADIUS = 130;
+    let isActive = false;
+    let targetRadius = 0,
+      currentRadius = 0;
+    let currentX = target.offsetWidth / 2,
+      currentY = target.offsetHeight / 2;
+    let mouseX = currentX,
+      mouseY = currentY;
+
+    btn.addEventListener("click", () => {
+      isActive = !isActive;
+      targetRadius = isActive ? LENS_MAX_RADIUS : 0;
+      btn.textContent = isActive ? "Disable Magnifier" : "Enable Magnifier";
+
+      if (isActive) {
+        currentX = target.offsetWidth / 2;
+        currentY = target.offsetHeight / 2;
+        mouseX = currentX;
+        mouseY = currentY;
+      }
+    });
+
+    target.addEventListener("mousemove", (e) => {
+      if (!isActive) return;
+      const rect = target.getBoundingClientRect();
+      mouseX = e.clientX - rect.left;
+      mouseY = e.clientY - rect.top;
+    });
+
+    function animate() {
+      currentRadius += (targetRadius - currentRadius) * 0.12;
+      currentX += (mouseX - currentX) * 0.15;
+      currentY += (mouseY - currentY) * 0.15;
+
+      const clipString = `circle(${currentRadius}px at ${currentX}px ${currentY}px)`;
+      overlay.style.clipPath = clipString;
+      overlay.style.webkitClipPath = clipString;
+
+      magContent.style.transformOrigin = `${currentX}px ${currentY}px`;
+
+      lensRing.style.width = `${currentRadius * 2}px`;
+      lensRing.style.height = `${currentRadius * 2}px`;
+      lensRing.style.left = `${currentX}px`;
+      lensRing.style.top = `${currentY}px`;
+      lensRing.style.opacity = currentRadius > 5 ? 1 : 0;
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  }
+
+  document.addEventListener("DOMContentLoaded", initGlassZoom);
+  document.addEventListener("astro:page-load", initGlassZoom);
+</script>

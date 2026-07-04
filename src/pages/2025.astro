@@ -1,6 +1,7 @@
 ---
 import { ClientRouter } from "astro:transitions";
 import Timeline from "../components/molecules/Timeline";
+import CyberZoom from "../components/atoms/zoom_shader.astro";
 const title = "Gyan Anjay's Portfolio | Jobs, Projects and Skills";
 const description =
   "Explore Gyan Anjay's portfolio showcasing professional projects, skills, and achievements. Discover how I can contribute to your team's success.";
@@ -71,7 +72,7 @@ const baseUrl = "https://bepbop.github.io/2025";
   </head>
   <body class="margin">
     <Timeline client:only="react" transition:name="trans" transition:persist />
-
+    <CyberZoom targetId="section-2-2025" buttonId="my-button" />
     <header id="section-1-2025">
       <div>
         <h1>Gyan Anjay</h1>
@@ -127,6 +128,9 @@ const baseUrl = "https://bepbop.github.io/2025";
           >
             <span>My Github Repo / AI Vibe Coded App </span>
             <img src="/img/arrow.svg" alt="Arrow icon" />
+          </a>
+          <a id="my-button" class="contact-links__item" style="opacity: 72%">
+            Enable Magnifier
           </a>
         </div>
       </aside>
@@ -306,8 +310,8 @@ const baseUrl = "https://bepbop.github.io/2025";
           <div class="content-layout__main-panel-content-left">
             <span style="font-weight: 500;">Product Management & Strategy</span>
           </div>
-          <div class="content-layout__main-panel-content-right">
-            <ul style="margin-bottom: 0;">
+          <div class="content-layout__main-panel-content-right sub-list">
+            <ul>
               <li>Agile, Scrum, Product Roadmapping, Stakeholder Management</li>
               <li>Strategic Prioritization, Backlog & Story Writing (JIRA)</li>
               <li>
@@ -319,8 +323,8 @@ const baseUrl = "https://bepbop.github.io/2025";
           <div class="content-layout__main-panel-content-left">
             <span style="font-weight: 500;">Data-Driven Decision Making</span>
           </div>
-          <div class="content-layout__main-panel-content-right">
-            <ul style="margin-bottom: 0;">
+          <div class="content-layout__main-panel-content-right sub-list">
+            <ul>
               <li>Cohort Analysis, A/B & Z Testing, Statistical Analysis</li>
               <li>
                 Python (Pandas), API Integration, Analytics Platforms (Pendo, MS
@@ -332,8 +336,8 @@ const baseUrl = "https://bepbop.github.io/2025";
           <div class="content-layout__main-panel-content-left">
             <span style="font-weight: 500;">User-Centric Design</span>
           </div>
-          <div class="content-layout__main-panel-content-right">
-            <ul style="margin-bottom: 0;">
+          <div class="content-layout__main-panel-content-right sub-list">
+            <ul>
               <li>User Research, Usability Testing, User Journey Mapping</li>
               <li>Figma, High-Fidelity Prototyping, Interaction Design</li>
             </ul>
@@ -342,7 +346,7 @@ const baseUrl = "https://bepbop.github.io/2025";
           <div class="content-layout__main-panel-content-left">
             <span style="font-weight: 500;">Go-to-Market & Enablement</span>
           </div>
-          <div class="content-layout__main-panel-content-right">
+          <div class="content-layout__main-panel-content-right sub-list">
             <ul>
               <li>
                 Customer Onboarding, Sales Enablement, Marketing Campaigns
@@ -361,8 +365,8 @@ const baseUrl = "https://bepbop.github.io/2025";
           <div class="content-layout__main-panel-content-left">
             <span style="font-weight: 500;">Double Promotion</span>
           </div>
-          <div class="content-layout__main-panel-content-right">
-            <ul style="margin-bottom: 0;">
+          <div class="content-layout__main-panel-content-right sub-list">
+            <ul>
               <li>
                 Achieved rapid promotions by consistently exceeding product
                 KPIs.
@@ -377,8 +381,8 @@ const baseUrl = "https://bepbop.github.io/2025";
           <div class="content-layout__main-panel-content-left">
             <span style="font-weight: 500;">Spotlight Award</span>
           </div>
-          <div class="content-layout__main-panel-content-right">
-            <ul style="margin-bottom: 0;">
+          <div class="content-layout__main-panel-content-right sub-list">
+            <ul>
               <li>
                 Honored for executing initiatives that significantly improved
                 retention and CSAT.
@@ -389,8 +393,8 @@ const baseUrl = "https://bepbop.github.io/2025";
           <div class="content-layout__main-panel-content-left">
             <span style="font-weight: 500;">Product Growth </span>
           </div>
-          <div class="content-layout__main-panel-content-right">
-            <ul style="margin-bottom: 0;">
+          <div class="content-layout__main-panel-content-right sub-list">
+            <ul>
               <li>
                 Led data-informed roadmap decisions delivering measurable user
                 adoption gains.
@@ -405,7 +409,7 @@ const baseUrl = "https://bepbop.github.io/2025";
           <div class="content-layout__main-panel-content-left">
             <span style="font-weight: 500;">Process Innovation</span>
           </div>
-          <div class="content-layout__main-panel-content-right">
+          <div class="content-layout__main-panel-content-right sub-list">
             <ul>
               <li>
                 Introduced structured prioritization frameworks (RICE, MoSCoW).
@@ -489,163 +493,8 @@ const baseUrl = "https://bepbop.github.io/2025";
     font-family: var(--font-main), sans-serif;
   }
 
-  /* 👇 Makes bold text "less bold" (medium weight) */
   strong {
     font-weight: 500;
-  }
-
-  #section-1-2025 {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 80px;
-    column-gap: 48px;
-    row-gap: 20px;
-    align-items: center;
-  }
-
-  #section-1-2025 > div {
-    flex: 1 1 600px !important;
-  }
-
-  #section-1-2025 h1 {
-    font-weight: 400;
-    font-size: var(--font-size-10);
-    line-height: 1;
-  }
-
-  #section-1-2025 h2 {
-    color: var(--text-secondary);
-    font-weight: 400;
-    font-size: var(--font-size-8);
-  }
-
-  #section-1-2025 button {
-    background: none;
-    border: 0 solid var(--border-color);
-    color: var(--text-primary);
-    cursor: pointer;
-    font-family: inherit;
-    font-size: var(--font-size-8);
-    line-height: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  #section-2-2025.content-layout {
-    display: flex;
-    flex-wrap: wrap;
-    gap: clamp(16px, 1rem + 3vw, 88px);
-  }
-
-  .content-layout__sidebar {
-    width: clamp(310px, 28%, 500px);
-    flex-shrink: 0;
-    height: fit-content;
-    position: sticky;
-    top: 32px;
-  }
-
-  .info-card {
-    font-weight: 300;
-    line-height: 1.5;
-    border-top: 1px solid var(--border-color);
-    padding: 36px 4px 56px 4px;
-  }
-
-  .info-card .info-card__description {
-    margin: 8px 0 0 0 !important;
-    font-size: var(--font-size-7);
-  }
-
-  .contact-links {
-    border-top: 1px solid var(--border-color);
-    cursor: pointer !important;
-  }
-
-  .contact-links__item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.2rem 4px;
-    font-size: 16px;
-    border-bottom: 1px solid var(--border-color);
-    text-decoration: none;
-    color: inherit;
-  }
-
-  .tag-list {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.75rem 1.25rem;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    font-size: 16px;
-  }
-
-  .tag-list li:not(:first-child)::before {
-    content: "•";
-    margin-right: 1.25rem;
-    color: var(--border-color);
-    font-size: 1.5em;
-    line-height: 1;
-    vertical-align: middle;
-  }
-
-  .content-layout__main-panel {
-    flex: 1 1 480px;
-  }
-
-  .content-layout__main-panel > * {
-    border-top: 1px solid var(--border-color);
-    padding: 36px 4px 64px 4px;
-  }
-
-  .content-layout__main-panel-content {
-    font-size: var(--font-size-6);
-    display: flex;
-    flex-wrap: wrap;
-    row-gap: 20px;
-    column-gap: 64px;
-    line-height: 1.6;
-  }
-
-  .content-layout__main-panel-content-left {
-    width: 280px;
-  }
-
-  .content-layout__main-panel-content-left p {
-    color: var(--border-color);
-    margin: 8px 0 !important;
-  }
-
-  .content-layout__main-panel-content-right {
-    flex: 1 0 300px;
-  }
-
-  .content-layout__main-panel-content-right ul {
-    margin-top: 0;
-    padding-left: 20px;
-  }
-
-  .content-layout__main-panel-content-right > ul > li {
-    margin-bottom: 16px;
-  }
-
-  /* 👇 Sub-list styling for cleaner bullets */
-  .sub-list {
-    list-style-type: none;
-    padding-left: 12px !important;
-    margin-top: 8px !important;
-  }
-
-  .sub-list li {
-    position: relative;
-    margin-bottom: 8px !important;
-    color: var(--text-secondary);
-    font-size: 0.95em;
   }
 
   ul {
@@ -656,9 +505,193 @@ const baseUrl = "https://bepbop.github.io/2025";
     display: none;
   }
 
+  /* --- Header --- */
+  #section-1-2025 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 80px;
+    column-gap: 48px;
+    row-gap: 20px;
+    align-items: center;
+
+    > div {
+      flex: 1 1 600px !important;
+    }
+
+    h1 {
+      font-weight: 400;
+      font-size: var(--font-size-10);
+      line-height: 1;
+    }
+
+    h2 {
+      color: var(--text-secondary);
+      font-weight: 400;
+      font-size: var(--font-size-8);
+    }
+
+    button {
+      background: none;
+      border: 0 solid var(--border-color);
+      color: var(--text-primary);
+      cursor: pointer;
+      font-family: inherit;
+      font-size: var(--font-size-8);
+      line-height: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  }
+
+  /* --- Main Content Layout --- */
+  #section-2-2025.content-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(16px, 1rem + 3vw, 88px);
+
+    @media (width < 1000px) {
+      gap: 0;
+    }
+  }
+
+  /* --- Sidebar Elements --- */
+  .content-layout__sidebar {
+    width: clamp(310px, 28%, 500px);
+    flex-shrink: 0;
+    height: fit-content;
+    position: sticky;
+    top: 32px;
+
+    @media (width < 1000px) {
+      width: 100%;
+      position: unset;
+    }
+
+    .info-card {
+      font-weight: 300;
+      line-height: 1.5;
+      border-top: 1px solid var(--border-color);
+      padding: 36px 4px 56px 4px;
+
+      .info-card__description {
+        margin: 8px 0 0 0 !important;
+        font-size: var(--font-size-7);
+      }
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem 1.25rem;
+      padding: 0;
+      margin: 0;
+      font-size: 16px;
+
+      li:not(:first-child)::before {
+        content: "•";
+        margin-right: 1.25rem;
+        color: var(--border-color);
+        font-size: 1.5em;
+        line-height: 1;
+        vertical-align: middle;
+      }
+    }
+
+    .contact-links {
+      border-top: 1px solid var(--border-color);
+      cursor: pointer !important;
+
+      .contact-links__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.2rem 4px;
+        font-size: 16px;
+        border-bottom: 1px solid var(--border-color);
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+  }
+
+  /* --- Main Panel Layout --- */
+  .content-layout__main-panel {
+    flex: 1 1 480px;
+
+    > * {
+      border-top: 1px solid var(--border-color);
+      padding: 36px 4px 64px 4px;
+    }
+  }
+
+  .content-layout__main-panel-content {
+    font-size: var(--font-size-6);
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    column-gap: 64px;
+    line-height: 1.6;
+
+    .content-layout__main-panel-content-left {
+      width: 280px;
+
+      p {
+        color: var(--border-color);
+        margin: 8px 0 !important;
+      }
+    }
+
+    .content-layout__main-panel-content-right {
+      flex: 1 0 300px;
+
+      ul {
+        margin-top: 0;
+        padding-left: 12px;
+
+        > li {
+          margin-bottom: 16px;
+          color: var(--text-secondary);
+          font-size: var(--font-size-6);
+
+          > span {
+            color: var(--text-primary);
+            padding-bottom: 16px;
+            display: inline-block;
+          }
+        }
+      }
+
+      .sub-list {
+        padding-left: 12px !important;
+
+        li {
+          position: relative;
+          margin-bottom: 8px !important;
+        }
+      }
+    }
+  }
+
+  /* --- View Transitions --- */
   #initial,
   #final {
     view-transition-name: my-box;
+  }
+
+  #initial {
+    @media (width < 1000px) {
+      > div:nth-child(1) {
+        border-top: 0;
+      }
+    }
+  }
+
+  #final {
+    > div.content-layout__main-panel-content {
+      font-size: var(--font-size-6);
+    }
   }
 
   ::view-transition-new(my-box) {
@@ -670,30 +703,10 @@ const baseUrl = "https://bepbop.github.io/2025";
       opacity: 0;
     }
   }
-
-  #final > div.content-layout__main-panel-content {
-    font-size: var(--font-size-6);
-  }
-
-  @media (width < 1000px) {
-    .content-layout__sidebar {
-      width: 100%;
-      position: unset;
-    }
-
-    #initial > div:nth-child(1) {
-      border-top: 0;
-    }
-
-    #section-2-2025 {
-      gap: 0;
-    }
-  }
 </style>
 
 <script>
   let isAnimating = false;
-
   document.addEventListener("click", (e) => {
     if (!(e.target instanceof Element)) return;
 
