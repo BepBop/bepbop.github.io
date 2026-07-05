@@ -1,7 +1,7 @@
 ---
 import { ClientRouter } from "astro:transitions";
 import Timeline from "../components/molecules/Timeline";
-import CyberZoom from "../components/atoms/zoom_shader.astro";
+import Zoom from "../components/atoms/zoom_shader.astro";
 const title = "Gyan Anjay's Portfolio | Jobs, Projects and Skills";
 const description =
   "Explore Gyan Anjay's portfolio showcasing professional projects, skills, and achievements. Discover how I can contribute to your team's success.";
@@ -72,13 +72,13 @@ const baseUrl = "https://bepbop.github.io/2025";
   </head>
   <body class="margin">
     <Timeline client:only="react" transition:name="trans" transition:persist />
-    <CyberZoom targetId="section-2-2025" buttonId="my-button" />
+    <Zoom buttonId="my-button" />
     <header id="section-1-2025">
       <div>
         <h1>Gyan Anjay</h1>
         <h2>Associate Product Manager 2</h2>
       </div>
-      <button aria-pressed="false">
+      <button type="button" aria-pressed="false">
         Click Me
         <svg
           width="24"
@@ -129,9 +129,7 @@ const baseUrl = "https://bepbop.github.io/2025";
             <span>My Github Repo / AI Vibe Coded App </span>
             <img src="/img/arrow.svg" alt="Arrow icon" />
           </a>
-          <a id="my-button" class="contact-links__item" style="opacity: 72%">
-            Enable Magnifier
-          </a>
+          <a id="my-button" class="contact-links__item"> Enable Magnifier </a>
         </div>
       </aside>
 
@@ -321,7 +319,7 @@ const baseUrl = "https://bepbop.github.io/2025";
           </div>
 
           <div class="content-layout__main-panel-content-left">
-            <span style="font-weight: 500;">Data-Driven Decision Making</span>
+            <span style="font-weight: 500;">Data-Driven</span>
           </div>
           <div class="content-layout__main-panel-content-right sub-list">
             <ul>
@@ -344,7 +342,7 @@ const baseUrl = "https://bepbop.github.io/2025";
           </div>
 
           <div class="content-layout__main-panel-content-left">
-            <span style="font-weight: 500;">Go-to-Market & Enablement</span>
+            <span style="font-weight: 500;">Go-to-Market</span>
           </div>
           <div class="content-layout__main-panel-content-right sub-list">
             <ul>
@@ -407,7 +405,7 @@ const baseUrl = "https://bepbop.github.io/2025";
           </div>
 
           <div class="content-layout__main-panel-content-left">
-            <span style="font-weight: 500;">Process Innovation</span>
+            <span style="font-weight: 500;">Process Oriented</span>
           </div>
           <div class="content-layout__main-panel-content-right sub-list">
             <ul>
@@ -671,36 +669,6 @@ const baseUrl = "https://bepbop.github.io/2025";
           margin-bottom: 8px !important;
         }
       }
-    }
-  }
-
-  /* --- View Transitions --- */
-  #initial,
-  #final {
-    view-transition-name: my-box;
-  }
-
-  #initial {
-    @media (width < 1000px) {
-      > div:nth-child(1) {
-        border-top: 0;
-      }
-    }
-  }
-
-  #final {
-    > div.content-layout__main-panel-content {
-      font-size: var(--font-size-6);
-    }
-  }
-
-  ::view-transition-new(my-box) {
-    animation: fade-in 0.25s ease-out;
-  }
-
-  @keyframes fade-in {
-    from {
-      opacity: 0;
     }
   }
 </style>
